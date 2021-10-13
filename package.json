@@ -1,0 +1,19 @@
+{
+  "name": "haunted-house-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luceroweb/haunted-house-game.git"
+  },
+  "author": "react-apprenticeship",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luceroweb/haunted-house-game/issues"
+  },
+  "homepage": "https://github.com/luceroweb/haunted-house-game#readme"
+}
