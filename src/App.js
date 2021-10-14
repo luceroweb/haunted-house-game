@@ -9,7 +9,6 @@ function App() {
   const [hasGoldKey, setHasGoldKey] = useState(false);
   const [hasSilverKey, setHasSilverKey] = useState(false);
   const [rooms, setRooms] = useState(RoomData.rooms);
-
   const [events, setEvents] = useState(EventsData.json);
 
   return (
