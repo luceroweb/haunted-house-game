@@ -1,4 +1,10 @@
 import React, {useState} from 'react';
+import { 
+  BrowserRouter,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import StartGame from './components/StartGame';
@@ -43,9 +49,19 @@ function App() {
 
 
   return (
-    <div className="App">
-      <StartGame />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <StartGame />
+        </Route>
+        <Route exact path="/hallway">
+          <div>Hallway</div>
+        </Route>
+        <Route path="/room/:name">
+          <div>Room Name</div>
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 

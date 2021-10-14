@@ -1,7 +1,7 @@
 import React from 'react';
 import house from '../img/rooms/house.jpeg';
 
-export default function StartGame() {
+export default function StartGame({hallway}) {
   return (
     <div>
       <img src={house} alt="" />
@@ -10,7 +10,7 @@ export default function StartGame() {
       <p>“Is there anyone home?” asks Myles.  “Do you think they have Skittles?”</p>
       <p>“Does it look like they have Skittles? They barely have time to clean from the looks of it!” Grace says, eyeing the cobwebs in the corner of the doorway.</p>
       <p>“Ooohh… I think I see some Skittles in the hallway!” Darla exclaims, pointing deeper into the darkened space just beyond the door.</p>
-      <button>Continue...</button>
+      <a href="/hallway"><button>Continue...</button></a>
     </div>
   )
 };
