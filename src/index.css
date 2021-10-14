@@ -26,7 +26,6 @@ code {
 }
 
 .App {
-  /* max-height: 100vh; */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -52,7 +51,6 @@ img {
   height: 300px;
   object-fit: cover;
   object-position: bottom;
-
 }
 
 p {
@@ -62,7 +60,7 @@ p {
 }
 
 @media (min-width: 800px) {
-  
+
   .App {
     margin: 5px auto;
   }
