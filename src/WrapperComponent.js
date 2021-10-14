@@ -1,5 +1,5 @@
 <WrapperComponent>
-    const x = (props) => {
+    const designWrapper = (props) => {
         return props.
     }
         <AnyNormalComponent>
@@ -11,7 +11,3 @@
 
 /* 
 
-Functional Component Demo
-
-
-*/
