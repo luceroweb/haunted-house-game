@@ -1,9 +1,15 @@
 import React, {useState} from 'react';
+import { 
+  BrowserRouter,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import RoomData from './components/RoomData.json';
 import EventsData from './components/EventsData.json';
-
+import StartGame from './components/StartGame';
 
 function App() {
   const [hasGoldKey, setHasGoldKey] = useState(false);
@@ -12,22 +18,19 @@ function App() {
   const [events, setEvents] = useState(EventsData.json);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <StartGame />
+        </Route>
+        <Route exact path="/hallway">
+          <div>Hallway</div>
+        </Route>
+        <Route path="/room/:name">
+          <div>Room Name</div>
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
