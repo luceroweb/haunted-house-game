@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import logo from "./logo.svg";
+import logo from "./logo.png";
 import "./App.css";
-import RoomData from "./components/RoomData";
+import RoomData from "./components/RoomData.js";
 import EventsData from "./components/EventsData.json";
 import StartGame from "./components/StartGame";
+import GameOver from "./components/GameOver";
+import Hallway from "./components/Hallway";
 import Room from "./components/Room";
 
 function App() {
@@ -20,7 +22,7 @@ function App() {
           <StartGame />
         </Route>
         <Route exact path="/hallway">
-          <div>Hallway</div>
+          <Hallway rooms={rooms} />
         </Route>
         <Route path="/room/:name">
           <Room rooms={rooms} />
@@ -29,5 +31,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;
