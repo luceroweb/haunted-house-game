@@ -5,11 +5,13 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import RoomData from './components/RoomData.json';
 import EventsData from './components/EventsData.json';
 import StartGame from './components/StartGame';
+import ResultAction1 from './components/ResultAction1';
+// import ResultAction from './components/ResultAction';
 
 function App() {
   const [hasGoldKey, setHasGoldKey] = useState(false);
@@ -21,6 +23,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
+          <ResultAction1/>
           <StartGame />
         </Route>
         <Route exact path="/hallway">
