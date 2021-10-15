@@ -12,14 +12,14 @@ const Event = ({ event }) => {
     //const selectedEvent = Random.selectEvent()
   //setEvent(selectedEvent);
         //setNewEventDisplay('');
-        //console.log(event)
+        console.log(event)
   
     return(
       <div>
         <h3>{event.name}</h3>
         <img src= {event.image} />
         <p>{event.description}</p>
-        {event.actions.map((action, i) => <button key={i} onClick={() =>{setAction(action)}}></button>)}
+        {event.actions.map((action, i) => <button key={i} onClick={() =>{setAction(action)}}>{action.action}</button>)}
       </div>
     )
 };       
