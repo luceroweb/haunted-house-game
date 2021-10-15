@@ -1,7 +1,8 @@
 import React from "react";
 
 const ResultAction = (props) => {
-	return <div>{props.action.result}</div>;
+	return props.i === props.selectedAction ? (
+		<p>{props.action.response}</p>
+	) : null;
 };
-
 export default ResultAction;
