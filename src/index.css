@@ -12,11 +12,19 @@
 #root div.header-div {
   border: 5px dashed #63C328;
   margin-bottom: 1em;
+  padding: 1rem; /* Added for more space around text */
 }
 
 .main-style-header {
-  font-size: 40px;
+  font-size: 30px; /* Changed for mobile first */
   font-weight: 700;
+  text-align: center; /* added for mobile first */
+}
+
+/* added this style */
+h3 {
+  text-align: center;
+  font-size: 1.08rem;
 }
 
 body {
@@ -130,4 +138,14 @@ h1 {
   button {
     font-size: 1.6rem;
   }
+
+  .main-style-header {
+    font-size: 45px; /* Changed for desktop */
+  }
+  
+  
+  h3 {
+    font-size: 1.15rem; /* Changed for desktop */
+  }
+
 }
