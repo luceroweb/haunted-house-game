@@ -8,25 +8,6 @@
   box-sizing: border-box;
 }
 
-/*Header div*/
-#root div.header-div {
-  border: 5px dashed #63C328;
-  margin-bottom: 1em;
-  padding: 1rem; /* Added for more space around text */
-}
-
-.main-style-header {
-  font-size: 30px; /* Changed for mobile first */
-  font-weight: 700;
-  text-align: center; /* added for mobile first */
-}
-
-/* added this style */
-h3 {
-  text-align: center;
-  font-size: 1.08rem;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -67,8 +48,32 @@ code {
   /* border: 1px solid red; */
 }
 
-button {
+/*Header div*/
+#root div.header-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-self: flex-start; */
+  border: 5px dashed #63C328;
+  margin-bottom: 1em;
+  padding: 1rem; /* Added for more space around text */
+  margin-top: 0;
+  height: 310px;
+}
 
+.main-style-header {
+  font-size: 30px; /* Changed for mobile first */
+  font-weight: 700;
+  text-align: center; /* added for mobile first */
+}
+
+/* added this style */
+h3 {
+  text-align: center;
+  font-size: 1.08rem;
+}
+
+button {
   border: 5px solid #63C328;
   padding: 10px 10px;
   background-color: #cf7017;
@@ -76,7 +81,6 @@ button {
   font-size: 1rem;
   font-family: 'Press Start 2P';
   color: rgba(0, 0, 0, 0.7);
-  /* width: 400px; */
   margin-bottom: .5rem;
 }
 
@@ -137,6 +141,10 @@ h1 {
 
   button {
     font-size: 1.6rem;
+  }
+
+  #root div.header-div {
+    height: 200px;
   }
 
   .main-style-header {
