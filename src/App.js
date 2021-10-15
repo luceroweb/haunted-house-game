@@ -5,11 +5,12 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
 import RoomData from './components/RoomData.json';
 import EventsData from './components/EventsData.json';
 import StartGame from './components/StartGame';
+import GameOver from './components/GameOver';
 
 function App() {
   const [hasGoldKey, setHasGoldKey] = useState(false);
@@ -29,9 +30,9 @@ function App() {
         <Route path="/room/:name">
           <div>Room Name</div>
         </Route>
+        
       </Switch>
     </BrowserRouter>
   );
 }
-
 export default App;
