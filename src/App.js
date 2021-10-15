@@ -17,6 +17,7 @@ function App() {
   const [hasSilverKey, setHasSilverKey] = useState(false);
   const [rooms, setRooms] = useState(RoomData.rooms);
   const [events, setEvents] = useState(EventsData.json);
+  const [isGameOver, setisGameOver]= useState(true)
 
   return (
     <BrowserRouter>
