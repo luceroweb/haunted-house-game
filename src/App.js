@@ -47,7 +47,8 @@ function App() {
     <div className="App">
       <ShowKey
       hasGoldKey={hasGoldKey}
-      hasSilverKey={hasSilverKey}/>
+      hasSilverKey={hasSilverKey}
+      setHasGoldKey={setHasGoldKey}/>
     </div>
   );
 }
