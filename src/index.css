@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 *,
 *::after,
 *::before {
@@ -18,6 +20,9 @@ body {
   /* Primary font color */
   color: #EEEB27;
   font-size: 16px;
+  font-family: 'Press Start 2P';
+  text-shadow: 2px 2px #902EBB;
+  line-height: 1.2;
 }
 
 code {
@@ -38,9 +43,9 @@ code {
 }
 
 button {
-  border: 3px solid green;
+  border: 5px solid #63C328;
   padding: 10px 50px;
-  background-color: #F4831B;
+  background-color: #cf7017;
   font-weight: 700;
   max-width: 400px;
   font-size: 2rem;
@@ -51,6 +56,7 @@ img {
   height: 300px;
   object-fit: cover;
   object-position: bottom;
+  filter: blur(1px) opacity(80%) saturate(82%);
 }
 
 p {
