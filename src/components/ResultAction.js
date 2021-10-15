@@ -2,7 +2,7 @@ import React from "react";
 
 
 const ResultAction = (props) => {
-	if(props.action.action==="A coffin."){
+	if(props.action.action==="A coffin"){
 		props.setHasSilverKey(true);
 		console.log("hasSilverKey");
 	}else if(props.action.action==="Believe the weird little alien, take the key." ){
