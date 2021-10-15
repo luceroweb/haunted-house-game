@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header'
 import house from '../img/rooms/house.jpeg';
 
+
 export default function StartGame({hallway}) {
   return (
     <div>

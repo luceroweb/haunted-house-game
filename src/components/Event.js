@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import ResultAction from "./ResultAction";
 
+
+
 const Event = ({ event }) => {
-	//const [event, setEvent] = useState();
+
+	const [hasGoldKey, setHasGoldKey] = useState(false);
+	const [hasSilverKey, setHasSilverKey] = useState(false);
+	const [isGameOver, setIsGameOver] = useState(false);
+	
 	const [action, setAction] = useState({});
 	const [newEventDisplay, selectNewEventDisplay] = useState("");
 	const [selectedAction, setSelectedAction] = useState(-1);
-	//const [gamePlay, setGamePlay] = useState(game.display)
-	//const generateList = events.map((event, )) => {}
-
-	//const selectedEvent = Random.selectEvent()
-	//setEvent(selectedEvent);
-	//setNewEventDisplay('');
-	console.log(event);
-
 	return (
 		<div>
 			<h3>{event.name}</h3>
@@ -29,7 +27,13 @@ const Event = ({ event }) => {
 					>
 						{currentAction.action}
 					</button>
-					<ResultAction i={i} action={action} selectedAction={selectedAction} />
+					<ResultAction 
+						i={i} 
+						action={action} 
+						selectedAction={selectedAction} 
+						setHasSilverKey={setHasSilverKey}
+						setHasGoldKey={setHasGoldKey}
+					/>
 				</div>
 			))}
 		</div>
