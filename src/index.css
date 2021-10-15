@@ -97,6 +97,10 @@ p {
     margin: 5px auto;
   }
 
+  img {
+    max-height: 400px;
+  }
+
   p {
     width: 85%;
     font-size: 1.1rem;
