@@ -47,8 +47,11 @@ button {
   padding: 10px 50px;
   background-color: #cf7017;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-family: 'Press Start 2P';
+  color: rgba(0, 0, 0, 0.7);
+  /* text-align: center; */
+  width: 400px;
 }
 
 img {
@@ -60,9 +63,9 @@ img {
 }
 
 p {
-  font-size: 1rem;
+  font-size: .8rem;
   text-align: left;
-  width: 60%;
+  width: 90%;
 }
 
 @media (min-width: 800px) {
@@ -72,7 +75,12 @@ p {
   }
 
   p {
-    width: 90%;
-    font-size: 1.2rem;
+    width: 80%;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  button {
+    font-size: 1.8rem;
   }
 }
