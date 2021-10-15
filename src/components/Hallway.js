@@ -1,5 +1,5 @@
 import React from 'react'
-import img from '../img/Hall-option-1.jpg'
+import img from '../img/rooms/Hall-option-1.jpg'
 import '../main.css';
 
 const Hallway = (props) => {
