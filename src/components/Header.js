@@ -2,6 +2,10 @@ import React from 'react';
 
 export default function Header(/*should pull from some sort of state here*/) {
     return (
-        <header>HAUNTED HOUSE GAME</header>
-    )
+        <div>
+            <h1>HAUNTED HOUSE GAME</h1>HAUNTED HOUSE GAME 
+        </header>
+        )
     };
+
+
