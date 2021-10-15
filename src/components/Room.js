@@ -1,4 +1,6 @@
 import { useParams } from "react-router-dom";
+import Event from './Event';
+import Random from '../util/Random';
 
 function Room(props) {
   const { name } = useParams();
@@ -15,6 +17,9 @@ function Room(props) {
       </div>
 
       <p>{found[0].description}</p>
+
+      <Event event={Random.selectEvent(props.events)} />
+
       <a href="/hallway">
         <button>
           Back to Hallway

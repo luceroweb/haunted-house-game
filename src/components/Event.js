@@ -12,6 +12,7 @@ const Event = ({ event }) => {
     //const selectedEvent = Random.selectEvent()
   //setEvent(selectedEvent);
         //setNewEventDisplay('');
+        console.log(event)
   
     return(
       <div>
