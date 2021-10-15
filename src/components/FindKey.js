@@ -1,15 +1,28 @@
 import React, { useState } from 'react';
+import talkingHeads from '../img/events/talking-heads.jpg';
 
 function FindKey(props){   
 
+
     const changeTwoStates = () => {
-        setHasGoldKey(true);
-        setHasSilverKey(true);
-    }    
+    
+    if(!props.hasSilverKey){
+        // "you win!"
+    } else 
+    if(!props.hasGoldKey){
+        // "try again"
+    }
+    
+    }
+    //console.log(props.hasSilverKey)
 
     return(        
         <div>
-            {changeTwoStates}
+            <img src = {talkingHeads} alt = "" />    
+
+            {changeTwoStates()}
+
+            <a href="/hallway"><button>Continue...</button></a>
         </div>
     )
 

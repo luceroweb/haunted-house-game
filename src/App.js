@@ -11,6 +11,7 @@ import RoomData from './components/RoomData.json';
 import EventsData from './components/EventsData.json';
 import StartGame from './components/StartGame';
 import GameOver from './components/GameOver';
+import FindKey from './components/FindKey';
 
 function App() {
   const [hasGoldKey, setHasGoldKey] = useState(false);
@@ -30,7 +31,9 @@ function App() {
         <Route path="/room/:name">
           <div>Room Name</div>
         </Route>
-        
+
+        <FindKey hasSilverKey = {hasSilverKey} hasGoldKey = {hasGoldKey}/>
+
       </Switch>
     </BrowserRouter>
   );
