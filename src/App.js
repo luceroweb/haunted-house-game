@@ -1,50 +1,31 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
-import KeyDisplay from "./components/KeyDisplay";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import logo from "./logo.png";
+import "./App.css";
+import RoomData from "./components/RoomData.json";
+import EventsData from "./components/EventsData.json";
+import StartGame from "./components/StartGame";
+import GameOver from "./components/GameOver";
 
 function App() {
   const [hasSilverKey, setHasSilverKey] = useState(false);
-  const [hasGoldKey, setHasGoldKey] = useState(false);
-  const [rooms, setRooms] = useState([
-    {
-      name: "Living Room",
-      description: "living room description goes here",
-      image: logo,
-    },
-    {
-      name: "Kitchen",
-      description: "kitchen description goes here",
-      image: logo,
-    },
-  ]);
-  const [events, setEvents] = useState([
-    {
-      name: "Ghost",
-      description: "ghost description goes here",
-      image: logo,
-      actions: [
-        { pass: "pass goes here" },
-        { fail: "fail goes here, goes into fail screen" },
-        { redo: "try again goes here" },
-      ],
-    },
-    {
-      name: "Warewolf",
-      description: "warewolf description goes here",
-      image: logo,
-      actions: [
-        { pass: "pass goes here" },
-        { fail: "fail goes here, goes into fail screen" },
-        { redo: "try again goes here" },
-      ],
-    },
-  ]);
+  const [rooms, setRooms] = useState(RoomData.rooms);
+  const [events, setEvents] = useState(EventsData.json);
 
   return (
-    <div className="App">
-      <KeyDisplay hasSilverKey={hasSilverKey} hasGoldKey={hasGoldKey} />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <StartGame />
+        </Route>
+        <Route exact path="/hallway">
+          <div>Hallway</div>
+        </Route>
+        <Route path="/room/:name">
+          <div>Room Name</div>
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
-
 export default App;
