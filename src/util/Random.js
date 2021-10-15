@@ -1,5 +1,5 @@
 
-class Random {
+export default class Random {
   /**
    * Gets a random event from events state
    * @param {Array} events
