@@ -10,7 +10,7 @@ import './App.css';
 import RoomData from './components/RoomData.json';
 import EventsData from './components/EventsData.json';
 import StartGame from './components/StartGame';
-
+import Event  from './components/Event';
 function App() {
   const [hasGoldKey, setHasGoldKey] = useState(false);
   const [hasSilverKey, setHasSilverKey] = useState(false);
@@ -21,7 +21,8 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <StartGame />
+          {/* <StartGame /> */}
+          <Event actions={Random.selectEvent(events)} />
         </Route>
         <Route exact path="/hallway">
           <div>Hallway</div>

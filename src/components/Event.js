@@ -2,71 +2,29 @@ import React, { useState } from 'react';
 
 
 
-const Event = () => {
-    const [event, setEvent] = useState();
+const Event = ({ event }) => {
+    //const [event, setEvent] = useState();
+    const [action,setAction] = useState();
     const [newEventDisplay, selectNewEventDisplay] = useState("");
-    const [gamePlay, setGamePlay] = useState(game.display)
+    //const [gamePlay, setGamePlay] = useState(game.display)
     //const generateList = events.map((event, )) => {}
-    const randomEvent =() => {
-    const selectedEvent = Random.selectEvent()
-        setEvent(selectedEvent);
+    
+    //const selectedEvent = Random.selectEvent()
+  //setEvent(selectedEvent);
         //setNewEventDisplay('');
-    };
+  
+    return(
+      <div>
+        <h3>{event.name}</h3>
+        <img src= {event.image} />
+        <p>{event.description}</p>
+        {event.actions.map((action, i) => <button key={i} onClick={() =>{setAction(action)}}></button>)}
+      </div>
+    )
 };       
     
-
- 
-
-    //constructor(props) {
-      //super(props);
-      //this.state = {
-        //count: 0
-      //};
-    //}
-  
-    render() {
-      return (
-        <div>
-        {/* <p>You clicked {this.state.count} count</p> */}
-          <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-            passed
-          </button>
-        </div>
-      );
-    }
-  }
-  export default Event
+export default Event
 
   
  
-    render() {
-      return (
-     
-      )
-    }
-  };
-  
-function Event(props){
-      return(
-               <div>
-              <img src ={props.logo} />
-                <p> {props.message}</p>
-              </div>
-            //)
-
-// var myArray = [
-    // class Eventrandomstring extends Componenent {
-        // const() {
-            // select 'react'Event();
-            // this.state = {
     
-            // }
-        //}
-    
-    //}
-    // "passed",
-    // "try again",
-    // "Dead"
- // ];
-  
-  //var randomItem = myArray[Math.floor(Math.random()*myArray.length)];
