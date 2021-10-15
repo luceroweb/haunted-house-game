@@ -203,9 +203,9 @@ const eventData = [
         response: "“I was mistaken, try again.”",
         },
         { 
-          type: "redo",
-          action: "Believe the weird little alien, take the key.", 
-          response: "The group makes their way to the front door.  Juan takes the key out of his pocket and inserts it into the keyhole, but just as the tip of the key touches the lock, it smashes into the lock, the gold wrapping peels away and reveals semi-melted chocolate.",
+        type: "redo",
+        action: "Believe the weird little alien, take the key.", 
+        response: "The group makes their way to the front door.  Juan takes the key out of his pocket and inserts it into the keyhole, but just as the tip of the key touches the lock, it smashes into the lock, the gold wrapping peels away and reveals semi-melted chocolate.",
         },   
       ]
     }
