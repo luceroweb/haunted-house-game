@@ -14,9 +14,10 @@
   /*margin-top: 30px 0; */
 }
 
-.main-style-header {
+.main-style-header,
+.footer-style {
   font-size: 40px;
-  font-weight: 700px;
+  font-weight: 700;
 }
 
 body {
@@ -34,6 +35,18 @@ body {
   font-family: 'Press Start 2P';
   text-shadow: 2px 2px #902EBB;
   line-height: 1.2;
+}
+
+/*Footer div */
+footer {
+  border: 5px dashed #63C328;
+  padding: 20px 80px;
+  justify-content: center;
+}
+
+.footer-style {
+  font-size: 40px;
+  font-weight: 700;
 }
 
 code {

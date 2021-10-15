@@ -14,5 +14,8 @@ export default function StartGame({hallway}) {
       <p>“Ooohh… I think I see some Skittles in the hallway!” Darla exclaims, pointing deeper into the darkened space just beyond the door.</p>
       <a href="/hallway"><button>Continue...</button></a>
     </div>
+    
+    
+
   )
 };
