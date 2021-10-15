@@ -2,19 +2,15 @@ import { useParams } from "react-router-dom";
 
 function Room(props) {
   const { name } = useParams();
-  // console.log(name);
-  // const room = props.rooms[name];
 
-  // console.log(room);
-  const found = props.rooms.filter((e) => e.name.toLowerCase() === name);
-  // console.log(found[0].image);
+  const found = props.rooms.filter(
+    (room) => room.name.toLowerCase() === name.toLowerCase()
+  );
 
   return (
     <div>
       <h1>{found[0].name}</h1>
-      <div
-      // style={{width:'auto', height:"280px",backgroundColor:'black',alignItems:'center',margin:'40px'}}
-      >
+      <div>
         <img src={found[0].image} alt="" />
       </div>
 
