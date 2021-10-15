@@ -19,7 +19,7 @@ function Room(props) {
       <Event event={Random.selectEvent(props.events)} />
 
       <a href="/hallway">
-        <button>
+        <button className="backToHomeBtn" >
           Back to Hallway
         </button>
       </a>
