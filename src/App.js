@@ -41,7 +41,7 @@ function App() {
           <Hallway rooms={rooms} />
         </Route>
         <Route path="/room/:name">
-          <Room rooms={rooms} />
+          <Room rooms={rooms} events={events} />
         </Route>
 <<<<<<< HEAD
 
