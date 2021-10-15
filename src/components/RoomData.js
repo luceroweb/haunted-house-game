@@ -4,7 +4,7 @@ import kitchen from "../img/rooms/kitchen-option.jpg";
 import library from "../img/rooms/Room_Library.jpg";
 const RoomData = [
   {
-    name: "Livingroom",
+    name: "Living Room",
     description:
       "Upon entering the living room you notice all the encrusted into the ripped old furniture. The floorboards creak with every step.  A sense of decay fills the room.",
     image: livingRoom,
