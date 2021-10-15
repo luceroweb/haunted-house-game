@@ -1,6 +1,6 @@
 import React from "react";
-import silverKey from "../img/keys/silver-key.jpg";
-import goldKey from "../img/keys/gold-key.jpeg";
+import silverKey from "../img/events/silver-key.jpg";
+import goldKey from "../img/events/gold-key.jpeg";
 
 function KeyDisplay(props) {
   return (
