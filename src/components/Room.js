@@ -12,9 +12,7 @@ function Room(props) {
   return (
     <div>
       <h1>{found[0].name}</h1>
-      <div>
-        <img src={found[0].image} alt="" />
-      </div>
+      <img src={found[0].image} alt="" />
 
       <p>{found[0].description}</p>
 
