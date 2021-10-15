@@ -9,9 +9,9 @@
 }
 
 /*Header div*/
-.header-div {
+#root div.header-div {
   border: 5px dashed #63C328;
-  /*margin-top: 30px 0; */
+  margin-bottom: 1em;
 }
 
 .main-style-header,
