@@ -6,9 +6,11 @@ import RoomData from "./components/RoomData.json";
 import EventsData from "./components/EventsData.json";
 import StartGame from "./components/StartGame";
 import GameOver from "./components/GameOver";
+import KeyDisplay from "./components/KeyDisplay";
 
 function App() {
   const [hasSilverKey, setHasSilverKey] = useState(false);
+  const [hasGoldKey, setHasGoldKey] = useState(false);
   const [rooms, setRooms] = useState(RoomData.rooms);
   const [events, setEvents] = useState(EventsData.json);
 
