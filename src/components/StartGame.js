@@ -1,11 +1,18 @@
 import React from 'react';
+import Header from './Header'
 import house from '../img/rooms/house.jpeg';
 
 
 export default function StartGame({hallway}) {
   return (
+<<<<<<< HEAD
     <div>      
       <img src={house} alt="" />
+=======
+    <div>
+      <Header />
+      <img src={house} alt="" />      
+>>>>>>> origin/staging
       <p>The Bitwise React Apprentices were out trick or treating on a dark and windy Halloween eve, when they stumbled across a creepy, rundown home at the end of a half-built construction site.  Juan, the leader of the group, walked up to the door, rang the doorbell and no one answered.</p>
       <p>He jiggled the door and it swung open.</p>
       <p>“Is there anyone home?” asks Myles.  “Do you think they have Skittles?”</p>
