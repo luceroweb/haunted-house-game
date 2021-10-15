@@ -14,19 +14,9 @@ function Room(props) {
         <img src={found[0].image} alt="" />
       </div>
 
-      <h2>{found[0].description}</h2>
+      <p>{found[0].description}</p>
       <a href="/hallway">
-        <button
-          style={{
-            width: "20%",
-            height: "80px",
-            backgroundColor: "grey",
-            alignItems: "center",
-            margin: "30px",
-            fontSize: "20px",
-            borderRadius: "10px",
-          }}
-        >
+        <button>
           Back to Hallway
         </button>
       </a>
