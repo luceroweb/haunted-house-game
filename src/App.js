@@ -14,20 +14,20 @@ function App() {
 	const [events, setEvents] = useState(EventsData);
 	const [isGameOver, setIsGameOver] = useState(false);
 
-	return (
-		<BrowserRouter>
-			<Switch>
-				<Route exact path="/">
-					<StartGame />
-				</Route>
-				<Route exact path="/hallway">
-					<Hallway rooms={rooms} />
-				</Route>
-				<Route path="/room/:name">
-					<Room rooms={rooms} />
-				</Route>
-			</Switch>
-		</BrowserRouter>
-	);
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <StartGame />
+        </Route>
+        <Route exact path="/hallway">
+          <Hallway rooms={rooms} />
+        </Route>
+        <Route path="/room/:name">
+          <Room rooms={rooms} events={events} />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  );
 }
 export default App;
