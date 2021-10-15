@@ -8,11 +8,10 @@ import Hallway from "./components/Hallway";
 import Room from "./components/Room";
 
 function App() {
-	const [hasGoldKey, setHasGoldKey] = useState(false);
-	const [hasSilverKey, setHasSilverKey] = useState(false);
+	
 	const [rooms, setRooms] = useState(RoomData);
 	const [events, setEvents] = useState(EventsData);
-	const [isGameOver, setIsGameOver] = useState(false);
+
 
   return (
     <BrowserRouter>
