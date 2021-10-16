@@ -15,8 +15,9 @@ const Hallway = (props) => {
             <p>The voice continues, “In front of you is a hallway filled with doors.  Each room has a challenge for you all to beat. One room holds the key.  Complete the challenge, find the key, and save yourselves before it’s too late. You’ve been volun-told to search the rooms for the key. Everyone else stays put.”</p>
             <p>As you step forward, a large metal cage slams down around Juan and the rest of the group.  A look of fear passes among the group.</p>
             <p>“Remember” the voice pronounces “Nobody belongs here more than you!”</p>
-            {props.rooms.map((room, key)=> (
-<a href={`/room/${room.name}`}><button>{room.name}</button></a>
+
+            {props.rooms.map((room, index)=> (
+              <a href={`/room/${room.name}`} key={index}><button>{room.name}</button></a>
             ))}
         </div>
     )
