@@ -1,5 +1,3 @@
-import React from "react";
-
 //Images
 import ghost from "../img/events/ghost-bride.png";
 import werewolf from "../img/events/werewolf.jpg";
