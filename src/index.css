@@ -8,17 +8,6 @@
   box-sizing: border-box;
 }
 
-/*Header div*/
-#root div.header-div {
-  border: 5px dashed #63C328;
-  margin-bottom: 1em;
-}
-
-.main-style-header {
-  font-size: 40px;
-  font-weight: 700;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -43,12 +32,12 @@ code {
 
 #root {
   width:100vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: auto;
 }
 
 #root div {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,24 +48,55 @@ code {
   /* border: 1px solid red; */
 }
 
-button {
+/*Header div*/
+#root div.header-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-self: flex-start; */
+  border: 5px dashed #63C328;
+  margin-bottom: 1em;
+  padding: 1rem; /* Added for more space around text */
+  margin-top: 0;
+  height: 310px;
+}
 
+.main-style-header {
+  font-size: 30px; /* Changed for mobile first */
+  font-weight: 700;
+  text-align: center; /* added for mobile first */
+}
+
+/* added this style */
+h3 {
+  text-align: center;
+  font-size: 1.08rem;
+}
+
+button {
   border: 5px solid #63C328;
-  padding: 10px 10px;
+  /* border: none; */
+  padding: 10px;
   background-color: #cf7017;
   font-weight: 700;
   font-size: 1rem;
   font-family: 'Press Start 2P';
   color: rgba(0, 0, 0, 0.7);
-  /* width: 400px; */
   margin-bottom: .5rem;
+}
+
+button.backToHomeBtn {
+  border: 5px solid #63C328;
+  color: #cf7017;
+  background-color: #000;
+  /* border: none; */
 }
 
 img {
   max-width: 100%;
   max-height: 400px;
   object-fit: cover;
-  object-position: center;
+  object-position: 60% 10%;
   filter: opacity(80%) hue-rotate(240deg);
   border-radius: 10px;
   margin-bottom: 1rem;
@@ -94,6 +114,8 @@ h1 {
   margin-bottom: .5rem;
 }
 
+
+
 @media (min-width: 320px) {
   p {
     font-size: 0.55rem;
@@ -104,9 +126,8 @@ h1 {
   }
 
   img {
-    max-height: 200px;
+    max-height: 400px;
     width: 70%;
-    object-position: center;
   }
 }
 
@@ -130,4 +151,18 @@ h1 {
   button {
     font-size: 1.6rem;
   }
+
+  #root div.header-div {
+    height: 200px;
+  }
+
+  .main-style-header {
+    font-size: 45px; /* Changed for desktop */
+  }
+  
+  
+  h3 {
+    font-size: 1.15rem; /* Changed for desktop */
+  }
+
 }
