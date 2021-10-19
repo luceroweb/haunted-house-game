@@ -6,6 +6,7 @@ import EventsData from "./components/EventsData";
 import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
+import FalseEnding from "./components/FalseEnding";
 
 function App() {
 	
@@ -16,6 +17,9 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
+        <Route exact path="/">
+          <FalseEnding />
+        </Route>
         <Route exact path="/">
           <StartGame />
         </Route>
