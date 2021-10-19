@@ -6,6 +6,7 @@ import EventsData from "./components/EventsData";
 import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
+import Music from "./components/Music";
 
 function App() {
 	const [hasGoldKey, setHasGoldKey] = useState(false);
