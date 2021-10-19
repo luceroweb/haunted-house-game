@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import RoomData from "./components/RoomData.js";
@@ -9,10 +9,8 @@ import Room from "./components/Room";
 import FalseEnding from "./components/FalseEnding";
 
 function App() {
-	
-	const [rooms, setRooms] = useState(RoomData);
-	const [events, setEvents] = useState(EventsData);
-
+	const rooms = RoomData;
+	const events = EventsData;
 
   return (
     <BrowserRouter>
@@ -33,4 +31,5 @@ function App() {
     </BrowserRouter>
   );
 }
+
 export default App;
