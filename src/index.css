@@ -1,5 +1,10 @@
+/* Importing the Press Start 2P font from google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+
+/*****************************
+*      SITE GLOBALS
+*****************************/
 *,
 *::after,
 *::before {
@@ -9,73 +14,81 @@
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   /* Background Color */
   background-color: #1C1C1C;
+
   /* Primary font color */
   color: #EEEB27;
+
+  /* Font and text settings */
   font-size: 16px;
   font-family: 'Press Start 2P';
   text-shadow: 2px 2px #902EBB;
   line-height: 1.2;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  /* Setting viewport width and height */
+  width:100vw;
+  min-height: 100vh;
 }
 
 #root {
-  width:100vw;
-  min-height: 100vh;
-  margin: auto;
+  width: 95%;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-#root div {
-  min-height: 100vh;
+/*****************************
+*      PAGE GLOBALS
+*****************************/
+#start-game,
+#hallway,
+#room {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 95%;
-  margin: auto;
-  padding: 20px 0;
   /* border: 1px solid red; */
 }
 
-/*Header div*/
-#root div.header-div {
+/*****************************
+*         HEADER
+*****************************/
+.header-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-self: flex-start; */
   border: 5px dashed #63C328;
   margin-bottom: 1em;
-  padding: 1rem; /* Added for more space around text */
+  padding: 1rem;
   margin-top: 0;
   height: 310px;
 }
 
 .main-style-header {
-  font-size: 30px; /* Changed for mobile first */
+  font-size: 30px;
   font-weight: 700;
-  text-align: center; /* added for mobile first */
+  text-align: center;
 }
 
-/* added this style */
-h3 {
+.main-style-header h3 {
   text-align: center;
   font-size: 1.08rem;
 }
 
+/*****************************
+*          BUTTONS
+*****************************/
+#button-bar {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-wrap {
+  margin: 0 20px;
+}
+
 button {
   border: 5px solid #63C328;
-  /* border: none; */
   padding: 10px;
   background-color: #cf7017;
   font-weight: 700;
@@ -83,15 +96,18 @@ button {
   font-family: 'Press Start 2P';
   color: rgba(0, 0, 0, 0.7);
   margin-bottom: .5rem;
+  cursor: pointer;
 }
 
 button.backToHomeBtn {
   border: 5px solid #63C328;
   color: #cf7017;
   background-color: #000;
-  /* border: none; */
 }
 
+/*****************************
+*          IMAGES
+*****************************/
 img {
   max-width: 100%;
   max-height: 400px;
@@ -102,35 +118,47 @@ img {
   margin-bottom: 1rem;
 }
 
+/*****************************
+*        PARAGRAPHS
+*****************************/
 p {
+  /* Changing the text itself */
   font-size: .6rem;
   text-align: center;
-  width: 90%;
   margin-bottom: 1em;
+  width: 90%;
 }
 
+/*****************************
+*         HEADINGS
+*****************************/
 h1 {
   font-size: 1.5rem;
   margin-bottom: .5rem;
 }
 
 
+/*****************************
+*      MEDIA QUERIES
+*****************************/
 
+/* Screens that start at 320px */
 @media (min-width: 320px) {
+  img {
+    max-height: 400px;
+    width: 70%;
+  }
+
   p {
     font-size: 0.55rem;
   }
 
   button {
     font-size: 1rem;
-  }
-
-  img {
-    max-height: 400px;
-    width: 70%;
-  }
+  }  
 }
 
+/* Screens that start at 800px */
 @media (min-width: 800px) {
 
   .App {
@@ -164,5 +192,4 @@ h1 {
   h3 {
     font-size: 1.15rem; /* Changed for desktop */
   }
-
 }

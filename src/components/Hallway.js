@@ -4,7 +4,7 @@ import '../main.css';
 
 const Hallway = (props) => {
     return (
-        <div>
+        <div id="hallway">
             <h1>Hallway</h1>
             <img className='hallway' src={img} alt="" />
             <p>The team of apprentices hesitantly step into the hallway, looking around into the begrimed space.  The door slams shut behind them, shaking the dust from the ceiling above!</p>
@@ -16,9 +16,13 @@ const Hallway = (props) => {
             <p>As you step forward, a large metal cage slams down around Juan and the rest of the group.  A look of fear passes among the group.</p>
             <p>“Remember” the voice pronounces “Nobody belongs here more than you!”</p>
 
-            {props.rooms.map((room, index)=> (
-              <a href={`/room/${room.name}`} key={index}><button>{room.name}</button></a>
-            ))}
+            <div id="button-bar">
+                {props.rooms.map((room, index)=> (
+                    <div className="btn-wrap">
+                        <a href={`/room/${room.name}`} key={index}><button>{room.name}</button></a>
+                    </div>              
+                ))}
+            </div>
         </div>
     )
 };
