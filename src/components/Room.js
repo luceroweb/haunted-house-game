@@ -5,7 +5,8 @@ import Random from '../util/Random';
 
 function Room(props) {
   const { name } = useParams();
-  const [isGameOver, setIsGameOver] = useState(false);	const [hasGoldKey, setHasGoldKey] = useState(false);
+  const [isGameOver, setIsGameOver] = useState(false);	
+  const [hasGoldKey, setHasGoldKey] = useState(false);
 	const [hasSilverKey, setHasSilverKey] = useState(false);
 
   const found = props.rooms.filter(
