@@ -8,7 +8,7 @@ export const TrailerEmbed = () => {
             <h3> Haunted House Project</h3>
                 <ReactPlayer
                 className='react-player'
-                    url='https://www.youtube.com/watch?v=5KCUT1os_ug'
+                    url='https://www.youtube.com/watch?v=zsRjgoRZlTY'
                     playing={true}
                     muted={true}
                     controls={true}
