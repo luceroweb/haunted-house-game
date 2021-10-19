@@ -6,6 +6,8 @@ import EventsData from "./components/EventsData";
 import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
+import GameOver from "./components/GameOver";
+import AnotherGameOver from "./components/AnotherGameOver";
 
 function App() {
 	const rooms = RoomData;
@@ -22,6 +24,10 @@ function App() {
         </Route>
         <Route path="/room/:name">
           <Room rooms={rooms} events={events} />
+        </Route>
+
+        <Route  path='/gameover'>
+          <AnotherGameOver   />
         </Route>
       </Switch>
     </BrowserRouter>
