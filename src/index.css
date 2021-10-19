@@ -42,7 +42,8 @@ body {
 *****************************/
 #start-game,
 #hallway,
-#room {
+#room,
+#game-wom {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,7 +93,7 @@ button {
   padding: 10px;
   background-color: #cf7017;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: .6rem;
   font-family: 'Press Start 2P';
   color: rgba(0, 0, 0, 0.7);
   margin-bottom: .5rem;
@@ -108,14 +109,16 @@ button.backToHomeBtn {
 /*****************************
 *          IMAGES
 *****************************/
+.img-wrap {
+  width: 400px;
+  margin-bottom: 1rem;
+}
+
 img {
   max-width: 100%;
   max-height: 400px;
-  object-fit: cover;
-  object-position: 60% 10%;
   filter: opacity(80%) hue-rotate(240deg);
   border-radius: 10px;
-  margin-bottom: 1rem;
 }
 
 /*****************************
@@ -137,6 +140,10 @@ h1 {
   margin-bottom: .5rem;
 }
 
+/*****************************
+*          MODAL
+*****************************/
+
 
 /*****************************
 *      MEDIA QUERIES
@@ -154,7 +161,9 @@ h1 {
   }
 
   button {
-    font-size: 1rem;
+    font-size: .75rem;
+    padding: 7px;
+    border: 3px solid #63C328;
   }  
 }
 
@@ -177,7 +186,7 @@ h1 {
   }
 
   button {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 
   #root div.header-div {
@@ -187,8 +196,7 @@ h1 {
   .main-style-header {
     font-size: 45px; /* Changed for desktop */
   }
-  
-  
+    
   h3 {
     font-size: 1.15rem; /* Changed for desktop */
   }
