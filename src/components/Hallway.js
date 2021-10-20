@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import img from '../img/rooms/Hall-option-1.jpg'
 import '../main.css';
+import KeyDisplay from './KeyDisplay';
+import PresentKey from './PresentKey';
+import ShowKey from './ShowKey';
+
+
 
 const Hallway = (props) => {
     return (
-        <div>
+        <div className="hallway-wrapper">
             <h1>Hallway</h1>
             <img className='hallway' src={img} alt="" />
             <p>The team of apprentices hesitantly step into the hallway, looking around into the begrimed space.  The door slams shut behind them, shaking the dust from the ceiling above!</p>
@@ -19,6 +25,9 @@ const Hallway = (props) => {
             {props.rooms.map((room, index)=> (
               <a href={`/room/${room.name}`} key={index}><button>{room.name}</button></a>
             ))}
+            
+            <PresentKey onClick={ShowKey}/>
+            
         </div>
     )
 };
