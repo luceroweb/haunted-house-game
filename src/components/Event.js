@@ -2,6 +2,8 @@ import React, { useState} from "react";
 import ResultAction from "./ResultAction";
 import GameOver from "./GameOver";
 
+//set variable for event
+//if null run random event
 
 const Event = ({
   event,

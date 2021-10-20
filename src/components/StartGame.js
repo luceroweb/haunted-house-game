@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import house from "../img/rooms/house.jpeg";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 
 export default function StartGame({ hallway }) {
@@ -37,13 +37,9 @@ export default function StartGame({ hallway }) {
 			/>
       <div id="btn-wrap">
         {page === 2 ? (
-          <a href={`/hallway`}>
-            <button>Continue...</button>
-          </a>
+          <Link to="/hallway"><button>Continue...</button></Link>
         ) : (
-          <a href={`/startgame/${page + 1}`}>
-            <button>Continue...</button>
-          </a>
+          <Link to={`/startgame/${page + 1}`}><button>Continue...</button></Link>
         )}
       </div>
 		</div>

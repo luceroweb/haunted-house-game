@@ -13,8 +13,10 @@ import GameOver from "./components/GameOver";
 function App() {
   const rooms = RoomData;
   const events = EventsData;
+  const [audioOn, setAudioOn] = useState(true);
   const [hasGoldKey, setHasGoldKey] = useState(false);
   const [hasSilverKey, setHasSilverKey] = useState(false);
+
   return (
     <BrowserRouter>
       <Switch>

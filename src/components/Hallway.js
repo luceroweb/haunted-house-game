@@ -1,14 +1,11 @@
 import React from "react";
 import img from "../img/rooms/Hall-option-1.jpg";
 import "../main.css";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import ShowKey from './ShowKey';
 //import KeyDisplay from ',/KeyDisplay'
 import PresentKey from "./PresentKey";
-
-
-
 
 const Hallway = (props) => {
 	let { page } = useParams();
@@ -52,9 +49,7 @@ const Hallway = (props) => {
 			/>
       <div id="button-bar">
         {props.rooms.map((room, index) => (
-          <a href={`/room/${room.name}`} key={index}>
-            <button>{room.name}</button>
-          </a>
+          <Link to={`/room/${room.name}`}><button>{room.name}</button></Link>
         ))}
       </div>
 	  <PresentKey 
