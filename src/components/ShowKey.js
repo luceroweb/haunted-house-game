@@ -1,4 +1,4 @@
-import GoldKeyMessage from "./GoldKeyMessage";
+import GameWon from "./GameWon";
 import SilverKeyMessage from "./SilverKeyMessage";
 
 // triggers when hasGoldKey or hasSilverKey are true
@@ -6,7 +6,7 @@ import SilverKeyMessage from "./SilverKeyMessage";
     var winMessage = '';
     // fake key and keep playing
     if (props.hasGoldKey) {
-      <GoldKeyMessage />
+      <GameWon />
     }
     // real key and win
     else if (props.hasSilverKey) {
