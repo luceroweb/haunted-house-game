@@ -82,7 +82,7 @@ body {
 *****************************/
 #button-bar {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
 }
 
 .btn-wrap {
@@ -219,6 +219,10 @@ h3 {
     width: 85%;
     font-size: 1.1rem;
     line-height: 1.4;
+  }
+
+  #button-bar {
+    flex-direction: row;
   }
 
   button {
