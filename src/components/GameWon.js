@@ -11,8 +11,8 @@ function GameWon() {
   return (
     <div id="game-won">
       {/* <button onClick={play}>Play</button> */}
-      {play()}
-      <Header />
+      {/* {play()} */}
+      
       <div className="img-wrap">
         <img src={silverKey} alt="silver key" />
       </div>
@@ -44,6 +44,7 @@ function GameWon() {
           <button className="backToHomeBtn">Restart the Game</button>
         </a>
       </div>
+      <Header/>
     </div>
   );
 }
