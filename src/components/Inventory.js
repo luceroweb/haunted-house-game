@@ -2,11 +2,11 @@ import React from "react";
 
 
 
-export default function Inventory() {
+export default function Inventory(goldKey, silverKey) {
 	return (
-		<div className="invnetory">
-			<span id="gold-key"></span>
-            <spanspan id="silverkey"></spanspan>
+		<div id="inventory">
+            { goldKey && <span id="gold-key">G</span> }
+            { silverKey && <span id="silver-key">S</span> }            
 		</div>
 	);
 }

@@ -7,12 +7,12 @@ import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
 import GameWon from "./components/GameWon";
-import GameOver from "./components/GameOver";
+// import GameOver from "./components/GameOver";
 
 function App() {
   const rooms = RoomData;
   const events = EventsData;
-  const [audioOn, setAudioOn] = useState(true);
+  // const [audioOn, setAudioOn] = useState(true);
 
   return (
     <BrowserRouter>

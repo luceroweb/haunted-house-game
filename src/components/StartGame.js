@@ -35,13 +35,13 @@ export default function StartGame({ hallway }) {
 					loop: false,
 				}}
 			/>
-      <div id="btn-wrap">
-        {page === 2 ? (
-          <Link to="/hallway"><button>Continue...</button></Link>
-        ) : (
-          <Link to={`/startgame/${page + 1}`}><button>Continue...</button></Link>
-        )}
-      </div>
+			<div id="btn-wrap">
+				{page === 2 ? (
+				<Link to="/hallway"><button>Continue...</button></Link>
+				) : (
+				<Link to={`/startgame/${page + 1}`}><button>Continue...</button></Link>
+				)}
+			</div>
 		</div>
 	);
 }

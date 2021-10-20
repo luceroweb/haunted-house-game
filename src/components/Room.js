@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Event from './Event';
 import Random from '../util/Random';
+import Inventory from "./Inventory";
 
 function Room(props) {
   const { name } = useParams();
@@ -15,6 +16,7 @@ function Room(props) {
 
   return (
     <div id="room">
+      <Inventory></Inventory>
       <h1>{found[0].name}</h1>
       <div className="img-wrap">
         <img src={found[0].image} alt="" />
