@@ -13,21 +13,6 @@
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-/*Header div*/
-#root div.header-div {
-  border: 5px dashed #63C328;
-  margin-bottom: 1em;
-}
-
-.main-style-header,
-.footer-style {
-  font-size: 40px;
-  font-weight: 700;
-}
-
-=======
->>>>>>> 65a124ff571e2b72c3e99f6d530e8a3d4e3415fb
 body {
   /* Background Color */
   background-color: #1C1C1C;
@@ -41,27 +26,9 @@ body {
   text-shadow: 2px 2px #902EBB;
   line-height: 1.2;
 
-<<<<<<< HEAD
-/*Footer div */
-footer {
-  border: 5px dashed #63C328;
-  padding: 20px 80px;
-  justify-content: center;
-}
-
-.footer-style {
-  font-size: 40px;
-  font-weight: 700;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-=======
   /* Setting viewport width and height */
   width:100vw;
   min-height: 100vh;
->>>>>>> cf3a8e785b8d72b4272baf88ac3e8ad48ca63137
 }
 
 #root {

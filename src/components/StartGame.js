@@ -21,7 +21,6 @@ export default function StartGame({ hallway }) {
 		],
 	];
 
-export default function StartGame({hallway}) {
   return (
     <div>
       <Header />
