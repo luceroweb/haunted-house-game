@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import ResultAction from "./ResultAction";
 
+//set variable for event
+//if null run random event
 
+//if hasEvent is null then show event
 
 const Event = ({ event }) => {
 

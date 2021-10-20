@@ -6,17 +6,15 @@ import EventsData from "./components/EventsData";
 import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
-import AudioMute from "./components/AudioMute";
 
 function App() {
 	
 	const [rooms, setRooms] = useState(RoomData);
 	const [events, setEvents] = useState(EventsData);
-  const [audioOn, setAudioOn] = useState(false);
+  const [audioOn, setAudioOn] = useState(true);
 
   return (
     <BrowserRouter>
-      <AudioMute />
       <Switch>
         <Route exact path="/">
           <StartGame />
