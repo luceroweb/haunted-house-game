@@ -17,7 +17,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "debug:client": "npm run start",
+    "debug:server": "nodemon --inspect-brk=9229 server.js",
+    "debug:dev": "env NODE_ENV=development concurrently -n 'server,client' -c 'blue,green' \"npm run debug:server\" \"npm run debug:client \""
   },
   "eslintConfig": {
     "extends": [
