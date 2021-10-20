@@ -6,18 +6,20 @@ function GameOver(props) {
   
    
   return props.isGameOver && props.i === props.selectedAction &&(
+    <div id='another-game'> 
+            <div className='img-wrap'><img src={gameOver} alt=''/></div>
+            <p> {props.message}</p>
+            <p>GameOver  </p>
+            <div className='btn-wrap'> <a href='/'>
+           <button className="backToHomeBtn">
+            Restart the Game </button>
+            </a></div>
+        </div>
     
-    <div>
-       <img src={gameOver} className="death-image" alt="" />
-      <p> {props.message}</p>
-      <a href="/gameover">
-      <button className="backToHomeBtn">Game Ove</button></a> 
-  
-      <gameover />
-    
-    </div>
    
     
   );
 }
 export default GameOver;
+
+
