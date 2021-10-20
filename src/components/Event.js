@@ -16,7 +16,7 @@ const Event = ({
   const [selectedAction, setSelectedAction] = useState(-1);
 
   return (
-    <div className='modal'>
+    <div className='modal' id="event">
       <h3>{event.name}</h3>
       <img src={event.image} alt="" />
       <p>{event.description}</p>

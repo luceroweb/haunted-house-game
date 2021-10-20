@@ -6,20 +6,24 @@ import EventsData from "./components/EventsData";
 import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
-import { TrailerEmbed } from "./components/TrailerEmbed";
+import GameWon from "./components/GameWon";
 import GameOver from "./components/GameOver";
+
 function App() {
-	const rooms = RoomData;
-	const events = EventsData;
-// Modall.setAppElement('#root')
+  const rooms = RoomData;
+  const events = EventsData;
+
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <TrailerEmbed/>
-        </Route>
-        <Route exact path="/startgame">
           <StartGame />
+        </Route>
+        <Route path="/startgame/:page">
+          <StartGame />
+        </Route>
+        <Route path="/hallway/:page">
+          <Hallway />
         </Route>
         <Route exact path="/hallway">
           <Hallway rooms={rooms} />
@@ -27,7 +31,9 @@ function App() {
         <Route path="/room/:name">
           <Room rooms={rooms} events={events} />
         </Route>
-
+        <Route path="/gamewon">
+          <GameWon />
+        </Route>
       </Switch>
     </BrowserRouter>
   );

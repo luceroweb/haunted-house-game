@@ -25,8 +25,11 @@
     return (
       <div>
         {winMessage}
-      { props.hasGoldKey &&
-        <button onClick={()=>props.setHasGoldKey(false)}>Keep trying</button>}
+        { props.hasGoldKey &&
+        <div className="btn-wrap">
+          <button onClick={()=>props.setHasGoldKey(false)}>Keep trying</button>
+        </div>
+        }
       </div>
     );
   };

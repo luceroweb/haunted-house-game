@@ -1,3 +1,6 @@
+
+
+
 import React from "react";
 import gameOver from "../img/events/game-over.png"
 import './Modal.css'
