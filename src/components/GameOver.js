@@ -1,12 +1,13 @@
 import React from "react";
 import gameOver from "../img/events/game-over.png"
-// import Footer from "./Footer";
+import './Modal.css'
+
 
 function GameOver(props) {
   
    
   return props.isGameOver && props.i === props.selectedAction &&(
-    <div id='another-game'> 
+    <div id='game-over' className='modal'> 
             <div className='img-wrap'><img src={gameOver} alt=''/></div>
             <p> {props.message}</p>
             <p>GameOver  </p>

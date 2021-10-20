@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ResultAction from "./ResultAction";
 import GameOver from "./GameOver";
-import { Link } from "react-router-dom";
+
 
 const Event = ({
   event,
@@ -16,7 +16,7 @@ const Event = ({
   const [selectedAction, setSelectedAction] = useState(-1);
 
   return (
-    <div>
+    <div className='modal'>
       <h3>{event.name}</h3>
       <img src={event.image} alt="" />
       <p>{event.description}</p>
@@ -42,19 +42,14 @@ const Event = ({
             hasGoldKey={hasGoldKey}
             hasSilverKey={hasSilverKey}
           />
-          {/* <GameOver
+          <GameOver
 						i={i} 
             isGameOver={isGameOver}
 			selectedAction={selectedAction} 
-          /> */}
+      message={action.response}
+          />
 
-          {/* <Link to = "/gameover">{isGameOver && i === selectedAction }</Link > */}
-
-          {isGameOver && i === selectedAction && (
-            <a href="/gameover">
-              <button>Game Over</button>
-            </a>
-          )}
+          
         </div>
       ))}
     </div>

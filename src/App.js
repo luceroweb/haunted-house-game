@@ -8,11 +8,10 @@ import Hallway from "./components/Hallway";
 import Room from "./components/Room";
 import { TrailerEmbed } from "./components/TrailerEmbed";
 import GameOver from "./components/GameOver";
-import AnotherGameOver from "./components/AnotherGameOver";
 function App() {
 	const rooms = RoomData;
 	const events = EventsData;
-
+// Modall.setAppElement('#root')
   return (
     <BrowserRouter>
       <Switch>
@@ -29,9 +28,6 @@ function App() {
           <Room rooms={rooms} events={events} />
         </Route>
 
-        <Route  path='/gameover'>
-          <AnotherGameOver   />
-        </Route>
       </Switch>
     </BrowserRouter>
   );
