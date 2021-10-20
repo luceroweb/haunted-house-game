@@ -1,17 +1,29 @@
+
+
+
 import React from "react";
 import gameOver from "../img/events/game-over.png"
-// import Footer from "./Footer";
+import './Modal.css'
+
 
 function GameOver(props) {
   
+   
   return props.isGameOver && props.i === props.selectedAction &&(
+    <div id='game-over' className='modal'> 
+            <div className='img-wrap'><img src={gameOver} alt=''/></div>
+            <p> {props.message}</p>
+            <p>GameOver  </p>
+            <div className='btn-wrap'> <a href='/'>
+           <button className="backToHomeBtn">
+            Restart the Game </button>
+            </a></div>
+        </div>
     
-    <div>
-      <img src={gameOver} className="death-image" alt="" />
-      <p> {props.message}</p>
-      <a href="/"><button >start Over</button></a>
-      {/* <Footer /> */}
-    </div>
+   
+    
   );
 }
 export default GameOver;
+
+
