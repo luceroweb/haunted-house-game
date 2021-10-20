@@ -1,7 +1,25 @@
-import React from 'react';
-import Header from './Header'
-import house from '../img/rooms/house.jpeg';
+import React from "react";
+import Header from "./Header";
+import house from "../img/rooms/house.jpeg";
+import { useParams, Link } from "react-router-dom";
+import Typewriter from "typewriter-effect";
 
+export default function StartGame({ hallway }) {
+	let { page } = useParams();
+	page = parseInt(page || 0);
+	const pages = [
+		[
+			`The Bitwise React Apprentices were out trick or treating on a dark and windy Halloween eve, when they stumbled across a creepy, rundown home at the end of a half-built construction site. Juan, the leader of the group, walked up to the door, rang the doorbell and no one answered.`,
+		],
+		[
+			`He jiggled the door and it swung open.`,
+			`“Is there anyone home?” asks Myles. “Do you think they have Skittles?”`,
+		],
+		[
+			`“Does it look like they have Skittles? They barely have time to clean from the looks of it!” Grace says, eyeing the cobwebs in the corner of the doorway.`,
+			`“Ooohh… I think I see some Skittles in the hallway!” Darla exclaims, pointing deeper into the darkened space just beyond the door.`,
+		],
+	];
 
 export default function StartGame({hallway}) {
   return (
