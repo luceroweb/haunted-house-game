@@ -9,14 +9,20 @@ import Room from "./components/Room";
 import GameWon from "./components/GameWon";
 
 function App() {
-	const rooms = RoomData;
-	const events = EventsData;
+  const rooms = RoomData;
+  const events = EventsData;
 
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
           <StartGame />
+        </Route>
+        <Route path="/startgame/:page">
+          <StartGame />
+        </Route>
+        <Route path="/hallway/:page">
+          <Hallway />
         </Route>
         <Route exact path="/hallway">
           <Hallway rooms={rooms} />

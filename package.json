@@ -2,25 +2,25 @@
   "name": "haunted-house-game",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://luceroweb.github.io/haunted-house-game",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-player": "^2.9.0",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
-    "use-sound": "^4.0.1",
-    "web-vitals": "^1.1.2"
+    "react-youtube": "^7.13.1",
+    "typewriter-effect": "^2.18.2",
+    "web-vitals": "^1.1.2",
+    "use-sound": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +41,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "react-typewriter-effect": "^1.1.0"
   }
 }
