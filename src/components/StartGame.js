@@ -22,7 +22,7 @@ export default function StartGame({ hallway }) {
 	];
 
 	return (
-		<div>
+		<div id="start-game">
 			{page === 0 && <Header />}
 			<img src={house} alt="" />
 			<Typewriter
@@ -35,15 +35,17 @@ export default function StartGame({ hallway }) {
 					loop: false,
 				}}
 			/>
-			{page === 2 ? (
-				<a href={`/hallway`}>
-					<button>Continue...</button>
-				</a>
-			) : (
-				<a href={`/startgame/${page + 1}`}>
-					<button>Continue...</button>
-				</a>
-			)}
+      <div id="btn-wrap">
+        {page === 2 ? (
+          <a href={`/hallway`}>
+            <button>Continue...</button>
+          </a>
+        ) : (
+          <a href={`/startgame/${page + 1}`}>
+            <button>Continue...</button>
+          </a>
+        )}
+      </div>
 		</div>
 	);
 }

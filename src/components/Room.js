@@ -13,9 +13,11 @@ function Room(props) {
   );
 
   return (
-    <div>
+    <div id="room">
       <h1>{found[0].name}</h1>
-      <img src={found[0].image} alt="" />
+      <div className="img-wrap">
+        <img src={found[0].image} alt="" />
+      </div>
 
       <p>{found[0].description}</p>
 
@@ -30,11 +32,13 @@ function Room(props) {
       />
 
       {(!isGameOver || !hasSilverKey) &&
-        <a href="/hallway">
-          <button className="backToHomeBtn" >
-            Back to Hallway
-          </button>
-        </a>
+        <div className="btn-wrap">
+          <a href="/hallway">
+            <button className="backToHomeBtn" >
+              Back to Hallway
+            </button>
+          </a>
+        </div>
       }
     </div>
   );

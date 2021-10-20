@@ -31,7 +31,7 @@ const Hallway = (props) => {
 		],
 	];
 	return (
-		<div>
+		<div id="hallway">
 			<h1>Hallway</h1>
 			<img className="hallway" src={img} alt="" />
 			<Typewriter
@@ -43,12 +43,13 @@ const Hallway = (props) => {
 					loop: false,
 				}}
 			/>
-
-		{props.rooms.map((room, index) => (
-				<a href={`/room/${room.name}`} key={index}>
-					<button>{room.name}</button>
-				</a>
-			))}
+      <div id="button-bar">
+        {props.rooms.map((room, index) => (
+          <a href={`/room/${room.name}`} key={index}>
+            <button>{room.name}</button>
+          </a>
+        ))}
+      </div>
 		</div>
 	);
 };

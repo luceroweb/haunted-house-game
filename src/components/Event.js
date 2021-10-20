@@ -8,37 +8,39 @@ const Event = ({ event, isGameOver, setIsGameOver, hasSilverKey, hasGoldKey, set
 	const [selectedAction, setSelectedAction] = useState(-1);
 
 	return (
-		<div>
+		<div id="event">
 			<h3>{event.name}</h3>
-			<img src={event.image} alt="" />
+			<div className="img-wrap">
+				<img src={event.image} alt="" />
+			</div>
 			<p>{event.description}</p>
 			{event.actions.map((currentAction, i) => (
 				<div key={i}>
-          {(!isGameOver) &&
-            <button
-              onClick={() => {
-                setAction(currentAction);
-                setSelectedAction(i);
-              }}
-            >
-              {currentAction.action}
-            </button>
-          }
+					{(!isGameOver) &&
+						<button
+							onClick={() => {
+							setAction(currentAction);
+							setSelectedAction(i);
+						}}
+						>
+							{currentAction.action}
+						</button>
+					}
 					<ResultAction 
 						i={i} 
 						action={action} 
 						selectedAction={selectedAction} 
 						setHasSilverKey={setHasSilverKey}
 						setHasGoldKey={setHasGoldKey}
-            setIsGameOver={setIsGameOver}
-            hasGoldKey={hasGoldKey}
-            hasSilverKey={hasSilverKey}
+						setIsGameOver={setIsGameOver}
+						hasGoldKey={hasGoldKey}
+						hasSilverKey={hasSilverKey}
 					/>
-          <GameOver
+					<GameOver
 						i={i} 
-            isGameOver={isGameOver}
+						isGameOver={isGameOver}
 						selectedAction={selectedAction} 
-          />
+					/>
 				</div>
 			))}
 		</div>
