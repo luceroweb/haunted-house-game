@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Event from './Event';
 import Random from '../util/Random';
 
 function Room(props) {
   const { name } = useParams();
-  const [isGameOver, setIsGameOver] = useState(false);	const [hasGoldKey, setHasGoldKey] = useState(false);
+  const [isGameOver, setIsGameOver] = useState(false);	
+  const [hasGoldKey, setHasGoldKey] = useState(false);
 	const [hasSilverKey, setHasSilverKey] = useState(false);
 
   const found = props.rooms.filter(
@@ -33,11 +34,11 @@ function Room(props) {
 
       {(!isGameOver || !hasSilverKey) &&
         <div className="btn-wrap">
-          <a href="/hallway">
-            <button className="backToHomeBtn" >
+          <Link to="/hallway">
+            <button className="backToHomeBtn">
               Back to Hallway
             </button>
-          </a>
+          </Link>
         </div>
       }
     </div>
