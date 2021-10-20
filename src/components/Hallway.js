@@ -43,9 +43,8 @@ const Hallway = (props) => {
 					loop: false,
 				}}
 			/>
-			{pages[page]}
 
-			{props.rooms.map((room, index) => (
+		{props.rooms.map((room, index) => (
 				<a href={`/room/${room.name}`} key={index}>
 					<button>{room.name}</button>
 				</a>

@@ -6,6 +6,7 @@ import EventsData from "./components/EventsData";
 import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
+import { TrailerEmbed } from "./components/TrailerEmbed";
 
 function App() {
 	const rooms = RoomData;
@@ -21,7 +22,7 @@ function App() {
 					<StartGame />
 				</Route>
 				<Route path="/hallway/:page">
-					<Hallway  />
+					<Hallway />
 				</Route>
 				<Route exact path="/hallway">
 					<Hallway rooms={rooms} />
