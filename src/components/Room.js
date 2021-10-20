@@ -26,13 +26,13 @@ function Room(props) {
         event={Random.selectEvent(props.events)}
         isGameOver={isGameOver}
         setIsGameOver={setIsGameOver}
-        hasGoldKey={props.hasGoldKey}
-        setHasGoldKey={props.setHasGoldKey}
-        hasSilverKey={props.hasSilverKey}
-        setHasSilverKey={props.setHasSilverKey}
+        hasGoldKey={hasGoldKey}
+        setHasGoldKey={setHasGoldKey}
+        hasSilverKey={hasSilverKey}
+        setHasSilverKey={setHasSilverKey}
       />
 
-      {(!isGameOver || !props.hasSilverKey) &&
+      {(!isGameOver || !hasSilverKey) &&
         <div className="btn-wrap">
           <Link to="/hallway">
             <button className="backToHomeBtn">

@@ -5,11 +5,11 @@ import SilverKeyMessage from "./SilverKeyMessage";
   export default function ShowKey (props) {
     var winMessage = '';
     // fake key and keep playing
-    if (props.hasGoldKey) {
+    if (hasGoldKey) {
       <GameWon />
     }
     // real key and win
-    else if (props.hasSilverKey) {
+    else if (hasSilverKey) {
       winMessage=
       <SilverKeyMessage />
     }
@@ -19,9 +19,9 @@ import SilverKeyMessage from "./SilverKeyMessage";
     return (
       <div>
         {winMessage}
-        { props.hasGoldKey &&
+        {props.hasGoldKey &&
         <div className="btn-wrap">
-          <button onClick={()=>props.setHasGoldKey(false)}>Keep trying</button>
+          <button onClick={()=>setHasGoldKey(false)}>Keep trying</button>
         </div>
         }
       </div>
