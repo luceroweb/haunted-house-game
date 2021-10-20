@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from './Header'
 import house from '../img/rooms/house.jpeg';
+import { Link } from 'react-router-dom';
 
-
-export default function StartGame({hallway}) {
+export default function StartGame({hallway, audioControls}) {
   return (
     <div>
       <Header />
@@ -13,7 +13,8 @@ export default function StartGame({hallway}) {
       <p>“Is there anyone home?” asks Myles.  “Do you think they have Skittles?”</p>
       <p>“Does it look like they have Skittles? They barely have time to clean from the looks of it!” Grace says, eyeing the cobwebs in the corner of the doorway.</p>
       <p>“Ooohh… I think I see some Skittles in the hallway!” Darla exclaims, pointing deeper into the darkened space just beyond the door.</p>
-      <a href="/hallway"><button>Continue...</button></a>
+      
+      <Link to="/hallway" onClick={() => {audioControls.play('ambience'); console.log(audioControls)}}><button >Continue...</button></Link>
     </div>
   )
 };
