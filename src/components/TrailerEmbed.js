@@ -6,14 +6,18 @@ export const TrailerEmbed = () => {
     return (
         <div id="trailer-embed">
             <h3> Haunted House Project</h3>
-            <ReactPlayer
-                className="player"
-                width='80%'
-                url='https://www.youtube.com/watch?v=5KCUT1os_ug'
-                playing={true}
-                muted={true}
-                controls={true}
-            />
+            <div className="player">
+                <ReactPlayer
+                    className='react-player'
+                    width='100%'
+                    height='100%'
+                    url='https://www.youtube.com/watch?v=5KCUT1os_ug'
+                    playing={true}
+                    muted={true}
+                    controls={true}
+                />
+            </div>
+            
             <div className="btn-wrap">
                 <a href="/startgame"><button>Are You Ready?</button></a>
             </div>
