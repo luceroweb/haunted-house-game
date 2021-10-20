@@ -122,6 +122,10 @@ img {
   border-radius: 10px;
 }
 
+#key-display img {
+  filter: hue-rotate(0deg);
+}
+
 /*****************************
 *          VIDEO
 *****************************/

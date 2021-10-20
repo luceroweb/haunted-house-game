@@ -6,7 +6,9 @@ const Hallway = (props) => {
     return (
         <div id="hallway">
             <h1>Hallway</h1>
-            <img className='hallway' src={img} alt="" />
+            <div className="img-wrap">
+                <img className='hallway' src={img} alt="" />
+            </div>
             <p>The team of apprentices hesitantly step into the hallway, looking around into the begrimed space.  The door slams shut behind them, shaking the dust from the ceiling above!</p>
             <p>A booming voice from the rafters cackles “You’ve found my Haunted House! Come in, grab a chair, take a nap if you'd like, but in order to leave you must find the silver key!”</p>
             <p>“What was that?!” Habteab exclaimed.</p>

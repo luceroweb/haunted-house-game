@@ -6,10 +6,12 @@ import goldKey from "../img/events/gold-key.jpeg";
 function KeyDisplay(props) {
 
   return (
-    <div>
+    <div id="key-display">
       {props.hasSilverKey && (
         <div>
-          <img src={silverKey} alt="silver key" />
+          <div className="img-wrap">
+            <img src={silverKey} alt="silver key" />
+          </div>
           <h2>You have obtained the Silver Key!</h2>
           <ShowKey 
             hasGoldKey={props.hasGoldKey}
@@ -20,7 +22,9 @@ function KeyDisplay(props) {
       )}
       {props.hasGoldKey && (
         <div>
-          <img src={goldKey} alt="gold key" />
+          <div className="img-wrap">
+            <img src={goldKey} alt="gold key" />
+          </div>
           <h2>You have obtained the Gold Key!</h2>
           <ShowKey 
             hasGoldKey={props.hasGoldKey}
