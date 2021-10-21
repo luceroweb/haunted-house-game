@@ -8,27 +8,29 @@ import Hallway from "./components/Hallway";
 import Room from "./components/Room";
 import GameWon from "./components/GameWon";
 import GameOver from "./components/GameOver";
+import AudioMute from './components/AudioMute';
+import Random from './util/Random';
 
 function App() {
   const rooms = RoomData;
   const events = EventsData;
   const [audioOn, setAudioOn] = useState(true);
-
+  console.log('your lucky events are ', Random.selectRandomElements(events, 3));
   return (
     <BrowserRouter>
-      <Audio onLoaded={(controls) => setAudioControls(controls)} />
+      <AudioMute audioOn={audioOn} setAudioOn={setAudioOn} />
       <Switch>
         <Route exact path="/">
-          <StartGame audioControls={audioControls}/>
+          <StartGame audioOn={audioOn} />
         </Route>
         <Route path="/startgame/:page">
-          <StartGame />
+          <StartGame audioOn={audioOn} />
         </Route>
         <Route path="/hallway/:page">
-          <Hallway />
+          <Hallway audioOn={audioOn} />
         </Route>
         <Route exact path="/hallway">
-          <Hallway rooms={rooms} />
+          <Hallway audioOn={audioOn} rooms={rooms} />
         </Route>
         <Route path="/room/:name">
           <Room rooms={rooms} events={events} />
