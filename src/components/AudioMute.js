@@ -4,7 +4,7 @@ import { GiSpeaker, GiSpeakerOff } from 'react-icons/gi';
 export default function AudioMute ({audioOn, setAudioOn}) {
     return (
         <div>
-            <button onClick={() => setAudioOn(!audioOn)}>
+            <button className="btn-audio" onClick={() => setAudioOn(!audioOn)}>
                 {
                     audioOn ?  //if audio on, then return GiSpeaker, else return Speakers 
                     <GiSpeaker /> :

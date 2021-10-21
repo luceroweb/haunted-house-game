@@ -1,19 +1,21 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import Event from "./Event";
-import Random from "../util/Random";
+import Event from './Event';
+import Random from '../util/Random';
 
 function Room(props) {
   const { name } = useParams();
   const [isGameOver, setIsGameOver] = useState(false);
+  const [showDialog, setShowDialog] = useState(false);
   const [beginEvent, setBeginEvent] = useState(true);
 
   const found = props.rooms.filter(
     (room) => room.name.toLowerCase() === name.toLowerCase()
   );
 
-  const handleBeginEvent = () => {
-    setBeginEvent(true);
+  const searchRoom = () => {
+    setShowDialog(true);
+    setBeginEvent(false);
   };
 
   return (
@@ -24,13 +26,17 @@ function Room(props) {
       </div>
 
       <p>{found[0].description}</p>
-      {/* {() => countDownTillRender} */}
-      <button>Search Room</button>
+      {beginEvent && <button onClick={() => searchRoom()}>Search Room</button>}
 
       {(!isGameOver || !props.hasSilverKey) && (
         <div className="btn-wrap">
           <Link to="/hallway">
-            <button className="backToHomeBtn">Back to Hallway</button>
+            <button
+              className="backToHomeBtn"
+              onClick={() => setBeginEvent(true)}
+            >
+              Back to Hallway
+            </button>
           </Link>
         </div>
       )}
@@ -44,6 +50,8 @@ function Room(props) {
         setHasSilverKey={props.setHasSilverKey}
         setBeginEvent={setBeginEvent}
         beginEvent={beginEvent}
+        setShowDialog={setShowDialog}
+        showDialog={showDialog}
       />
     </div>
   );
