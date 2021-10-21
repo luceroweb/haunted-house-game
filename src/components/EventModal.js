@@ -18,7 +18,7 @@ function EventModal(props) {
     "The Talking Heads": evilLaugh,
 
   }
-  const [playSound] = useSound(noiseStarter[props.name])
+  const [playSound] = useSound(noiseStarter[props.event.name], {volume:0.50})
 
   // For if they just received either key
   if (!informedOfSilverKey || !informedOfGoldKey) {
@@ -48,7 +48,7 @@ function EventModal(props) {
     //For when the event first renders and they haven't chosen an action yet
     <>
       {!props.hasChosenAction && !props.isGameOver ? (
-        <div className="event-modal" id="event">
+        <div className="event-modal" id="event" onMouseEnter={()=>playSound()}>
           <div style={{ margin: "0" }}>
             <h3>{props.event.name}</h3>
             <img src={props.event.image} alt="" />
