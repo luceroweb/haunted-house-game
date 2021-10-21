@@ -1,14 +1,11 @@
 /* Importing the Press Start 2P font from google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-h1{
-}
-
-div{
+/* div{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 /*****************************
 *      SITE GLOBALS
