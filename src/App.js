@@ -29,10 +29,10 @@ function App() {
       />
       <Switch>
         <Route exact path="/">
-          {/* <StartGame /> */}
-          <AudioDemo/>
+          <StartGame />
+          {/* <AudioDemo/> */}
         {/* <Music/> */}
-          <DoorOpen/>
+          {/* <DoorOpen/> */}
         </Route>
         <Route path="/startgame/:page">
           <StartGame />
