@@ -65,12 +65,14 @@ const Hallway = (props) => {
 					))
 				)}
 			</div>
-			<PresentKey
-				hasGoldKey={props.hasGoldKey}
-				hasSilverKey={props.hasSilverKey}
-				setHasGoldKey={props.setHasGoldKey}
-				setHasSilverKey={props.setHasSilverKey}
-			/>
+			{page === 1 && (
+				<PresentKey
+					hasGoldKey={props.hasGoldKey}
+					hasSilverKey={props.hasSilverKey}
+					setHasGoldKey={props.setHasGoldKey}
+					setHasSilverKey={props.setHasSilverKey}
+				/>
+			)}
 		</div>
 	);
 };

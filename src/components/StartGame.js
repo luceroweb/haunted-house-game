@@ -47,7 +47,7 @@ export default function StartGame({ hallway, audioOn }) {
 			/>
 			<div id="btn-wrap">
 				{page === 1 ? (
-					<Link to={`/hallway/${page - 1}`}>
+					<Link to={`/hallway/0`}>
 						<button>Continue...</button>
 					</Link>
 				) : (
