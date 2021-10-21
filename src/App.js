@@ -7,7 +7,8 @@ import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
 import GameWon from "./components/GameWon";
-import GameOver from "./components/GameOver";
+import Inventory from "./components/Inventory";
+// import GameOver from "./components/GameOver";
 
 
 function App() {
@@ -19,6 +20,12 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Inventory
+          audio={audioOn}
+          setAudio={setAudioOn}
+          goldKey={hasGoldKey}
+          silverKey={hasSilverKey}
+      />
       <Switch>
         <Route exact path="/">
           <StartGame />

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import Event from "./Event";
-import Random from "../util/Random";
+import Event from './Event';
+import Random from '../util/Random';
 
 function Room(props) {
   const { name } = useParams();

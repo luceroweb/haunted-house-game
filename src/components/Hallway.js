@@ -1,6 +1,5 @@
 import React from "react";
 import img from "../img/rooms/Hall-option-1.jpg";
-import "../main.css";
 import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 //import ShowKey from './ShowKey';
@@ -37,7 +36,9 @@ const Hallway = (props) => {
 	return (
 		<div id="hallway">
 			<h1>Hallway</h1>
-			<img className="hallway" src={img} alt="" />
+            <div className="img-wrap">
+                <img className="hallway" src={img} alt="" />
+            </div>
 			<Typewriter
 				options={{
 					strings: pages[page],
@@ -47,17 +48,17 @@ const Hallway = (props) => {
 					loop: false,
 				}}
 			/>
-      <div id="button-bar">
-        {props.rooms.map((room, index) => (
-          <Link to={`/room/${room.name}`}><button>{room.name}</button></Link>
-        ))}
-      </div>
-	  <PresentKey 
-	  hasGoldKey={props.hasGoldKey}
-	  hasSilverKey={props.hasSilverKey}
-	  setHasGoldKey={props.setHasGoldKey}
-	  setHasSilverKey={props.setHasSilverKey}
-	 />
+			<div id="button-bar">
+				{props.rooms.map((room, index) => (
+				<Link to={`/room/${room.name}`}><button>{room.name}</button></Link>
+				))}
+			</div>
+			<PresentKey 
+			hasGoldKey={props.hasGoldKey}
+			hasSilverKey={props.hasSilverKey}
+			setHasGoldKey={props.setHasGoldKey}
+			setHasSilverKey={props.setHasSilverKey}
+			/>
 		</div>
 	);
 };
