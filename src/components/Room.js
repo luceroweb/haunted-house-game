@@ -6,8 +6,6 @@ import Random from "../util/Random";
 function Room(props) {
   const { name } = useParams();
   const [isGameOver, setIsGameOver] = useState(false);
-  const [hasGoldKey, setHasGoldKey] = useState(false);
-  const [hasSilverKey, setHasSilverKey] = useState(false);
   const [beginEvent, setBeginEvent] = useState(true);
 
   const found = props.rooms.filter(
@@ -29,7 +27,7 @@ function Room(props) {
       {/* {() => countDownTillRender} */}
       <button>Search Room</button>
 
-      {(!isGameOver || !hasSilverKey) && (
+      {(!isGameOver || !props.hasSilverKey) && (
         <div className="btn-wrap">
           <Link to="/hallway">
             <button className="backToHomeBtn">Back to Hallway</button>
@@ -40,10 +38,10 @@ function Room(props) {
         event={Random.selectEvent(props.events)}
         isGameOver={isGameOver}
         setIsGameOver={setIsGameOver}
-        hasGoldKey={hasGoldKey}
-        setHasGoldKey={setHasGoldKey}
-        hasSilverKey={hasSilverKey}
-        setHasSilverKey={setHasSilverKey}
+        hasGoldKey={props.hasGoldKey}
+        setHasGoldKey={props.setHasGoldKey}
+        hasSilverKey={props.hasSilverKey}
+        setHasSilverKey={props.setHasSilverKey}
         setBeginEvent={setBeginEvent}
         beginEvent={beginEvent}
       />
