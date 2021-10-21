@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ResultAction from "./ResultAction";
 import GameOver from "./GameOver";
+import EventModal from "./EventModal";
 import "./Modal.css";
 
 const Event = ({
@@ -11,74 +12,92 @@ const Event = ({
   hasGoldKey,
   setHasGoldKey,
   setHasSilverKey,
-  beginEvent,
+  setShowDialog,
+  showDialog,
   setBeginEvent,
+  beginEvent,
 }) => {
   const [action, setAction] = useState({});
   const [selectedAction, setSelectedAction] = useState(-1);
-  const [showDialog, setShowDialog] = useState(false);
+  const [hasAnswered, setHasAnswered] = useState(false);
+  const [deathNote, setDeathNote] = useState("");
 
-  const displayEvent = (time) => {
-    setTimeout(() => {
-      setShowDialog(true);
-    }, time);
+  const displayEvent = () => {
+    setShowDialog(true);
   };
 
-  const closeEvent = (time) => {
-    setTimeout(() => {
-      setShowDialog(false);
-    }, time);
+  const closeEvent = () => {
+    setShowDialog(false);
   };
-
-  if (beginEvent) {
-    displayEvent(5000);
-    setBeginEvent(false);
-  }
 
   return (
     <>
       {showDialog && (
-        <div className="modal" id="event">
-          <h3>{event.name}</h3>
-          <img src={event.image} alt="" />
-          <p>{event.description}</p>
-          {event.actions.map((currentAction, i) => (
-            <div key={i}>
-              {!isGameOver && (
-                <button
-                  onClick={() => {
-                    setAction(currentAction);
-                    setSelectedAction(i);
-                  }}
-                >
-                  {currentAction.action}
-                </button>
-              )}
-              <ResultAction
-                i={i}
-                action={action}
-                selectedAction={selectedAction}
-                setHasSilverKey={setHasSilverKey}
-                setHasGoldKey={setHasGoldKey}
-                setIsGameOver={setIsGameOver}
-                hasGoldKey={hasGoldKey}
-                hasSilverKey={hasSilverKey}
-                closeEvent={closeEvent}
-                name={event.name}
-                setShowDialog={setShowDialog}
-              />
-              <GameOver
-                i={i}
-                isGameOver={isGameOver}
-                selectedAction={selectedAction}
-                message={action.response}
-              />
-            </div>
-          ))}
-        </div>
+        <EventModal
+          event={event}
+          isGameOver={isGameOver}
+          setAction={setAction}
+          setSelectedAction={setSelectedAction}
+          selectedAction={selectedAction}
+          setHasSilverKey={setHasSilverKey}
+          setHasGoldKey={setHasGoldKey}
+          setIsGameOver={setIsGameOver}
+          hasGoldKey={hasGoldKey}
+          hasSilverKey={hasSilverKey}
+          closeEvent={closeEvent}
+          setDeathNote={setDeathNote}
+          setShowDialog={setShowDialog}
+          action={action}
+          hasAnswered={hasAnswered}
+          setHasAnswered={setHasAnswered}
+        />
       )}
+      <GameOver
+        // i={i}
+        isGameOver={isGameOver}
+        // selectedAction={selectedAction}
+        message={deathNote}
+      />
     </>
   );
 };
 
 export default Event;
+
+{
+  /* <div className="event-modal" id="event">
+<div style={{ margin: "0" }}>
+  <h3>{event.name}</h3>
+  <img src={event.image} alt="" />
+  <p>{event.description}</p>
+  {event.actions.map((currentAction, i) => (
+    <div key={i}>
+      {!isGameOver && (
+        <button
+          onClick={() => {
+            setAction(currentAction);
+            setSelectedAction(i);
+          }}
+        >
+          {currentAction.action}
+        </button>
+      )}
+      <ResultAction
+        i={i}
+        action={action}
+        selectedAction={selectedAction}
+        setHasSilverKey={setHasSilverKey}
+        setHasGoldKey={setHasGoldKey}
+        setIsGameOver={setIsGameOver}
+        hasGoldKey={hasGoldKey}
+        hasSilverKey={hasSilverKey}
+        closeEvent={closeEvent}
+        name={event.name}
+        setShowDialog={setShowDialog}
+        setDeathNote={setDeathNote}
+      />
+    </div>
+  ))}
+</div>
+</div> */
+}

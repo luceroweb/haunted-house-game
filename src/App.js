@@ -13,6 +13,8 @@ function App() {
   const rooms = RoomData;
   const events = EventsData;
   const [audioOn, setAudioOn] = useState(true);
+  const [hasGoldKey, setHasGoldKey] = useState(false);
+  const [hasSilverKey, setHasSilverKey] = useState(false);
 
   return (
     <BrowserRouter>
@@ -27,10 +29,23 @@ function App() {
           <Hallway />
         </Route>
         <Route exact path="/hallway">
-          <Hallway rooms={rooms} />
+          <Hallway
+            rooms={rooms}
+            setHasSilverKey={setHasSilverKey}
+            hasSilverKey={hasSilverKey}
+            setHasGoldKey={setHasGoldKey}
+            hasGoldKey={hasGoldKey}
+          />
         </Route>
         <Route path="/room/:name">
-          <Room rooms={rooms} events={events} />
+          <Room
+            rooms={rooms}
+            events={events}
+            setHasSilverKey={setHasSilverKey}
+            hasSilverKey={hasSilverKey}
+            setHasGoldKey={setHasGoldKey}
+            hasGoldKey={hasGoldKey}
+          />
         </Route>
         <Route path="/gamewon">
           <GameWon />

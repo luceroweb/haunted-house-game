@@ -6,16 +6,18 @@ import Random from "../util/Random";
 function Room(props) {
   const { name } = useParams();
   const [isGameOver, setIsGameOver] = useState(false);
-  const [hasGoldKey, setHasGoldKey] = useState(false);
-  const [hasSilverKey, setHasSilverKey] = useState(false);
+  // const [hasGoldKey, setHasGoldKey] = useState(false);
+  // const [hasSilverKey, setHasSilverKey] = useState(false);
+  const [showDialog, setShowDialog] = useState(false);
   const [beginEvent, setBeginEvent] = useState(true);
 
   const found = props.rooms.filter(
     (room) => room.name.toLowerCase() === name.toLowerCase()
   );
 
-  const handleBeginEvent = () => {
-    setBeginEvent(true);
+  const searchRoom = () => {
+    setShowDialog(true);
+    setBeginEvent(false);
   };
 
   return (
@@ -26,13 +28,17 @@ function Room(props) {
       </div>
 
       <p>{found[0].description}</p>
-      {/* {() => countDownTillRender} */}
-      <button>Search Room</button>
+      {beginEvent && <button onClick={() => searchRoom()}>Search Room</button>}
 
-      {(!isGameOver || !hasSilverKey) && (
+      {(!isGameOver || !props.hasSilverKey) && (
         <div className="btn-wrap">
           <Link to="/hallway">
-            <button className="backToHomeBtn">Back to Hallway</button>
+            <button
+              className="backToHomeBtn"
+              onClick={() => setBeginEvent(true)}
+            >
+              Back to Hallway
+            </button>
           </Link>
         </div>
       )}
@@ -40,12 +46,14 @@ function Room(props) {
         event={Random.selectEvent(props.events)}
         isGameOver={isGameOver}
         setIsGameOver={setIsGameOver}
-        hasGoldKey={hasGoldKey}
-        setHasGoldKey={setHasGoldKey}
-        hasSilverKey={hasSilverKey}
-        setHasSilverKey={setHasSilverKey}
-        setBeginEvent={setBeginEvent}
+        hasGoldKey={props.hasGoldKey}
+        setHasGoldKey={props.setHasGoldKey}
+        hasSilverKey={props.hasSilverKey}
+        setHasSilverKey={props.setHasSilverKey}
+        setShowDialog={setShowDialog}
+        showDialog={showDialog}
         beginEvent={beginEvent}
+        setBeginEvent={setBeginEvent}
       />
     </div>
   );
