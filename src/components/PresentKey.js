@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ShowKey from './ShowKey';
-//import KeyDisplay from './KeyDisplay';
+
 
 function PresentKey(props) {
     const [presentSilverKey, setPresentSilverKey] = useState(false);
@@ -26,7 +26,8 @@ function PresentKey(props) {
                 hasGoldKey={props.hasGoldKey}
                 hasSilverKey={props.hasSilverKey}
                 setHasGoldKey={props.setHasGoldKey}
-            />}
+            />
+            }
         </div>
     )
 }
