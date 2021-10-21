@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import RoomData from "./components/RoomData.js";
@@ -12,6 +12,7 @@ import GameOver from "./components/GameOver";
 function App() {
   const rooms = RoomData;
   const events = EventsData;
+  const [audioOn, setAudioOn] = useState(true);
 
   return (
     <BrowserRouter>
