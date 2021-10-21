@@ -6,8 +6,11 @@ import EventsData from "./components/EventsData";
 import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
+import AudioDemo from"./components/AudioDemo";
+import DoorOpen from "./components/DoorOpen";
 import GameWon from "./components/GameWon";
-import GameOver from "./components/GameOver";
+import Inventory from "./components/Inventory";
+
 
 function App() {
   const rooms = RoomData;
@@ -18,9 +21,18 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Inventory
+          audio={audioOn}
+          setAudio={setAudioOn}
+          goldKey={hasGoldKey}
+          silverKey={hasSilverKey}
+      />
       <Switch>
         <Route exact path="/">
           <StartGame />
+          {/* <AudioDemo/> */}
+        {/* <Music/> */}
+          {/* <DoorOpen/> */}
         </Route>
         <Route path="/startgame/:page">
           <StartGame />
@@ -29,22 +41,22 @@ function App() {
           <Hallway />
         </Route>
         <Route exact path="/hallway">
-          <Hallway
-            rooms={rooms}
-            setHasSilverKey={setHasSilverKey}
-            hasSilverKey={hasSilverKey}
-            setHasGoldKey={setHasGoldKey}
-            hasGoldKey={hasGoldKey}
+          <Hallway 
+          rooms={rooms}
+          hasSilverKey={hasSilverKey}
+          hasGoldKey={hasGoldKey}
+          setHasSilverKey={setHasSilverKey}
+          setHasGoldKey={setHasGoldKey}
           />
         </Route>
         <Route path="/room/:name">
-          <Room
-            rooms={rooms}
+          <Room 
+            rooms={rooms} 
             events={events}
-            setHasSilverKey={setHasSilverKey}
             hasSilverKey={hasSilverKey}
-            setHasGoldKey={setHasGoldKey}
             hasGoldKey={hasGoldKey}
+            setHasSilverKey={setHasSilverKey}
+            setHasGoldKey={setHasGoldKey}
           />
         </Route>
         <Route path="/gamewon">

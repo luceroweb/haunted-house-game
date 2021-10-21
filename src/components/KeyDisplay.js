@@ -1,5 +1,7 @@
 import React from "react";
 import ShowKey from "./ShowKey";
+
+//images
 import silverKey from "../img/events/silver-key.jpg";
 import goldKey from "../img/events/gold-key.jpeg";
 
@@ -9,24 +11,20 @@ function KeyDisplay(props) {
     <div>
       {!props.informedOfSilverKey && (
         <div>
-          <img src={silverKey} alt="silver key" />
+          <div className="img-wrap">
+            <img src={silverKey} alt="silver key" />
+          </div>
           <h2>You have obtained the Silver Key!</h2>
-          <ShowKey
-            hasGoldKey={props.hasGoldKey}
-            setHasGoldKey={props.setHasGoldKey}
-            hasSilverKey={props.hasSilverKey}
-          />
+          <p>You must now find your way back to the hallway to present the key.</p>
         </div>
       )}
       {!props.informedOfGoldKey && (
         <div>
-          <img src={goldKey} alt="gold key" />
+          <div className="img-wrap">
+            <img src={goldKey} alt="gold key" />
+          </div>
           <h2>You have obtained the Gold Key!</h2>
-          <ShowKey
-            hasGoldKey={props.hasGoldKey}
-            setHasGoldKey={props.setHasGoldKey}
-            hasSilverKey={props.hasSilverKey}
-          />
+          <p>You must now find your way back to the hallway to present the key.</p>
         </div>
       )}
     </div>

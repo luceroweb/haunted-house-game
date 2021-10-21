@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import Event from "./Event";
-import Random from "../util/Random";
+import Event from './Event';
+import Random from '../util/Random';
 
 function Room(props) {
   const { name } = useParams();
   const [isGameOver, setIsGameOver] = useState(false);
-  // const [hasGoldKey, setHasGoldKey] = useState(false);
-  // const [hasSilverKey, setHasSilverKey] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
   const [beginEvent, setBeginEvent] = useState(true);
 
@@ -50,10 +48,10 @@ function Room(props) {
         setHasGoldKey={props.setHasGoldKey}
         hasSilverKey={props.hasSilverKey}
         setHasSilverKey={props.setHasSilverKey}
+        setBeginEvent={setBeginEvent}
+        beginEvent={beginEvent}
         setShowDialog={setShowDialog}
         showDialog={showDialog}
-        beginEvent={beginEvent}
-        setBeginEvent={setBeginEvent}
       />
     </div>
   );

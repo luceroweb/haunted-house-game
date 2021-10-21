@@ -1,6 +1,14 @@
 /* Importing the Press Start 2P font from google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+h1{
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /*****************************
 *      SITE GLOBALS
@@ -31,15 +39,16 @@ body {
   min-height: 100vh;
 }
 
-#root {
-  width: 95%;
-  margin: 0 auto;
-  padding: 20px 0;
-}
-
 /*****************************
 *      PAGE GLOBALS
 *****************************/
+#root {
+  width: 95%;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 20px 0;
+}
+
 #start-game,
 #hallway,
 #room,
@@ -49,6 +58,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  width: 90%;
+  height: 100vh;
+  padding: 5px;
   /* border: 1px solid red; */
 }
 
@@ -82,11 +94,10 @@ body {
 *****************************/
 #button-bar {
   display: flex;
-  /* flex-direction: row; */
 }
 
 .btn-wrap {
-  margin: 0 20px;
+  margin: 5px 20px;
 }
 
 button {
@@ -94,17 +105,29 @@ button {
   padding: 10px;
   background-color: #cf7017;
   font-weight: 700;
-  font-size: .8rem;
+  font-size: .6rem;
   font-family: 'Press Start 2P';
   color: rgba(0, 0, 0, 0.7);
   margin-bottom: .5rem;
   cursor: pointer;
+  margin: 5px 20px;
 }
 
 button.backToHomeBtn {
   border: 5px solid #63C328;
   color: #cf7017;
   background-color: #000;
+}
+
+.btn-audio {
+  border: 4px solid rgba(173, 216, 230, 0.726);
+  border-radius: 5px;
+  background-color:rgba(0, 0, 0, 0.3);
+  color: #cdcdcd;
+  margin: 0;
+  margin-bottom: 10px;
+  width: 60px;
+  height: 60px;
 }
 
 /*****************************
@@ -115,11 +138,23 @@ button.backToHomeBtn {
   margin-bottom: 1rem;
 }
 
+img{
+  flex: 1;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+
 img {
   max-width: 100%;
-  max-height: 400px;
+  height: 300px;
   filter: opacity(80%) hue-rotate(240deg);
   border-radius: 10px;
+}
+
+#key-display img {
+  filter: hue-rotate(0deg);
 }
 
 /*****************************
@@ -138,25 +173,16 @@ img {
   left: 0;
 }
 
-/* .payer iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-} */
-
-
-
 /*****************************
-*        PARAGRAPHS
+*    PARAGRAPHS & SPANS
 *****************************/
+span,
 p {
   /* Changing the text itself */
   font-size: .6rem;
   text-align: center;
   margin-bottom: 1em;
-  width: 90%;
+  width: 80%;
 }
 
 /*****************************
@@ -174,7 +200,82 @@ h3 {
 /*****************************
 *          MODAL
 *****************************/
+.modal {
+  position: absolute;
+  margin: 0 auto;
+  padding: 10px;
+  width: 95%;
+  height: 93%;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  background-color: #1C1C1C;
+  border: 3px solid orange;
+}
 
+.event-modal {
+  position: absolute;
+  margin: 0 auto;
+  padding: 0;
+  top: 5vh;
+  bottom: 0;
+  left: 5vw;
+  right: 0;
+  width: 80vw;
+  border: 12px solid orange;
+  height: 98vh;
+  z-index: 100;
+  background-color: #1c1c1c;
+  overflow: auto;
+}
+
+.game-over-modal {
+  position: absolute;
+  margin: 0 auto;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  background-color: #1c1c1c;
+  background: cover;
+  overflow: auto;
+}
+
+
+/*****************************
+*        INVENTORY
+*****************************/
+#inventory {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  margin: 10px;
+}
+
+#inventory span {
+  display: block;
+  border: 2px solid orange;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 10px;
+}
+
+#inventory #gold-key {
+  border-color: gold;
+}
+
+#inventory #silver-key {
+  border-color: silver;
+}
 
 /*****************************
 *      MEDIA QUERIES
@@ -183,16 +284,17 @@ h3 {
 /* Screens that start at 320px */
 @media (min-width: 320px) {
   img {
-    max-height: 400px;
-    width: 70%;
+    max-height: 150px;
+    max-width: 70%;
   }
 
+  span,
   p {
     font-size: 0.55rem;
   }
 
   button {
-    font-size: 1rem;
+    font-size: .8rem;
     padding: 7px;
     border: 3px solid #63C328;
   }
@@ -211,10 +313,11 @@ h3 {
   }
 
   img {
-    max-height: 400px;
+    height: 400px;
     filter: blur(1px) opacity(80%) hue-rotate(240deg);
   }
 
+  span,
   p {
     width: 85%;
     font-size: 1.1rem;
