@@ -2,7 +2,7 @@ import { useState } from "react";
 import ShowKey from "./ShowKey";
 import useSound from "use-sound";
 //import KeyDisplay from './KeyDisplay';
-import gameWin from "../sounds/game-over-win-2.mp3";
+import gameWin from "../sounds/game-over-win.mp3";
 
 function PresentKey(props) {
   const [presentSilverKey, setPresentSilverKey] = useState(false);
@@ -10,23 +10,23 @@ function PresentKey(props) {
 
   return (
     <div className="btn-wrap">
-        <a href="/gamewon">
-      <button
-        className="presentKey"
-        onClick={() => {
-          setPresentSilverKey(props.hasSilverKey ? true : false);
-        //   play()
-        }}
-      >
-        Present Key
-      </button>
+      <a href="/gamewon">
+        <button
+          className="presentKey"
+          onClick={() => {
+            setPresentSilverKey(props.hasSilverKey ? true : false);
+            //   play()
+          }}
+        >
+          Present Key
+        </button>
       </a>
       {presentSilverKey && (
         <ShowKey
           hasGoldKey={props.hasGoldKey}
           hasSilverKey={props.hasSilverKey}
           setHasGoldKey={props.setHasGoldKey}
-        //   onClick={play}
+          //   onClick={play}
         />
       )}
     </div>
