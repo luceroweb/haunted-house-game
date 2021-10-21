@@ -1,16 +1,29 @@
 import React, { useState } from "react";
 import ResultAction from "./ResultAction";
 import KeyDisplay from "./KeyDisplay";
+import useSound from "use-sound";
+import { zombieMoan, ghostScream, chainsaw, evilLaugh, werewolf,  } from "../sounds";
+
 
 function EventModal(props) {
   //States to determine which key they have just received since now it is possible to have both keys simultaneously
   const [informedOfSilverKey, setInformedOfSilverKey] = useState(true);
   const [informedOfGoldKey, setInformedOfGoldKey] = useState(true);
 
+  const noiseStarter = {
+    Ghost: ghostScream,
+    Werewolf: werewolf,
+    Zombie: zombieMoan,
+    "Chainsaw Murderer": chainsaw,
+    "The Talking Heads": evilLaugh,
+
+  }
+  const [playSound] = useSound(noiseStarter[props.name])
+
   // For if they just received either key
   if (!informedOfSilverKey || !informedOfGoldKey) {
     return (
-      <div className="event-modal" id="event">
+      <div className="event-modal" id="event" onMouseEnter={()=>playSound()}>
         <p>{props.action.response}</p>
         <KeyDisplay
           hasGoldKey={props.hasGoldKey}
