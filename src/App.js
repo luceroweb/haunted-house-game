@@ -32,10 +32,6 @@ function App() {
 			<Switch>
 				<Route exact path="/">
 					<StartGame audioOn={audioOn} />
-					{/* <AudioDemo/> */}
-					{/* <Music/> */}
-					{/* <DoorOpen/> */}
-					{/* <FalseEnding /> */}
 				</Route>
 				<Route path="/startgame/:page">
 					<StartGame audioOn={audioOn} />

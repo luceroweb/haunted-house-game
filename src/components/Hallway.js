@@ -4,8 +4,6 @@ import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import useSound from "use-sound";
 import { doorCreak } from "../sounds";
-//import ShowKey from './ShowKey';
-//import KeyDisplay from ',/KeyDisplay'
 import PresentKey from "./PresentKey";
 
 const Hallway = (props) => {
