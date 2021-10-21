@@ -300,7 +300,7 @@ h3 {
   }
 
   img {
-    height: 400px;
+    max-height: 400px;
     filter: blur(1px) opacity(80%) hue-rotate(240deg);
   }
 

@@ -22,13 +22,14 @@ function App() {
 
   return (
     <BrowserRouter>
+    <div className="controls">
       <AudioMute audioOn={audioOn} setAudioOn={setAudioOn} />
       <Inventory
-          audio={audioOn}
-          setAudio={setAudioOn}
           goldKey={hasGoldKey}
           silverKey={hasSilverKey}
       />
+    </div>
+      
       <Switch>
         <Route exact path="/">
           <StartGame audioOn={audioOn} />
