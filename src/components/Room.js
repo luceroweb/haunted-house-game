@@ -54,7 +54,7 @@ function Room(props) {
         showDialog={showDialog}
       />
 
-      {(!isGameOver || !hasSilverKey) &&
+      {(!isGameOver || !props.hasSilverKey) &&
         <a href="/">
           <button className="backToHomeBtn" >
             Restart Game!
