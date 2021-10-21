@@ -6,6 +6,7 @@ import Typewriter from "typewriter-effect";
 //import KeyDisplay from ',/KeyDisplay'
 import PresentKey from "./PresentKey";
 
+
 const Hallway = (props) => {
 	let { page } = useParams();
 	page = parseInt(page || 0);

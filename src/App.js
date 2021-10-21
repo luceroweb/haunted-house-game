@@ -6,9 +6,10 @@ import EventsData from "./components/EventsData";
 import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
+import AudioDemo from"./components/AudioDemo";
+import DoorOpen from "./components/DoorOpen";
 import GameWon from "./components/GameWon";
 import Inventory from "./components/Inventory";
-// import GameOver from "./components/GameOver";
 
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <StartGame />
+          {/* <AudioDemo/> */}
+        {/* <Music/> */}
+          {/* <DoorOpen/> */}
         </Route>
         <Route path="/startgame/:page">
           <StartGame />
