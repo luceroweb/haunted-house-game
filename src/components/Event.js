@@ -12,6 +12,7 @@ const Event = ({
   setHasSilverKey,
   setShowDialog,
   showDialog,
+  events,
 }) => {
   const [action, setAction] = useState({});
   const [selectedAction, setSelectedAction] = useState(-1);
@@ -42,6 +43,7 @@ const Event = ({
           action={action}
           hasChosenAction={hasChosenAction}
           setHasChosenAction={setHasChosenAction}
+          events={events}
         />
       )}
       <GameOver isGameOver={isGameOver} message={deathNote} />
