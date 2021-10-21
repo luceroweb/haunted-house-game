@@ -6,7 +6,7 @@ function GameOver(props) {
   return (
     props.isGameOver &&
     props.i === props.selectedAction && (
-      <div id="game-over" className="modal">
+      <div id="game-over" className="game-over-modal">
         <div className="img-wrap">
           <img src={gameOver} alt="" />
         </div>

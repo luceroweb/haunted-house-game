@@ -22,7 +22,7 @@
   overflow: auto;
 }
 
-.modal {
+.game-over-modal {
   position: absolute;
   margin: 0 auto;
   padding: 0;

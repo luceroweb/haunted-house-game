@@ -7,7 +7,7 @@ function EventModal(props) {
   const [informedOfSilverKey, setInformedOfSilverKey] = useState(true);
   const [informedOfGoldKey, setInformedOfGoldKey] = useState(true);
 
-// For if they just received either key
+  // For if they just received either key
   if (!informedOfSilverKey || !informedOfGoldKey) {
     return (
       <div className="event-modal" id="event">
@@ -87,20 +87,7 @@ function EventModal(props) {
             <div style={{ margin: "0" }}>
               <h3>{props.event.name}</h3>
               <img src={props.event.image} alt="" />
-              {/* <p>{props.event.description}</p> */}
-              {/* {props.event.actions.map((currentAction, i) => (
-              <div key={i}>
-                {!props.isGameOver && (
-                  <button
-                    onClick={() => {
-                      props.setAction(currentAction);
-                      props.setSelectedAction(i);
-                      props.setHasAnswered(true);
-                    }}
-                  >
-                    {currentAction.action}
-                  </button>
-                )} */}
+
               <ResultAction
                 i={props.selectedAction}
                 action={props.action}
@@ -120,8 +107,6 @@ function EventModal(props) {
                 informedOfSilverKey={informedOfSilverKey}
               />
             </div>
-            {/* ))}
-          </div> */}
           </div>
         )
       )}
