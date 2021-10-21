@@ -10,8 +10,6 @@ const ResultAction = (props) => {
 		console.log("hasGoldKey");
 	}
 
-
-
 	return props.i === props.selectedAction ? (
 		<p>{props.action.response}</p>
 	) : null;
