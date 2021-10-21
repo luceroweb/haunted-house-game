@@ -1,5 +1,18 @@
+/* Importing the Press Start 2P font from google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+h1{
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*****************************
+*      SITE GLOBALS
+*****************************/
 *,
 *::after,
 *::before {
@@ -9,128 +22,290 @@
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   /* Background Color */
   background-color: #1C1C1C;
+
   /* Primary font color */
   color: #EEEB27;
+
+  /* Font and text settings */
   font-size: 16px;
   font-family: 'Press Start 2P';
   text-shadow: 2px 2px #902EBB;
   line-height: 1.2;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-#root {
+  /* Setting viewport width and height */
   width:100vw;
   min-height: 100vh;
-  margin: auto;
 }
 
-#root div {
-  min-height: 100vh;
+/*****************************
+*      PAGE GLOBALS
+*****************************/
+#root {
+  width: 95%;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 20px 0;
+}
+
+#start-game,
+#hallway,
+#room,
+#game-won,
+#trailer-embed {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 95%;
-  margin: auto;
-  padding: 20px 0;
+  width: 90%;
+  height: 100vh;
+  padding: 5px;
   /* border: 1px solid red; */
 }
 
-/*Header div*/
-#root div.header-div {
+/*****************************
+*         HEADER
+*****************************/
+.header-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-self: flex-start; */
   border: 5px dashed #63C328;
   margin-bottom: 1em;
-  padding: 1rem; /* Added for more space around text */
+  padding: 1rem;
   margin-top: 0;
-  height: 310px;
+  max-height: 310px;
 }
 
 .main-style-header {
-  font-size: 30px; /* Changed for mobile first */
+  font-size: 1.5rem;
   font-weight: 700;
-  text-align: center; /* added for mobile first */
+  text-align: center;
 }
 
-/* added this style */
-h3 {
+.header-div h3 {
   text-align: center;
-  font-size: 1.08rem;
+  font-size: .8rem;
+}
+
+/*****************************
+*          BUTTONS
+*****************************/
+#button-bar {
+  display: flex;
+}
+
+.btn-wrap {
+  margin: 5px 20px;
 }
 
 button {
   border: 5px solid #63C328;
-  /* border: none; */
   padding: 10px;
   background-color: #cf7017;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: .6rem;
   font-family: 'Press Start 2P';
   color: rgba(0, 0, 0, 0.7);
   margin-bottom: .5rem;
+  cursor: pointer;
+  margin: 5px 20px;
 }
 
 button.backToHomeBtn {
   border: 5px solid #63C328;
   color: #cf7017;
   background-color: #000;
-  /* border: none; */
+}
+
+.btn-audio {
+  border: 4px solid rgba(173, 216, 230, 0.726);
+  border-radius: 5px;
+  background-color:rgba(0, 0, 0, 0.3);
+  color: #cdcdcd;
+  margin: 0;
+  margin-bottom: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+/*****************************
+*          IMAGES
+*****************************/
+.img-wrap {
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+img{
+  flex: 1;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
 }
 
 img {
   max-width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  object-position: 60% 10%;
+  height: 300px;
   filter: opacity(80%) hue-rotate(240deg);
   border-radius: 10px;
-  margin-bottom: 1rem;
 }
 
+#key-display img {
+  filter: hue-rotate(0deg);
+}
+
+/*****************************
+*          VIDEO
+*****************************/
+
+.player {
+  position: relative;
+  padding-top: 56.25%;
+  width: 100%;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*****************************
+*    PARAGRAPHS & SPANS
+*****************************/
+span,
 p {
+  /* Changing the text itself */
   font-size: .6rem;
   text-align: center;
-  width: 90%;
   margin-bottom: 1em;
+  width: 80%;
 }
 
+/*****************************
+*         HEADINGS
+*****************************/
 h1 {
   font-size: 1.5rem;
   margin-bottom: .5rem;
 }
 
+h3 {
+  text-align: center;
+}
+
+/*****************************
+*          MODAL
+*****************************/
+.modal {
+  position: absolute;
+  margin: 0 auto;
+  padding: 10px;
+  width: 95%;
+  height: 93%;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  background-color: #1C1C1C;
+  border: 3px solid orange;
+}
+
+.event-modal {
+  position: absolute;
+  margin: 0 auto;
+  padding: 0;
+  top: 5vh;
+  bottom: 0;
+  left: 5vw;
+  right: 0;
+  width: 80vw;
+  border: 12px solid orange;
+  height: 98vh;
+  z-index: 100;
+  background-color: #1c1c1c;
+  overflow: auto;
+}
+
+.game-over-modal {
+  position: absolute;
+  margin: 0 auto;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  background-color: #1c1c1c;
+  background: cover;
+  overflow: auto;
+}
 
 
+/*****************************
+*        INVENTORY
+*****************************/
+#inventory {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  margin: 10px;
+}
+
+#inventory span {
+  display: block;
+  border: 2px solid orange;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 10px;
+}
+
+#inventory #gold-key {
+  border-color: gold;
+}
+
+#inventory #silver-key {
+  border-color: silver;
+}
+
+/*****************************
+*      MEDIA QUERIES
+*****************************/
+
+/* Screens that start at 320px */
 @media (min-width: 320px) {
+  img {
+    max-height: 150px;
+    max-width: 70%;
+  }
+
+  span,
   p {
     font-size: 0.55rem;
   }
 
   button {
-    font-size: 1rem;
+    font-size: .8rem;
+    padding: 7px;
+    border: 3px solid #63C328;
   }
 
-  img {
-    max-height: 400px;
-    width: 70%;
+  /* Video */
+  .player {
+    padding-bottom: 45%;
   }
 }
 
+/* Screens that start at 800px */
 @media (min-width: 800px) {
 
   .App {
@@ -138,18 +313,23 @@ h1 {
   }
 
   img {
-    max-height: 400px;
+    height: 400px;
     filter: blur(1px) opacity(80%) hue-rotate(240deg);
   }
 
+  span,
   p {
     width: 85%;
     font-size: 1.1rem;
     line-height: 1.4;
   }
 
+  #button-bar {
+    flex-direction: row;
+  }
+
   button {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 
   #root div.header-div {
@@ -159,10 +339,8 @@ h1 {
   .main-style-header {
     font-size: 45px; /* Changed for desktop */
   }
-  
-  
+    
   h3 {
     font-size: 1.15rem; /* Changed for desktop */
   }
-
 }
