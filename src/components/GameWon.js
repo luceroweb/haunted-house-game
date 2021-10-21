@@ -10,9 +10,9 @@ function GameWon() {
 
   return (
     <div id="game-won" 
-    // onMouseOverCapture={play}
+    onMouseOverCapture={play}
     >
-      <button onClick={play}>Play</button>
+      {/* <button onClick={play}>Play</button> */}
       {/* {play} */}
       
       <div className="img-wrap">
