@@ -27,10 +27,6 @@ export default function StartGame({ hallway, audioOn }) {
 		],
 	];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2b5a5110879185eb4347cac9e20ea3b21e10a5c2
 	if (!audioOn) {
 		ambienceSoundData.stop();
 	}
@@ -63,24 +59,3 @@ export default function StartGame({ hallway, audioOn }) {
 		</div>
 	);
 }
-<<<<<<< HEAD
-=======
-  return (
-    <div>
-      <Header />
-      <img src={house} alt="" />      
-      <p>The Bitwise React Apprentices were out trick or treating on a dark and windy Halloween eve, when they stumbled across a creepy, rundown home at the end of a half-built construction site.  Juan, the leader of the group, walked up to the door, rang the doorbell and no one answered.</p>
-      <p>He jiggled the door and it swung open.</p>
-      <p>“Is there anyone home?” asks Myles.  “Do you think they have Skittles?”</p>
-      <p>“Does it look like they have Skittles? They barely have time to clean from the looks of it!” Grace says, eyeing the cobwebs in the corner of the doorway.</p>
-      <p>“Ooohh… I think I see some Skittles in the hallway!” Darla exclaims, pointing deeper into the darkened space just beyond the door.</p>
-      <a href="/hallway"><button>Continue...</button></a>
-    </div>
-    
-    
-
-  )
-};
->>>>>>> bdcf540a820251c39f8ea657d09a8eae9fd914fa
-=======
->>>>>>> 2b5a5110879185eb4347cac9e20ea3b21e10a5c2
