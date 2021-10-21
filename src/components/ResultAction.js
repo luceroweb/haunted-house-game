@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import KeyDisplay from "./KeyDisplay";
+import AltResult from "./AltResult";
 
 const ResultAction = (props) => {
+	const [isAlternate, setIsAlternate] = useState(false);
+
   if(props.action.type === 'fail') {
     props.setIsGameOver(true);
   }
@@ -15,13 +18,22 @@ const ResultAction = (props) => {
 	return props.i === props.selectedAction ? (
     <>
       <p>{props.action.response}</p>
+
+      
       <KeyDisplay 
         hasGoldKey={props.hasGoldKey}
         hasSilverKey={props.hasSilverKey}
         setHasGoldKey={props.setHasGoldKey}
       />
     </>
-  ) : null;
+  )
+    : isAlternate ? (
+        <AltResult 
+        setIsAlternate={setIsAlternate}
+        
+        />
+    )
+    : null;
 }
 
 export default ResultAction;

@@ -6,6 +6,7 @@ import GameOver from "./GameOver";
 const Event = ({ event, isGameOver, setIsGameOver, hasSilverKey, hasGoldKey, setHasGoldKey, setHasSilverKey }) => {
 	const [action, setAction] = useState({});
 	const [selectedAction, setSelectedAction] = useState(-1);
+	
 
 	return (
 		<div>
@@ -26,7 +27,7 @@ const Event = ({ event, isGameOver, setIsGameOver, hasSilverKey, hasGoldKey, set
           }
 					<ResultAction 
 						i={i} 
-						action={action} 
+						action={action}  
 						selectedAction={selectedAction} 
 						setHasSilverKey={setHasSilverKey}
 						setHasGoldKey={setHasGoldKey}
@@ -42,7 +43,7 @@ const Event = ({ event, isGameOver, setIsGameOver, hasSilverKey, hasGoldKey, set
 				</div>
 			))}
 		</div>
-	);
+	)
 };
 
 export default Event;

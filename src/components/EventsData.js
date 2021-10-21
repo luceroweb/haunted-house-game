@@ -25,7 +25,12 @@ const eventData = [
             { 
             type: "fail",
             action: "Tell her a joke to lighten the mood in the room.", 
-            response: "She’s not amused and locks you in the room so you can mourn with her forever."
+            response: "She’s not amused and locks you in the room so you can mourn with her forever.",
+              altAction: {
+                altResponse: "alt response",
+                chance: 30,
+                type: "pass"
+              }
             },
             { 
             type: "redo",
@@ -47,8 +52,13 @@ const eventData = [
         },
         { 
         type: "fail",
-        action: "Gun", 
-        response: "Unfortunately, the gun did not contain a silver bullet.  The wound further enrages the werewolf and it bites you before you can escape.  You turn into a werewolf and run off into the night, howling at the moon, doomed to the cycle of transformation for all time."
+        action: "Gun",
+        response: "Unfortunately, the gun did not contain a silver bullet.  The wound further enrages the werewolf and it bites you before you can escape.  You turn into a werewolf and run off into the night, howling at the moon, doomed to the cycle of transformation for all time.",
+          altAction: {
+            altResponse: "alt response",
+            chance: 30,
+            type: "pass"
+          }
         },
         { 
         type: "redo",
@@ -66,12 +76,22 @@ const eventData = [
         { 
         type: "pass",
         action: "Dodge", 
-        response: "You dodge the zombie, and in the chaos, it stumbles and smashes it’s head open. You escape the zombie and continue to search for the silver key."
+        response: "You dodge the zombie, and in the chaos, it stumbles and smashes it’s head open. You escape the zombie and continue to search for the silver key.",
+          altAction: {
+            altResponse: "alt response",
+            chance: 30,
+            type: "fail"
+          }
         },
         { 
         type: "fail",
         action: "Attack", 
-        response: "You try to attack the zombie, but you underestimate its strength.  It overpowers you and bites you."
+        response: "You try to attack the zombie, but you underestimate its strength.  It overpowers you and bites you.",
+          altAction: {
+            altResponse: "alt response",
+            chance: 30,
+            type: "pass"
+          }
         },
         { 
         type: "redo",

@@ -1,13 +1,23 @@
 import React from 'react';
-import Header from './Header'
+import Header from './Header';
+import trailer from '../video/trailer.webm';
 import house from '../img/rooms/house.jpeg';
+// import VideoPlayer from 'react-video-js-player';
+
+// videojS = () =>{
+//   const videoSrc = trailer;
+//   return(
+//     <h1>title</h1>
+//   )
+// }
 
 
 export default function StartGame({hallway}) {
   return (
     <div>
       <Header />
-      <img src={house} alt="" />      
+
+      {/* <img src={house} alt="" />       */}
       <p>The Bitwise React Apprentices were out trick or treating on a dark and windy Halloween eve, when they stumbled across a creepy, rundown home at the end of a half-built construction site.  Juan, the leader of the group, walked up to the door, rang the doorbell and no one answered.</p>
       <p>He jiggled the door and it swung open.</p>
       <p>“Is there anyone home?” asks Myles.  “Do you think they have Skittles?”</p>
