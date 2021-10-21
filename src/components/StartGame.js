@@ -1,10 +1,14 @@
 import React from "react";
-import Header from "./Header";
-import house from "../img/rooms/house.jpeg";
 import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
+import useSound from "use-sound";
 
-export default function StartGame({ hallway }) {
+import Header from "./Header";
+import house from "../img/rooms/house.jpeg";
+import { ambienceHauntedCave } from '../sounds';
+
+export default function StartGame({ hallway, audioOn }) {
+	const [ playAmbience, ambienceSoundData ] = useSound(ambienceHauntedCave, { soundEnabled: audioOn, volume: 0.70 });
 	let { page } = useParams();
 	page = parseInt(page || 0);
 	const pages = [
@@ -21,8 +25,12 @@ export default function StartGame({ hallway }) {
 		],
 	];
 
+	if (!audioOn) {
+		ambienceSoundData.stop();
+	}
+
 	return (
-		<div id="start-game">
+		<div id="start-game" onMouseEnter={() => playAmbience()}>
 			{page === 0 && <Header />}
 			<img src={house} alt="" />
 			<Typewriter
@@ -35,13 +43,13 @@ export default function StartGame({ hallway }) {
 					loop: false,
 				}}
 			/>
-      <div id="btn-wrap">
-        {page === 2 ? (
-          <Link to="/hallway"><button>Continue...</button></Link>
-        ) : (
-          <Link to={`/startgame/${page + 1}`}><button>Continue...</button></Link>
-        )}
-      </div>
+			<div id="btn-wrap">
+				{page === 2 ? (
+				<Link to="/hallway"><button>Continue...</button></Link>
+				) : (
+				<Link to={`/startgame/${page + 1}`}><button>Continue...</button></Link>
+				)}
+			</div>
 		</div>
 	);
 }
