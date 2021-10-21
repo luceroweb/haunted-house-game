@@ -30,7 +30,7 @@ function Room(props) {
 
       {(!isGameOver || !props.hasSilverKey) && (
         <div className="btn-wrap">
-          <Link to="/hallway">
+          <Link to="/hallway/1">
             <button
               className="backToHomeBtn"
               onClick={() => setBeginEvent(true)}
@@ -54,6 +54,12 @@ function Room(props) {
         showDialog={showDialog}
         events={props.events}
       />
+
+      {(!isGameOver || !props.hasSilverKey) && (
+        <a href="/">
+          <button className="backToHomeBtn">Restart Game!</button>
+        </a>
+      )}
     </div>
   );
 }

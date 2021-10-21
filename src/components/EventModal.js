@@ -83,8 +83,6 @@ function EventModal(props) {
         !props.isGameOver &&
         informedOfSilverKey &&
         informedOfGoldKey && (
-          // !props.hasSilverKey &&
-          // !props.hasGoldKey && (
           <div className="event-modal" id="event">
             <div style={{ margin: "0" }}>
               <h3>{props.event.name}</h3>
