@@ -32,9 +32,9 @@ function EventModal(props) {
     );
   }
   return (
-    //For when the event first renders and they haven't responded yet
+    //For when the event first renders and they haven't chosen an action yet
     <>
-      {!props.hasAnswered && !props.isGameOver ? (
+      {!props.hasChosenAction && !props.isGameOver ? (
         <div className="event-modal" id="event">
           <div style={{ margin: "0" }}>
             <h3>{props.event.name}</h3>
@@ -48,7 +48,7 @@ function EventModal(props) {
                       props.setAction(currentAction);
                       props.setSelectedAction(i);
                       if (currentAction.type !== "redo")
-                        props.setHasAnswered(true);
+                        props.setHasChosenAction(true);
                     }}
                   >
                     {currentAction.action}
@@ -77,7 +77,7 @@ function EventModal(props) {
           </div>
         </div>
       ) : (
-        //For when they have answered and see response but didn't receive either key
+        //For when they have chosen an action and see response but didn't receive either key
         !props.isGameOver &&
         informedOfSilverKey &&
         informedOfGoldKey && (

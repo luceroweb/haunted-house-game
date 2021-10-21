@@ -17,6 +17,12 @@ const eventData = [
     image: ghost,
     actions: [
       {
+        type: "pass",
+        action: "Offer your sincerest apologies.",
+        response:
+          "She accepts your apology and you can continue your search for the silver key.",
+      },
+      {
         type: "fail",
         action: "Tell her a joke to lighten the mood in the room.",
         response:
@@ -27,12 +33,6 @@ const eventData = [
         action: "Give her a blank stare.",
         response: "You end up in a staring contest. Choose again.",
       },
-      {
-        type: "pass",
-        action: "Offer your sincerest apologies.",
-        response:
-          "She accepts your apology and you can continue your search for the silver key.",
-      },
     ],
   },
   {
@@ -42,16 +42,16 @@ const eventData = [
     image: werewolf,
     actions: [
       {
-        type: "fail",
-        action: "Gun",
-        response:
-          "Unfortunately, the gun did not contain a silver bullet.  The wound further enrages the werewolf and it bites you before you can escape.  You turn into a werewolf and run off into the night, howling at the moon, doomed to the cycle of transformation for all time.",
-      },
-      {
         type: "pass",
         action: "Candlestick",
         response:
           "You barely connect with the candlestick, but luckily it is made out of silver.  The werewolf is severely wounded and loses consciousness.  You escape unscathed and can continue your search for the key.",
+      },
+      {
+        type: "fail",
+        action: "Gun",
+        response:
+          "Unfortunately, the gun did not contain a silver bullet.  The wound further enrages the werewolf and it bites you before you can escape.  You turn into a werewolf and run off into the night, howling at the moon, doomed to the cycle of transformation for all time.",
       },
       {
         type: "redo",
@@ -74,16 +74,16 @@ const eventData = [
           "You dodge the zombie, and in the chaos, it stumbles and smashes it’s head open. You escape the zombie and continue to search for the silver key.",
       },
       {
-        type: "redo",
-        action: "Push",
-        response:
-          "Pushing the zombie causes it to stumble, but regains its footing, and positions itself to attack. Choose another way to try to overcome the zombie.",
-      },
-      {
         type: "fail",
         action: "Attack",
         response:
           "You try to attack the zombie, but you underestimate its strength.  It overpowers you and bites you.",
+      },
+      {
+        type: "redo",
+        action: "Push",
+        response:
+          "Pushing the zombie causes it to stumble, but regains its footing, and positions itself to attack. Choose another way to try to overcome the zombie.",
       },
     ],
   },
@@ -94,10 +94,10 @@ const eventData = [
     image: clownPuppet,
     actions: [
       {
-        type: "redo",
-        action: "Take a closer look.",
+        type: "pass",
+        action: "Attack the Puppet",
         response:
-          "As the clown head finishes turning, you look down at its hand and you notice a small object.  You lunge to attack the clown puppet, and as you do it drops the object and smoke fills the room, allowing you to choose another way to overcome the clown puppet.",
+          "You throw the clown puppet on the ground and smash it!  You can now leave the room to continue your search for the silver key.",
       },
       {
         type: "fail",
@@ -106,10 +106,10 @@ const eventData = [
           "As the clown head turns to face you, its mouth opens and out comes a spout adorned with a fake flower. The clown squirts you with a liquid. You believe to be water, but as the liquid touches your skin it begins to burn. You realize its acid and it starts to disintegrate your body.",
       },
       {
-        type: "pass",
-        action: "Attack the Puppet",
+        type: "redo",
+        action: "Take a closer look.",
         response:
-          "You throw the clown puppet on the ground and smash it!  You can now leave the room to continue your search for the silver key.",
+          "As the clown head finishes turning, you look down at its hand and you notice a small object.  You lunge to attack the clown puppet, and as you do it drops the object and smoke fills the room, allowing you to choose another way to overcome the clown puppet.",
       },
     ],
   },
@@ -119,12 +119,6 @@ const eventData = [
       "A reving of a motor fires up behind you.  As you turn, you see a madman with a chainsaw revving in his hands. The madman lifts the chainsaw over you, you decide to...",
     image: chainsawMurderer,
     actions: [
-      {
-        type: "redo",
-        action: "Kick him!",
-        response:
-          "The kick connects with the madman’s chest.  He is stunned, but he quickly recovers, giving you enough time to try again.",
-      },
       {
         type: "pass",
         action: "Duck!",
@@ -137,6 +131,12 @@ const eventData = [
         response:
           "The madman overpowers you.  As you look up, the last thing you see is the saw connecting with your lower half.  You pass out from the pain.",
       },
+      {
+        type: "redo",
+        action: "Kick him!",
+        response:
+          "The kick connects with the madman’s chest.  He is stunned, but he quickly recovers, giving you enough time to try again.",
+      },
     ],
   },
   {
@@ -145,6 +145,12 @@ const eventData = [
       "You spot a  glowing candy dish full of Skittles sitting on a pedestal in the middle of the room with a sign that says “Eat me if you dare…”.",
     image: skittles,
     actions: [
+      {
+        type: "pass",
+        action: "Eat a handful of Skittles.",
+        response:
+          "Yess! These are delicious! You're able to walk away and keep looking for the silver key.",
+      },
       {
         type: "fail",
         action: "Eat 13 skittles.",
@@ -156,12 +162,6 @@ const eventData = [
         action: "Eat the skittles, but only the red ones.",
         response:
           "Oh no!  You need to eat one at least one of every color! Choose again. ",
-      },
-      {
-        type: "pass",
-        action: "Eat a handful of Skittles.",
-        response:
-          "Yess! These are delicious! You're able to walk away and keep looking for the silver key.",
       },
     ],
   },
@@ -196,14 +196,14 @@ const eventData = [
     image: crystalOrbs,
     actions: [
       {
-        type: "redo",
-        action: "“Are you hungry?”",
-        response: "“I was mistaken, try again” .",
-      },
-      {
         type: "pass",
         action: "“Talk to the heads” ",
         response: "“Yes, talk to the heads to help you find the key.”",
+      },
+      {
+        type: "redo",
+        action: "“Are you hungry?”",
+        response: "“I was mistaken, try again” .",
       },
       {
         type: "redo",
@@ -220,7 +220,7 @@ const eventData = [
     actions: [
       {
         type: "pass",
-        action: "Turn the key down and keep looking.",
+        action: "“Turn the key down and keep looking.",
         response: "“I was mistaken, try again.”",
       },
       {

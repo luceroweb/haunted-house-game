@@ -19,7 +19,7 @@ const Event = ({
 }) => {
   const [action, setAction] = useState({});
   const [selectedAction, setSelectedAction] = useState(-1);
-  const [hasAnswered, setHasAnswered] = useState(false);
+  const [hasChosenAction, setHasChosenAction] = useState(false);
   const [deathNote, setDeathNote] = useState("");
 
   const displayEvent = () => {
@@ -48,8 +48,8 @@ const Event = ({
           setDeathNote={setDeathNote}
           setShowDialog={setShowDialog}
           action={action}
-          hasAnswered={hasAnswered}
-          setHasAnswered={setHasAnswered}
+          hasChosenAction={hasChosenAction}
+          setHasChosenAction={setHasChosenAction}
         />
       )}
       <GameOver
