@@ -31,6 +31,9 @@ body {
   min-height: 100vh;
 }
 
+/*****************************
+*      PAGE GLOBALS
+*****************************/
 #root {
   width: 95%;
   margin: 0 auto;
@@ -38,9 +41,6 @@ body {
   padding: 20px 0;
 }
 
-/*****************************
-*      PAGE GLOBALS
-*****************************/
 #start-game,
 #hallway,
 #room,
@@ -52,6 +52,7 @@ body {
   justify-content: space-between;
   width: 90%;
   height: 100vh;
+  padding: 5px;
   /* border: 1px solid red; */
 }
 
@@ -96,7 +97,7 @@ button {
   padding: 10px;
   background-color: #cf7017;
   font-weight: 700;
-  font-size: .8rem;
+  font-size: .6rem;
   font-family: 'Press Start 2P';
   color: rgba(0, 0, 0, 0.7);
   margin-bottom: .5rem;
@@ -131,7 +132,7 @@ button.backToHomeBtn {
 
 img {
   max-width: 100%;
-  height: 400px;
+  height: 300px;
   filter: opacity(80%) hue-rotate(240deg);
   border-radius: 10px;
 }
@@ -183,29 +184,25 @@ h3 {
 /*****************************
 *          MODAL
 *****************************/
-/* .modal {
+.modal {
   position: absolute;
   margin: 0 auto;
-  padding: 0;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
+  padding: 10px;
+  width: 95%;
+  height: 93%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   z-index: 100;
   background-color: #1C1C1C;
-  background: cover;
-} */
+  border: 1px solid orange;
+}
 
 /*****************************
 *        INVENTORY
 *****************************/
 #inventory {
   position: fixed;
-  z-index: 200;
+  z-index: 50;
   top: 0;
   left: 0;
   display: inline-block;
@@ -236,8 +233,8 @@ h3 {
 /* Screens that start at 320px */
 @media (min-width: 320px) {
   img {
-    max-height: 400px;
-    width: 70%;
+    max-height: 150px;
+    max-width: 70%;
   }
 
   span,
@@ -246,7 +243,7 @@ h3 {
   }
 
   button {
-    font-size: 1rem;
+    font-size: .8rem;
     padding: 7px;
     border: 3px solid #63C328;
   }

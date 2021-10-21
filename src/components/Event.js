@@ -1,7 +1,6 @@
 import React, { useState} from "react";
 import ResultAction from "./ResultAction";
 import GameOver from "./GameOver";
-import "./Modal.css";
 
 const Event = ({
   event,
