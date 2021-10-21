@@ -22,9 +22,6 @@ function App() {
 					<StartGame />
 				</Route>
 				<Route path="/hallway/:page">
-					<Hallway />
-				</Route>
-				<Route exact path="/hallway">
 					<Hallway rooms={rooms} />
 				</Route>
 				<Route path="/room/:name">
