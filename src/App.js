@@ -7,15 +7,13 @@ import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
 import GameWon from "./components/GameWon";
-import GameOver from "./components/GameOver";
 import AudioMute from './components/AudioMute';
-import Random from './util/Random';
 
 function App() {
   const rooms = RoomData;
   const events = EventsData;
   const [audioOn, setAudioOn] = useState(true);
-  console.log('your lucky events are ', Random.selectRandomElements(events, 3));
+
   return (
     <BrowserRouter>
       <AudioMute audioOn={audioOn} setAudioOn={setAudioOn} />
