@@ -126,6 +126,23 @@ button.backToHomeBtn {
   width: 60px;
   height: 60px;
 }
+@media (min-width: 320px) {
+  button {
+    font-size: .8rem;
+    padding: 7px;
+    border: 3px solid #63C328;
+  }
+}
+
+@media (min-width: 800px) {
+  #button-bar {
+    flex-direction: row;
+  }
+
+  button {
+    font-size: 1.2rem;
+  }
+}
 
 /*****************************
 *          IMAGES
@@ -154,10 +171,26 @@ img{
   filter: hue-rotate(0deg);
 }
 
+/* Screens that start at 320px */
+@media (min-width: 320px) {
+  img {
+    max-height: 150px;
+    max-width: 70%;
+  }
+}
+
+/* Screens that start at 800px */
+@media (min-width: 800px) {
+  img {
+    max-height: 400px;
+    filter: blur(1px) opacity(80%) hue-rotate(240deg);
+  }
+}
+
+
 /*****************************
 *          VIDEO
 *****************************/
-
 .player {
   position: relative;
   padding-top: 56.25%;
@@ -182,6 +215,24 @@ p {
   width: 80%;
 }
 
+/* Screens that start at 320px */
+@media (min-width: 320px) {
+  span,
+  p {
+    font-size: 0.55rem;
+  }
+}
+
+/* Screens that start at 800px */
+@media (min-width: 800px) {
+  span,
+  p {
+    width: 85%;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+}
+
 /*****************************
 *         HEADINGS
 *****************************/
@@ -192,6 +243,12 @@ h1 {
 
 h3 {
   text-align: center;
+}
+
+@media (min-width: 800px) {    
+  h3 {
+    font-size: 1.15rem;
+  }
 }
 
 /*****************************
@@ -270,15 +327,6 @@ h3 {
 
 /* Screens that start at 320px */
 @media (min-width: 320px) {
-  img {
-    max-height: 150px;
-    max-width: 70%;
-  }
-
-  span,
-  p {
-    font-size: 0.55rem;
-  }
 
   button {
     font-size: .8rem;
@@ -286,29 +334,16 @@ h3 {
     border: 3px solid #63C328;
   }
 
-  /* Video */
+  Video
   .player {
     padding-bottom: 45%;
   }
 }
 
-/* Screens that start at 800px */
 @media (min-width: 800px) {
 
   .App {
     margin: 5px auto;
-  }
-
-  img {
-    max-height: 400px;
-    filter: blur(1px) opacity(80%) hue-rotate(240deg);
-  }
-
-  span,
-  p {
-    width: 85%;
-    font-size: 1.1rem;
-    line-height: 1.4;
   }
 
   #button-bar {
@@ -324,10 +359,10 @@ h3 {
   }
 
   .main-style-header {
-    font-size: 45px; /* Changed for desktop */
+    font-size: 45px; 
   }
     
   h3 {
-    font-size: 1.15rem; /* Changed for desktop */
+    font-size: 1.15rem;
   }
 }
