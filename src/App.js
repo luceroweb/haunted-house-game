@@ -1,4 +1,4 @@
-import React/*, { useState }*/ from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import RoomData from "./components/RoomData.js";
@@ -7,18 +7,23 @@ import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
 import GameWon from "./components/GameWon";
+import Inventory from "./components/Inventory";
 // import GameOver from "./components/GameOver";
 
 
 function App() {
   const rooms = RoomData;
   const events = EventsData;
-  const [audioOn, setAudioOn] = useState(true);
+  // const [audioOn, setAudioOn] = useState(true);
   const [hasGoldKey, setHasGoldKey] = useState(false);
   const [hasSilverKey, setHasSilverKey] = useState(false);
 
   return (
     <BrowserRouter>
+      <Inventory
+          goldKey={hasGoldKey}
+          silverKey={hasSilverKey}
+      />
       <Switch>
         <Route exact path="/">
           <StartGame />

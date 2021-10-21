@@ -194,6 +194,7 @@ h3 {
 #inventory {
   position: fixed;
   z-index: 200;
+  top: 0;
   left: 0;
   display: inline-block;
   margin: 10px;

@@ -31,7 +31,7 @@ const Event = ({
   };
 
   if (beginEvent) {
-    displayEvent(5000);
+    displayEvent(500);
     setBeginEvent(false);
   }
 
