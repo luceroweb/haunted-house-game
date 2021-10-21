@@ -3,7 +3,7 @@ import img from "../img/rooms/Hall-option-1.jpg";
 import "../main.css";
 import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
-import ShowKey from './ShowKey';
+//import ShowKey from './ShowKey';
 //import KeyDisplay from ',/KeyDisplay'
 import PresentKey from "./PresentKey";
 
@@ -53,10 +53,10 @@ const Hallway = (props) => {
         ))}
       </div>
 	  <PresentKey 
-	  hasGoldKey={hasGoldKey}
-	  hasSilverKey={hasSilverKey}
-	  setHasGoldKey={setHasGoldKey}
-	  setHasSilverKey={setHasSilverKey}
+	  hasGoldKey={props.hasGoldKey}
+	  hasSilverKey={props.hasSilverKey}
+	  setHasGoldKey={props.setHasGoldKey}
+	  setHasSilverKey={props.setHasSilverKey}
 	 />
 		</div>
 	);

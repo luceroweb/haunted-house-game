@@ -39,7 +39,14 @@ function App() {
           />
         </Route>
         <Route path="/room/:name">
-          <Room rooms={rooms} events={events} />
+          <Room 
+            rooms={rooms} 
+            events={events}
+            hasSilverKey={hasSilverKey}
+            hasGoldKey={hasGoldKey}
+            setHasSilverKey={setHasSilverKey}
+            setHasGoldKey={setHasGoldKey}
+          />
         </Route>
         <Route path="/gamewon">
           <GameWon />

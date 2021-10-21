@@ -1,17 +1,16 @@
 import GameWon from "./GameWon";
-import SilverKeyMessage from "./SilverKeyMessage";
+import GoldKeyMessage from "./GoldKeyMessage";
 
 // triggers when hasGoldKey or hasSilverKey are true
   export default function ShowKey (props) {
     var winMessage = '';
     // fake key and keep playing
-    if (hasGoldKey) {
-      <GameWon />
+    if (props.hasGoldKey) {
+      <GoldKeyMessage /> 
     }
     // real key and win
-    else if (hasSilverKey) {
-      winMessage=
-      <SilverKeyMessage />
+    else if (props.hasSilverKey) {
+      winMessage= <GameWon />
     }
     else {
       winMessage='';
@@ -19,10 +18,13 @@ import SilverKeyMessage from "./SilverKeyMessage";
     return (
       <div>
         {winMessage}
-        {props.hasGoldKey &&
+        {props.hasGoldKey && 
+        <>
+        <GoldKeyMessage /> 
         <div className="btn-wrap">
-          <button onClick={()=>setHasGoldKey(false)}>Keep trying</button>
+          <button onClick={()=>props.setHasGoldKey(false)}>Keep trying</button>
         </div>
+        </>
         }
       </div>
     );
