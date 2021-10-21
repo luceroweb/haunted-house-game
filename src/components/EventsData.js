@@ -33,6 +33,57 @@ const eventData = [
             }
         ]
     },
+    //alternate response
+    {
+      name: "Ghost",
+      description: "A ghost bride aimlessly floats into the room.  As you step into the room, she takes notice of you.  Her face contorts in rage that you’ve disturbed her mourning her lost love.",
+      image: ghost,
+      actions: 
+      [
+          { 
+          type: "pass",
+          action: "Offer your sincerest apologies.", 
+          response: "She accepts your apology and you can continue your search for the silver key.",
+          },
+          { 
+          type: "pass",
+          action: "Tell her a joke to lighten the mood in the room.", 
+          response: "alternate response", //myles please add
+          },
+          { 
+          type: "redo",
+          action: "Give her a blank stare.", 
+          response: "You end up in a staring contest. Choose again."
+          }
+      ]
+  },
+    {
+      name: "Werewolf",
+      description:
+        "A snarling and ravenous werewolf attacks you from behind. You barely evade it. Just out your reach, you spot a gun, a haymaker, and a candlestick. You only have time to get to one.",
+      image: werewolf,
+      actions: [
+        {
+          type: "pass",
+          action: "Candlestick",
+          response:
+            "You barely connect with the candlestick, but luckily it is made out of silver.  The werewolf is severely wounded and loses consciousness.  You escape unscathed and can continue your search for the key.",
+        },
+        {
+          type: "fail",
+          action: "Gun",
+          response:
+            "Unfortunately, the gun did not contain a silver bullet.  The wound further enrages the werewolf and it bites you before you can escape.  You turn into a werewolf and run off into the night, howling at the moon, doomed to the cycle of transformation for all time.",
+        },
+        {
+          type: "redo",
+          action: "Haymaker",
+          response:
+            "Your old boxing lessons paid off and the werewolf is temporarily stunned.  Choose one of the other two options while he’s discombobulated.",
+        },
+        ],
+      },
+  //Alternate Response werewolf
   {
     name: "Werewolf",
     description:
@@ -41,22 +92,24 @@ const eventData = [
     actions: [
       {
         type: "pass",
-        action: "Dodge", 
-        response: "You dodge the zombie, and in the chaos, it stumbles and smashes it’s head open. You escape the zombie and continue to search for the silver key.",
-        },
-        { 
-        type: "fail",
-        action: "Attack", 
-        response: "You try to attack the zombie, but you underestimate its strength.  It overpowers you and bites you.",
-        },
-        { 
+        action: "Candlestick",
+        response:
+          "You barely connect with the candlestick, but luckily it is made out of silver.  The werewolf is severely wounded and loses consciousness.  You escape unscathed and can continue your search for the key.",
+      },
+      {
+        type: "pass",
+        action: "Gun",
+        response:
+          "alternate response", //myles please add
+      },
+      {
         type: "redo",
         action: "Haymaker",
         response:
           "Your old boxing lessons paid off and the werewolf is temporarily stunned.  Choose one of the other two options while he’s discombobulated.",
       },
-    ],
-  },
+      ],
+    },
   {
     name: "Zombie",
     description:
@@ -74,6 +127,33 @@ const eventData = [
         action: "Attack",
         response:
           "You try to attack the zombie, but you underestimate its strength.  It overpowers you and bites you.",
+      },
+      {
+        type: "redo",
+        action: "Push",
+        response:
+          "Pushing the zombie causes it to stumble, but regains its footing, and positions itself to attack. Choose another way to try to overcome the zombie.",
+      },
+    ],
+  },
+  // zombie alternate response
+  {
+    name: "Zombie",
+    description:
+      "A foul, grimy, diseased zombie in blood-stained, tattered clothing approaches you.",
+    image: zombie,
+    actions: [
+      {
+        type: "fail",
+        action: "Dodge",
+        response:
+          "alternate response", //myles please add
+      },
+      {
+        type: "pass",
+        action: "Attack",
+        response:
+          "alternate response", //myles please add
       },
       {
         type: "redo",
