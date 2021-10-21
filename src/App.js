@@ -11,6 +11,7 @@ import DoorOpen from "./components/DoorOpen";
 import GameWon from "./components/GameWon";
 import AudioMute from './components/AudioMute';
 import Inventory from "./components/Inventory";
+import FalseEnding from "./components/FalseEnding";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           {/* <AudioDemo/> */}
         {/* <Music/> */}
           {/* <DoorOpen/> */}
+          {/* <FalseEnding /> */}
         </Route>
         <Route path="/startgame/:page">
           <StartGame audioOn={audioOn} />
