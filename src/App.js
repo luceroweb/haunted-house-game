@@ -6,27 +6,68 @@ import EventsData from "./components/EventsData";
 import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
+import AudioDemo from"./components/AudioDemo";
+import DoorOpen from "./components/DoorOpen";
+import GameWon from "./components/GameWon";
+import AudioMute from './components/AudioMute';
+import Inventory from "./components/Inventory";
+
 
 function App() {
-	
-	const [rooms, setRooms] = useState(RoomData);
-	const [events, setEvents] = useState(EventsData);
+  const rooms = RoomData;
+  const events = EventsData;
   const [audioOn, setAudioOn] = useState(true);
+  const [hasGoldKey, setHasGoldKey] = useState(false);
+  const [hasSilverKey, setHasSilverKey] = useState(false);
 
   return (
     <BrowserRouter>
+      <AudioMute audioOn={audioOn} setAudioOn={setAudioOn} />
+      <Inventory
+          audio={audioOn}
+          setAudio={setAudioOn}
+          goldKey={hasGoldKey}
+          silverKey={hasSilverKey}
+      />
       <Switch>
         <Route exact path="/">
-          <StartGame />
+          <StartGame audioOn={audioOn} />
+          {/* <AudioDemo/> */}
+        {/* <Music/> */}
+          {/* <DoorOpen/> */}
+        </Route>
+        <Route path="/startgame/:page">
+          <StartGame audioOn={audioOn} />
+        </Route>
+        <Route path="/hallway/:page">
+          <Hallway audioOn={audioOn} />
         </Route>
         <Route exact path="/hallway">
-          <Hallway rooms={rooms} />
+          <Hallway
+            audioOn={audioOn}
+            rooms={rooms}
+            hasSilverKey={hasSilverKey}
+            hasGoldKey={hasGoldKey}
+            setHasSilverKey={setHasSilverKey}
+            setHasGoldKey={setHasGoldKey}
+          />
         </Route>
         <Route path="/room/:name">
-          <Room rooms={rooms} events={events} />
+          <Room 
+            rooms={rooms} 
+            events={events}
+            hasSilverKey={hasSilverKey}
+            hasGoldKey={hasGoldKey}
+            setHasSilverKey={setHasSilverKey}
+            setHasGoldKey={setHasGoldKey}
+          />
+        </Route>
+        <Route path="/gamewon">
+          <GameWon />
         </Route>
       </Switch>
     </BrowserRouter>
   );
 }
+
 export default App;

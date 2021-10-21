@@ -1,4 +1,3 @@
-import React from "react";
 import livingRoom from "../img/rooms/living-room.jpg";
 import kitchen from "../img/rooms/kitchen-option.jpg";
 import library from "../img/rooms/Room_Library.jpg";

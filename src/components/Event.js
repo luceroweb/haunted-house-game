@@ -1,41 +1,52 @@
 import React, { useState } from "react";
-import ResultAction from "./ResultAction";
+import GameOver from "./GameOver";
+import EventModal from "./EventModal";
 
-const Event = ({ event }) => {
+const Event = ({
+  event,
+  isGameOver,
+  setIsGameOver,
+  hasSilverKey,
+  hasGoldKey,
+  setHasGoldKey,
+  setHasSilverKey,
+  setShowDialog,
+  showDialog,
+}) => {
+  const [action, setAction] = useState({});
+  const [selectedAction, setSelectedAction] = useState(-1);
+  const [hasChosenAction, setHasChosenAction] = useState(false);
+  const [deathNote, setDeathNote] = useState("");
 
-	const [hasGoldKey, setHasGoldKey] = useState(false);
-	const [hasSilverKey, setHasSilverKey] = useState(false);
-	const [isGameOver, setIsGameOver] = useState(false);
-	
-	const [action, setAction] = useState({});
-	const [newEventDisplay, selectNewEventDisplay] = useState("");
-	const [selectedAction, setSelectedAction] = useState(-1);
-	return (
-		<div>
-			<h3>{event.name}</h3>
-			<img src={event.image} />
-			<p>{event.description}</p>
-			{event.actions.map((currentAction, i) => (
-				<div key={i}>
-					<button
-						onClick={() => {
-							setAction(currentAction);
-							setSelectedAction(i);
-						}}
-					>
-						{currentAction.action}
-					</button>
-					<ResultAction 
-						i={i} 
-						action={action} 
-						selectedAction={selectedAction} 
-						setHasSilverKey={setHasSilverKey}
-						setHasGoldKey={setHasGoldKey}
-					/>
-				</div>
-			))}
-		</div>
-	);
+  const closeEvent = () => {
+    setShowDialog(false);
+  };
+
+  return (
+    <>
+      {showDialog && (
+        <EventModal
+          event={event}
+          isGameOver={isGameOver}
+          setAction={setAction}
+          setSelectedAction={setSelectedAction}
+          selectedAction={selectedAction}
+          setHasSilverKey={setHasSilverKey}
+          setHasGoldKey={setHasGoldKey}
+          setIsGameOver={setIsGameOver}
+          hasGoldKey={hasGoldKey}
+          hasSilverKey={hasSilverKey}
+          closeEvent={closeEvent}
+          setDeathNote={setDeathNote}
+          setShowDialog={setShowDialog}
+          action={action}
+          hasChosenAction={hasChosenAction}
+          setHasChosenAction={setHasChosenAction}
+        />
+      )}
+      <GameOver isGameOver={isGameOver} message={deathNote} />
+    </>
+  );
 };
 
 export default Event;
