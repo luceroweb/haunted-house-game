@@ -14,13 +14,15 @@ import Inventory from "./components/Inventory";
 function App() {
   const rooms = RoomData;
   const events = EventsData;
-  // const [audioOn, setAudioOn] = useState(true);
+  const [audioOn, setAudioOn] = useState(true);
   const [hasGoldKey, setHasGoldKey] = useState(false);
   const [hasSilverKey, setHasSilverKey] = useState(false);
 
   return (
     <BrowserRouter>
       <Inventory
+          audio={audioOn}
+          setAudio={setAudioOn}
           goldKey={hasGoldKey}
           silverKey={hasSilverKey}
       />

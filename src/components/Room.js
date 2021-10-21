@@ -19,7 +19,6 @@ function Room(props) {
 
   return (
     <div id="room">
-      <Inventory></Inventory>
       <h1>{found[0].name}</h1>
       <div className="img-wrap">
         <img src={found[0].image} alt="" />
