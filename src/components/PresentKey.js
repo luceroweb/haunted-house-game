@@ -1,7 +1,10 @@
 import { useState } from "react";
 import ShowKey from "./ShowKey";
 import useSound from "use-sound";
+<<<<<<< HEAD
 //import KeyDisplay from './KeyDisplay';
+=======
+>>>>>>> e7d705b4666ea31e031a99fdf4c5217c4db1252a
 import gameWin from "../sounds/game-over-win.mp3";
 
 function PresentKey(props) {
@@ -15,7 +18,10 @@ function PresentKey(props) {
           className="presentKey"
           onClick={() => {
             setPresentSilverKey(props.hasSilverKey ? true : false);
+<<<<<<< HEAD
             //   play()
+=======
+>>>>>>> e7d705b4666ea31e031a99fdf4c5217c4db1252a
           }}
         >
           Present Key

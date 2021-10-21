@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import Event from './Event';
-import Random from '../util/Random';
+import Event from "./Event";
+import Random from "../util/Random";
 
 function Room(props) {
   const { name } = useParams();
@@ -30,7 +30,7 @@ function Room(props) {
 
       {(!isGameOver || !props.hasSilverKey) && (
         <div className="btn-wrap">
-          <Link to="/hallway">
+          <Link to="/hallway/1">
             <button
               className="backToHomeBtn"
               onClick={() => setBeginEvent(true)}
@@ -52,15 +52,14 @@ function Room(props) {
         beginEvent={beginEvent}
         setShowDialog={setShowDialog}
         showDialog={showDialog}
+        events={props.events}
       />
 
-      {(!isGameOver || !props.hasSilverKey) &&
+      {(!isGameOver || !props.hasSilverKey) && (
         <a href="/">
-          <button className="backToHomeBtn" >
-            Restart Game!
-          </button>
+          <button className="backToHomeBtn">Restart Game!</button>
         </a>
-      }
+      )}
     </div>
   );
 }
