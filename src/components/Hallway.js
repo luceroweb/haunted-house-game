@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import img from "../img/rooms/Hall-option-1.jpg";
 import "../main.css";
 import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import Inventory from "./Inventory";
-import { useState } from "react";
 
 const Hallway = (props) => {
-    let {hasGoldKey, setHasGoldKey} = useState(false);
+    const {hasGoldKey, setHasGoldKey} = useState(false);
+    const {hasSilverKey, setHasSilverKey} = useState(true);
 	let { page } = useParams();
 	page = parseInt(page || 0);
 
@@ -38,8 +38,10 @@ const Hallway = (props) => {
 		<div id="hallway">
             <Inventory
                 goldKey={hasGoldKey}
+                silverKey={hasSilverKey}
+                setGoldKey={setHasGoldKey}
+                setSilverKey={setHasSilverKey}
             />
-            {console.log(hasGoldKey)}
 			<h1>Hallway</h1>
             <div className="img-wrap">
                 <img className="hallway" src={img} alt="" />
