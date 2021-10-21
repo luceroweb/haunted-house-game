@@ -71,6 +71,8 @@ function EventModal(props) {
                   setInformedOfSilverKey={setInformedOfSilverKey}
                   informedOfGoldKey={informedOfGoldKey}
                   informedOfSilverKey={informedOfSilverKey}
+                  event={props.event}
+                  events={props.events}
                 />
               </div>
             ))}
@@ -105,6 +107,8 @@ function EventModal(props) {
                 setInformedOfSilverKey={setInformedOfSilverKey}
                 informedOfGoldKey={informedOfGoldKey}
                 informedOfSilverKey={informedOfSilverKey}
+                event={props.event}
+                events={props.events}
               />
             </div>
           </div>
