@@ -30,9 +30,9 @@ function Room(props) {
       />
 
       {(!isGameOver || !hasSilverKey) &&
-        <a href="/hallway">
+        <a href="/">
           <button className="backToHomeBtn" >
-            Back to Hallway
+            Restart Game!
           </button>
         </a>
       }
