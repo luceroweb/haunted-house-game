@@ -9,10 +9,13 @@ import Room from "./components/Room";
 import GameWon from "./components/GameWon";
 // import GameOver from "./components/GameOver";
 
+
 function App() {
   const rooms = RoomData;
   const events = EventsData;
-  // const [audioOn, setAudioOn] = useState(true);
+  const [audioOn, setAudioOn] = useState(true);
+  const [hasGoldKey, setHasGoldKey] = useState(false);
+  const [hasSilverKey, setHasSilverKey] = useState(false);
 
   return (
     <BrowserRouter>
@@ -27,10 +30,23 @@ function App() {
           <Hallway />
         </Route>
         <Route exact path="/hallway">
-          <Hallway rooms={rooms} />
+          <Hallway 
+          rooms={rooms}
+          hasSilverKey={hasSilverKey}
+          hasGoldKey={hasGoldKey}
+          setHasSilverKey={setHasSilverKey}
+          setHasGoldKey={setHasGoldKey}
+          />
         </Route>
         <Route path="/room/:name">
-          <Room rooms={rooms} events={events} />
+          <Room 
+            rooms={rooms} 
+            events={events}
+            hasSilverKey={hasSilverKey}
+            hasGoldKey={hasGoldKey}
+            setHasSilverKey={setHasSilverKey}
+            setHasGoldKey={setHasGoldKey}
+          />
         </Route>
         <Route path="/gamewon">
           <GameWon />

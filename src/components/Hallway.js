@@ -4,6 +4,9 @@ import "../main.css";
 import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import Inventory from "./Inventory";
+//import ShowKey from './ShowKey';
+//import KeyDisplay from ',/KeyDisplay'
+import PresentKey from "./PresentKey";
 
 const Hallway = (props) => {
     const {hasGoldKey, setHasGoldKey} = useState(false);
@@ -55,14 +58,17 @@ const Hallway = (props) => {
 					loop: false,
 				}}
 			/>
-            <div id="button-bar">
-                {props.rooms.map((room, index) => (
-                    <div className="btn-wrap">
-                        <Link to={`/room/${room.name}`}><button>{room.name}</button></Link>
-                    </div>
-                    
-                ))}
-            </div>
+      <div id="button-bar">
+        {props.rooms.map((room, index) => (
+          <Link to={`/room/${room.name}`}><button>{room.name}</button></Link>
+        ))}
+      </div>
+	  <PresentKey 
+	  hasGoldKey={props.hasGoldKey}
+	  hasSilverKey={props.hasSilverKey}
+	  setHasGoldKey={props.setHasGoldKey}
+	  setHasSilverKey={props.setHasSilverKey}
+	 />
 		</div>
 	);
 };
