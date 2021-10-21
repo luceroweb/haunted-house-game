@@ -7,4 +7,3 @@ import evilLaugh from './evil-laugh.mp3';
 
 export { ambienceHauntedCave, doorCreak, werewolf, gameOverFail, gameOverWin, evilLaugh };
 
- 
