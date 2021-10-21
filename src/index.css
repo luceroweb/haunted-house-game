@@ -131,7 +131,7 @@ button.backToHomeBtn {
 *          IMAGES
 *****************************/
 .img-wrap {
-  width: 50%;
+  width: 80%;
   margin-bottom: 1rem;
 }
 
@@ -143,12 +143,12 @@ img{
   border-radius: 10px;
 }
 
-img {
+/* img {
   max-width: 100%;
   height: 300px;
   filter: opacity(80%) hue-rotate(240deg);
   border-radius: 10px;
-}
+} */
 
 #key-display img {
   filter: hue-rotate(0deg);
@@ -214,13 +214,9 @@ h3 {
   position: absolute;
   margin: 0 auto;
   padding: 0;
-  top: 5vh;
-  bottom: 0;
-  left: 5vw;
-  right: 0;
   width: 80vw;
   border: 12px solid orange;
-  height: 98vh;
+  height: 90%;
   z-index: 100;
   background-color: #1c1c1c;
   overflow: auto;
@@ -229,15 +225,9 @@ h3 {
 .game-over-modal {
   position: absolute;
   margin: 0 auto;
-  padding: 0;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
+  padding: 10px;
+  width: 90%;
+  height: 90%;
   z-index: 100;
   background-color: #1c1c1c;
   background: cover;
