@@ -1,6 +1,5 @@
 import React from "react";
 import img from "../img/rooms/Hall-option-1.jpg";
-import "../main.css";
 import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 //import ShowKey from './ShowKey';
