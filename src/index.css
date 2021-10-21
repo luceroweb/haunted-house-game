@@ -86,6 +86,16 @@ body {
   font-size: .8rem;
 }
 
+@media (min-width: 800px) {
+  #root div.header-div {
+    height: 200px;
+  }
+
+  .main-style-header {
+    font-size: 45px; 
+  }
+}
+
 /*****************************
 *          BUTTONS
 *****************************/
@@ -116,16 +126,14 @@ button.backToHomeBtn {
   background-color: #000;
 }
 
-.btn-audio {
+/* .btn-audio {
   border: 4px solid rgba(173, 216, 230, 0.726);
   border-radius: 5px;
-  background-color:rgba(0, 0, 0, 0.3);
-  color: #cdcdcd;
-  margin: 0;
-  margin-bottom: 10px;
+  background-color:rgba(0, 0, 0, 0.3);  
   width: 60px;
   height: 60px;
-}
+} */
+
 @media (min-width: 320px) {
   button {
     font-size: .8rem;
@@ -150,13 +158,10 @@ button.backToHomeBtn {
 .img-wrap {
   width: 80%;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 img{
-  flex: 1;
-  align-items: center;
-  display: flex;
-  justify-content: center;
   border-radius: 10px;
 }
 
@@ -170,6 +175,7 @@ img{
 #key-display img {
   filter: hue-rotate(0deg);
 }
+
 
 /* Screens that start at 320px */
 @media (min-width: 320px) {
@@ -201,6 +207,13 @@ img{
   position: absolute;
   top: 0;
   left: 0;
+}
+
+@media (min-width: 320px) {
+  Video
+  .player {
+    padding-bottom: 45%;
+  }
 }
 
 /*****************************
@@ -254,7 +267,7 @@ h3 {
 /*****************************
 *          MODAL
 *****************************/
-.modal {
+/* .modal {
   position: absolute;
   margin: 0 auto;
   padding: 10px;
@@ -265,7 +278,7 @@ h3 {
   z-index: 100;
   background-color: #1C1C1C;
   border: 3px solid orange;
-}
+} */
 
 .event-modal {
   position: absolute;
@@ -277,6 +290,9 @@ h3 {
   z-index: 100;
   background-color: #1c1c1c;
   overflow: auto;
+  text-align: center;
+  display: flex;
+  align-content: center;
 }
 
 .game-over-modal {
@@ -295,13 +311,22 @@ h3 {
 /*****************************
 *        INVENTORY
 *****************************/
-#inventory {
+.controls {
   position: fixed;
   z-index: 50;
   top: 0;
   left: 0;
-  display: inline-block;
   margin: 10px;
+}
+
+.controls div .btn-audio {
+  border: 4px solid rgba(173, 216, 230, 0.726);
+  border-radius: 5px;
+  background-color:rgba(0, 0, 0, 0.3);  
+  width: 60px;
+  height: 60px;
+  color: #cdcdcd;
+  margin: 5px 0;
 }
 
 #inventory span {
@@ -311,6 +336,8 @@ h3 {
   height: 60px;
   line-height: 60px;
   border-radius: 10px;
+  margin: 5px 0;
+  display: block;
 }
 
 #inventory #gold-key {
@@ -324,45 +351,3 @@ h3 {
 /*****************************
 *      MEDIA QUERIES
 *****************************/
-
-/* Screens that start at 320px */
-@media (min-width: 320px) {
-
-  button {
-    font-size: .8rem;
-    padding: 7px;
-    border: 3px solid #63C328;
-  }
-
-  Video
-  .player {
-    padding-bottom: 45%;
-  }
-}
-
-@media (min-width: 800px) {
-
-  .App {
-    margin: 5px auto;
-  }
-
-  #button-bar {
-    flex-direction: row;
-  }
-
-  button {
-    font-size: 1.2rem;
-  }
-
-  #root div.header-div {
-    height: 200px;
-  }
-
-  .main-style-header {
-    font-size: 45px; 
-  }
-    
-  h3 {
-    font-size: 1.15rem;
-  }
-}
