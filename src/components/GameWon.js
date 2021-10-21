@@ -1,18 +1,19 @@
 import React from "react";
 import useSound from "use-sound";
-import gameWin from "../sounds/game-over-win.mp3";
+import { gameOverWin, gameOverWinTwo } from "../sounds";
 import image from "../img/events/win.jpeg";
 import Header from "./Header";
 import silverKey from "../img/events/silver-key.jpg";
-
+import Random from "../util/Random";
 function GameWon() {
-  const [play] = useSound(gameWin);
+  const randomSound = Random.selectEvent([gameOverWin, gameOverWinTwo]);
+  const [play] = useSound(randomSound);
 
   return (
-    <div id="game-won">
+    <div id="game-won" onMouseOverCapture={play}>
       {/* <button onClick={play}>Play</button> */}
-      {/* {play()} */}
-      
+      {/* {play} */}
+
       <div className="img-wrap">
         <img src={silverKey} alt="silver key" />
       </div>
@@ -44,7 +45,7 @@ function GameWon() {
           <button className="backToHomeBtn">Restart the Game</button>
         </a>
       </div>
-      <Header/>
+      <Header />
     </div>
   );
 }
