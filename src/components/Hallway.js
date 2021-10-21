@@ -3,8 +3,11 @@ import img from "../img/rooms/Hall-option-1.jpg";
 import "../main.css";
 import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
+import useSound from 'use-sound';
+import { doorCreak } from '../sounds';
 
 const Hallway = (props) => {
+	const [ playDoorCreak, doorCreakSoundData ] = useSound(doorCreak, { soundEnabled: props.audioOn });
 	let { page } = useParams();
 	page = parseInt(page || 0);
 
@@ -31,6 +34,11 @@ const Hallway = (props) => {
 			`“Remember” the voice pronounces “Nobody belongs here more than you!”`,
 		],
 	];
+	
+	if (!props.audioOn) {
+		doorCreakSoundData.stop();
+	}
+
 	return (
 		<div id="hallway">
 			<h1>Hallway</h1>
@@ -46,7 +54,9 @@ const Hallway = (props) => {
 			/>
       <div id="button-bar">
         {props.rooms.map((room, index) => (
-          <Link to={`/room/${room.name}`}><button>{room.name}</button></Link>
+          <Link to={`/room/${room.name}`}>
+						<button onClick={() => playDoorCreak()}>{room.name}</button>
+					</Link>
         ))}
       </div>
 		</div>
