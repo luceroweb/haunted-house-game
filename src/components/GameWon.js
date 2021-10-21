@@ -1,6 +1,6 @@
 import React from "react";
 import useSound from "use-sound";
-import gameWin from "../sounds/game-over-win.mp3";
+import gameWin from "../sounds/game-over-win-2.mp3";
 import image from "../img/events/win.jpeg";
 import Header from "./Header";
 import silverKey from "../img/events/silver-key.jpg";
@@ -9,9 +9,11 @@ function GameWon() {
   const [play] = useSound(gameWin);
 
   return (
-    <div id="game-won">
-      {/* <button onClick={play}>Play</button> */}
-      {/* {play()} */}
+    <div id="game-won" 
+    // onMouseOverCapture={play}
+    >
+      <button onClick={play}>Play</button>
+      {/* {play} */}
       
       <div className="img-wrap">
         <img src={silverKey} alt="silver key" />
