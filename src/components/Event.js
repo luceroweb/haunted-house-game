@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ResultAction from "./ResultAction";
 import GameOver from "./GameOver";
 
-
 const Event = ({
   event,
   isGameOver,
@@ -16,7 +15,7 @@ const Event = ({
   const [selectedAction, setSelectedAction] = useState(-1);
 
   return (
-    <div className='modal' id="event">
+    <div className="modal" id="event">
       <h3>{event.name}</h3>
       <img src={event.image} alt="" />
       <p>{event.description}</p>
@@ -43,13 +42,11 @@ const Event = ({
             hasSilverKey={hasSilverKey}
           />
           <GameOver
-						i={i} 
+            i={i}
             isGameOver={isGameOver}
-			selectedAction={selectedAction} 
-      message={action.response}
+            selectedAction={selectedAction}
+            message={action.response}
           />
-
-          
         </div>
       ))}
     </div>
