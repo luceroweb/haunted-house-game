@@ -1,4 +1,4 @@
-import React { Component } from "react";
+import React, { Component } from "react";
 import { Icon } from 'antd';
 import './style.css';
 import { Component } from 'react';
