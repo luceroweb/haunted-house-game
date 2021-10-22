@@ -16,7 +16,7 @@ import GoldKeyMessage from "./GoldKeyMessage";
       winMessage='';
     }
     return (
-      <div>
+      <div className="game-over-modal" >
         {winMessage}
         {props.hasGoldKey && 
         <>
