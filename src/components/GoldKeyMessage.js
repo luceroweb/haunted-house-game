@@ -1,10 +1,9 @@
 import React from 'react'
+import FalseEnding from './FalseEnding';
 
 function GoldKeyMessage() {
     return (
-        <div>
-            <p>False key presented</p>
-        </div>
+        <FalseEnding />
     )
 }
 
