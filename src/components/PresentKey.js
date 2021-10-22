@@ -3,27 +3,33 @@ import { Link } from "react-router-dom";
 import ShowKey from "./ShowKey";
 
 function PresentKey(props) {
-  const [presentSilverKey, setPresentSilverKey] = useState(false);
+  const [presentedKey, setPresentedKey] = useState(null);
 
   return (
     <div className="btn-wrap">
-      <Link to="/gamewon">
-        <button
-          className="presentKey"
-          onClick={() => {
-            setPresentSilverKey(props.hasSilverKey ? true : false);
-          }}
-        >
-          Present Key
-        </button>
-      </Link>
-      {presentSilverKey && (
-        <ShowKey
-          hasGoldKey={props.hasGoldKey}
-          hasSilverKey={props.hasSilverKey}
-          setHasGoldKey={props.setHasGoldKey}
-          //   onClick={play}
-        />
+      <button
+        className="presentKey"
+        onClick={() => {
+          setPresentedKey(true);
+        }}
+      >
+        Present Key
+      </button>
+      { 
+      presentedKey !== null
+      && !(props.hasGoldKey || props.hasSilverKey)
+      && <p>You need to find a key first!</p>
+      }
+      {
+      presentedKey
+        && (props.hasGoldKey || props.hasSilverKey)
+        && (
+          <ShowKey
+            hasGoldKey={props.hasGoldKey}
+            hasSilverKey={props.hasSilverKey}
+            setHasGoldKey={props.setHasGoldKey}
+            audioOn={props.audioOn}
+          />
       )}
     </div>
   );
