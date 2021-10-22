@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import gameOver from "../img/events/game-over.png"
 import useSound from 'use-sound';
 import { gameOverFail } from '../sounds';
@@ -26,10 +27,9 @@ function GameOver(props) {
         <p> {props.message}</p>
         <h1>Game Over</h1>
         <div className="btn-wrap">
-          {" "}
-          <a href="/">
+          <Link to="/">
             <button className="backToHomeBtn">Restart the Game </button>
-          </a>
+          </Link>
         </div>
       </div>
     )

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import KeyDisplay from "./KeyDisplay";
 import Random from "../util/Random";
 

@@ -37,7 +37,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Inventory
-				audio={audioOn}
+				audioOn={audioOn}
 				setAudio={setAudio}
 				goldKey={hasGoldKey}
 				silverKey={hasSilverKey}

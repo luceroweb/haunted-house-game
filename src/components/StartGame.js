@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
-
 import Header from "./Header";
 import house from "../img/rooms/house.jpeg";
 
