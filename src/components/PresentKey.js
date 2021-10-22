@@ -1,30 +1,34 @@
 import { useState } from "react";
 import ShowKey from "./ShowKey";
-import useSound from "use-sound";
-import gameWin from "../sounds/game-over-win.mp3";
 
 function PresentKey(props) {
-  const [presentSilverKey, setPresentSilverKey] = useState(false);
+  const [presentedKey, setPresentedKey] = useState(null);
 
   return (
     <div className="btn-wrap">
-      <a href="/gamewon">
-        <button
-          className="presentKey"
-          onClick={() => {
-            setPresentSilverKey(props.hasSilverKey ? true : false);
-          }}
-        >
-          Present Key
-        </button>
-      </a>
-      {presentSilverKey && (
-        <ShowKey
-          hasGoldKey={props.hasGoldKey}
-          hasSilverKey={props.hasSilverKey}
-          setHasGoldKey={props.setHasGoldKey}
-          audioOn={props.audioOn}
-        />
+      <button
+        className="presentKey"
+        onClick={() => {
+          setPresentedKey(true);
+        }}
+      >
+        Present Key
+      </button>
+      { 
+      presentedKey !== null
+      && !(props.hasGoldKey || props.hasSilverKey)
+      && <p>You need to find a key first!</p>
+      }
+      {
+      presentedKey
+        && (props.hasGoldKey || props.hasSilverKey)
+        && (
+          <ShowKey
+            hasGoldKey={props.hasGoldKey}
+            hasSilverKey={props.hasSilverKey}
+            setHasGoldKey={props.setHasGoldKey}
+            audioOn={props.audioOn}
+          />
       )}
     </div>
   );
