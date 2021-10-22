@@ -1,16 +1,29 @@
 import React, { useState } from "react";
 import ResultAction from "./ResultAction";
 import KeyDisplay from "./KeyDisplay";
+import useSound from "use-sound";
+import { zombieMoan, ghostScream, chainsaw, evilLaugh, werewolf,  } from "../sounds";
+
 
 function EventModal(props) {
   //States to determine which key they have just received since now it is possible to have both keys simultaneously
   const [informedOfSilverKey, setInformedOfSilverKey] = useState(true);
   const [informedOfGoldKey, setInformedOfGoldKey] = useState(true);
 
+  const noiseStarter = {
+    Ghost: ghostScream,
+    Werewolf: werewolf,
+    Zombie: zombieMoan,
+    "Chainsaw Murderer": chainsaw,
+    "The Talking Heads": evilLaugh,
+
+  }
+  const [playSound] = useSound(noiseStarter[props.event.name], {volume:0.50})
+
   // For if they just received either key
   if (!informedOfSilverKey || !informedOfGoldKey) {
     return (
-      <div className="event-modal" id="event">
+      <div className="event-modal" id="event" onMouseEnter={()=>playSound()}>
         <p>{props.action.response}</p>
         <KeyDisplay
           hasGoldKey={props.hasGoldKey}
@@ -35,10 +48,12 @@ function EventModal(props) {
     //For when the event first renders and they haven't chosen an action yet
     <>
       {!props.hasChosenAction && !props.isGameOver ? (
-        <div className="event-modal" id="event">
+        <div className="event-modal" id="event" onMouseEnter={()=>playSound()}>
           <div style={{ margin: "0" }}>
             <h3>{props.event.name}</h3>
-            <img src={props.event.image} alt="" />
+            <div className="img-wrap">
+              <img src={props.event.image} alt="" />
+            </div>
             <p>{props.event.description}</p>
             {props.event.actions.map((currentAction, i) => (
               <div key={i}>
@@ -73,6 +88,8 @@ function EventModal(props) {
                   setInformedOfSilverKey={setInformedOfSilverKey}
                   informedOfGoldKey={informedOfGoldKey}
                   informedOfSilverKey={informedOfSilverKey}
+                  event={props.event}
+                  events={props.events}
                 />
               </div>
             ))}
@@ -83,13 +100,12 @@ function EventModal(props) {
         !props.isGameOver &&
         informedOfSilverKey &&
         informedOfGoldKey && (
-          // !props.hasSilverKey &&
-          // !props.hasGoldKey && (
           <div className="event-modal" id="event">
             <div style={{ margin: "0" }}>
               <h3>{props.event.name}</h3>
-              <img src={props.event.image} alt="" />
-
+              <div className="img-wrap">
+                <img src={props.event.image} alt="" />
+              </div>
               <ResultAction
                 i={props.selectedAction}
                 action={props.action}
@@ -107,6 +123,8 @@ function EventModal(props) {
                 setInformedOfSilverKey={setInformedOfSilverKey}
                 informedOfGoldKey={informedOfGoldKey}
                 informedOfSilverKey={informedOfSilverKey}
+                event={props.event}
+                events={props.events}
               />
             </div>
           </div>

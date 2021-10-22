@@ -6,7 +6,7 @@ export default function AudioMute ({audioOn, setAudioOn}) {
         <div>
             <button className="btn-audio" onClick={() => setAudioOn(!audioOn)}>
                 {
-                    audioOn ?
+                    audioOn ?  //if audio on, then return GiSpeaker, else return Speakers 
                     <GiSpeaker /> :
                     <GiSpeakerOff />
                 }
@@ -14,3 +14,4 @@ export default function AudioMute ({audioOn, setAudioOn}) {
         </div>
     );
 };
+

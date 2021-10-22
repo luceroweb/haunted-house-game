@@ -1,17 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useSound from "use-sound";
-import gameWin from "../sounds/game-over-win.mp3";
+import { gameOverWin, gameOverWinTwo } from "../sounds";
 import image from "../img/events/win.jpeg";
 import Header from "./Header";
 import silverKey from "../img/events/silver-key.jpg";
-
+import Random from "../util/Random";
 function GameWon() {
-  const [play] = useSound(gameWin);
+  const randomSound = Random.selectEvent([gameOverWin, gameOverWinTwo]);
+  const [play] = useSound(randomSound);
 
   return (
-    <div id="game-won">
-      {/* <button onClick={play}>Play</button> */}
-      {/* {play()} */}
+    <div id="game-won" onMouseOverCapture={play}>
       
       <div className="img-wrap">
         <img src={silverKey} alt="silver key" />
@@ -40,11 +40,11 @@ function GameWon() {
       </p>
 
       <div className="btn-wrap">
-        <a href="/">
+        <Link to="/">
           <button className="backToHomeBtn">Restart the Game</button>
-        </a>
+        </Link>
       </div>
-      <Header/>
+      <Header />
     </div>
   );
 }
