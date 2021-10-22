@@ -16,6 +16,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  /* border: 1px solid red; */
 }
 
 body {
@@ -33,7 +34,7 @@ body {
 
   /* Setting viewport width and height */
   width:100vw;
-  min-height: 100vh;
+  max-height: 100vh;
 }
 
 /*****************************
@@ -42,23 +43,30 @@ body {
 #root {
   width: 95%;
   margin: 0 auto;
-  height: 100vh;
+  max-height: 100vh;
   padding: 20px 0;
 }
 
 #start-game,
 #hallway,
 #room,
-#game-won,
 #trailer-embed {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 90%;
   height: 100vh;
   padding: 5px;
+  margin: auto;
   /* border: 1px solid red; */
+}
+
+#game-won {
+  justify-content: center;
+  align-items: space-around;
+  padding: 10px;
+  text-align: center;
 }
 
 /*****************************
@@ -101,10 +109,13 @@ body {
 *****************************/
 #button-bar {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-wrap {
   margin: 5px 20px;
+  display: inline-block;
 }
 
 button {
@@ -148,7 +159,6 @@ button.backToHomeBtn {
 *          IMAGES
 *****************************/
 .img-wrap {
-  /* width: 80%; */
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -158,12 +168,16 @@ img {
   height: 300px;
   filter: opacity(80%) hue-rotate(240deg);
   border-radius: 10px;
+  margin: auto;
 }
 
 #key-display img {
   filter: hue-rotate(0deg);
 }
 
+.event-modal img {
+  filter: hue-rotate(0);
+}
 
 /* Screens that start at 320px */
 @media (min-width: 320px) {
@@ -180,7 +194,6 @@ img {
     filter: blur(1px) opacity(80%) hue-rotate(240deg);
   }
 }
-
 
 /*****************************
 *          VIDEO
@@ -233,7 +246,6 @@ p {
 @media (min-width: 800px) {
   span,
   p {
-    width: 85%;
     font-size: 1.1rem;
     line-height: 1.4;
   }
@@ -247,6 +259,7 @@ h1 {
   margin-bottom: .5rem;
 }
 
+h2,
 h3 {
   text-align: center;
 }
@@ -260,30 +273,18 @@ h3 {
 /*****************************
 *          MODAL
 *****************************/
-/* .modal {
+.event-modal,
+.game-over-modal {
   position: absolute;
-  margin: 0 auto;
-  padding: 10px;
-  width: 95%;
-  height: 93%;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  background-color: #1C1C1C;
-  border: 3px solid orange;
-} */
-
-.event-modal, .game-over-modal {
-  position: fixed;
   padding: 10px;
   margin: 0 auto;
-  width: 80vw;
+  width: 90%;
   border: 12px solid orange;
   height: 90%;
   z-index: 100;
   background-color: #1c1c1c;
   text-align: center;
-  overflow-x: auto;
+  overflow: auto;
 }
 
 
@@ -302,8 +303,8 @@ h3 {
   border: 4px solid rgba(173, 216, 230, 0.726);
   border-radius: 5px;
   background-color:rgba(0, 0, 0, 0.3);  
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   color: #cdcdcd;
   margin: 5px 0;
 }
@@ -311,9 +312,9 @@ h3 {
 #inventory span {
   display: block;
   border: 2px solid orange;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   border-radius: 10px;
   margin: 5px 0;
   display: block;
@@ -326,7 +327,3 @@ h3 {
 #inventory #silver-key {
   border-color: silver;
 }
-
-/*****************************
-*      MEDIA QUERIES
-*****************************/
