@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import useSound from "use-sound";
 import { gameOverWin, gameOverWinTwo } from "../sounds";
 import image from "../img/events/win.jpeg";
 import Header from "./Header";
 import silverKey from "../img/events/silver-key.jpg";
 import Random from "../util/Random";
-function GameWon() {
-  const randomSound = Random.selectEvent([gameOverWin, gameOverWinTwo]);
-  const [play] = useSound(randomSound);
+
+function GameWon({ audioOn }) {
+  // useState to prevent infinite loop bug when passing random sounds to useSound
+  const [randomAudio, setRandomAudio] = useState(Random.selectEvent([gameOverWin, gameOverWinTwo]));
+  const [playGameOverWin, gameOverWinSoundData] = useSound(randomAudio, {
+    soundEnabled: audioOn,
+    volume: 0.15,
+    interrupt: true
+  });
+ 
+  if (!audioOn) {
+    gameOverWinSoundData.stop();
+  } else {
+    // setTimeout hack to place playGameOverWin() in back of event queue 
+    setTimeout(() => playGameOverWin(), 0);
+  }
 
   return (
-    <div id="game-won" onMouseOverCapture={play}>
+    <div id="game-won">
       
       <div className="img-wrap">
         <img src={silverKey} alt="silver key" />
