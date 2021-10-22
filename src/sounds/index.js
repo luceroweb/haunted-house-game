@@ -9,7 +9,6 @@ import chainsaw from './chainsaw-rev.flac';
 import ghostScream from './ghost-scream.mp3';
 import zombieMoan from './zombie-moan.wav';
 
-
 export { ambienceHauntedCave, doorCreak, werewolf,gameOverWinTwo, gameOverFail, gameOverWin, evilLaugh, chainsaw, zombieMoan, ghostScream };
 
  

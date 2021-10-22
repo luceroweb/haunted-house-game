@@ -1,11 +1,8 @@
 import { useState } from "react";
 import ShowKey from "./ShowKey";
-import useSound from "use-sound";
-import gameWin from "../sounds/game-over-win.mp3";
 
 function PresentKey(props) {
   const [presentSilverKey, setPresentSilverKey] = useState(false);
-  const [play] = useSound(gameWin);
 
   return (
     <div className="btn-wrap">

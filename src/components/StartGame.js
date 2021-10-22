@@ -26,7 +26,6 @@ export default function StartGame({ hallway, audioOn }) {
 		],
 	];
 
-
 	if (!audioOn) {
 		ambienceSoundData.stop();
 	}
@@ -59,4 +58,3 @@ export default function StartGame({ hallway, audioOn }) {
 		</div>
 	);
 }
-

@@ -47,10 +47,10 @@ const Hallway = (props) => {
 					autoStart: true,
 					loop: false,
 				}}
-			/>{" "}
+			/>
 			<div id="button-bar">
 				{page === 0 ? (
-					<Link to={`/hallway/${page + 1}`}>
+					<Link to={`/hallway/${page - 1}`}>
 						<button id="btn">Continue...</button>
 					</Link>
 				) : (

@@ -1,14 +1,11 @@
 /* Importing the Press Start 2P font from google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-h1{
-}
-
-div{
+/* div{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 /*****************************
 *      SITE GLOBALS
@@ -89,6 +86,16 @@ body {
   font-size: .8rem;
 }
 
+@media (min-width: 800px) {
+  #root div.header-div {
+    height: 200px;
+  }
+
+  .main-style-header {
+    font-size: 45px; 
+  }
+}
+
 /*****************************
 *          BUTTONS
 *****************************/
@@ -119,31 +126,31 @@ button.backToHomeBtn {
   background-color: #000;
 }
 
-.btn-audio {
-  border: 4px solid rgba(173, 216, 230, 0.726);
-  border-radius: 5px;
-  background-color:rgba(0, 0, 0, 0.3);
-  color: #cdcdcd;
-  margin: 0;
-  margin-bottom: 10px;
-  width: 60px;
-  height: 60px;
+@media (min-width: 320px) {
+  button {
+    font-size: .8rem;
+    padding: 7px;
+    border: 3px solid #63C328;
+  }
+}
+
+@media (min-width: 800px) {
+  #button-bar {
+    flex-direction: row;
+  }
+
+  button {
+    font-size: 1.2rem;
+  }
 }
 
 /*****************************
 *          IMAGES
 *****************************/
 .img-wrap {
-  width: 50%;
+  /* width: 80%; */
   margin-bottom: 1rem;
-}
-
-img{
-  flex: 1;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  border-radius: 10px;
+  text-align: center;
 }
 
 img {
@@ -157,10 +164,27 @@ img {
   filter: hue-rotate(0deg);
 }
 
+
+/* Screens that start at 320px */
+@media (min-width: 320px) {
+  img {
+    max-height: 150px;
+    max-width: 70%;
+  }
+}
+
+/* Screens that start at 800px */
+@media (min-width: 800px) {
+  img {
+    max-height: 400px;
+    filter: blur(1px) opacity(80%) hue-rotate(240deg);
+  }
+}
+
+
 /*****************************
 *          VIDEO
 *****************************/
-
 .player {
   position: relative;
   padding-top: 56.25%;
@@ -173,6 +197,13 @@ img {
   left: 0;
 }
 
+@media (min-width: 320px) {
+  Video
+  .player {
+    padding-bottom: 45%;
+  }
+}
+
 /*****************************
 *    PARAGRAPHS & SPANS
 *****************************/
@@ -182,7 +213,29 @@ p {
   font-size: .6rem;
   text-align: center;
   margin-bottom: 1em;
-  width: 80%;
+}
+
+/* Screens that start at 320px */
+@media (min-width: 320px) {
+  span,
+  p {
+    font-size: 0.55rem;
+  }
+}
+
+.event-modal p {
+  text-align: center;
+  margin: 0;
+}
+
+/* Screens that start at 800px */
+@media (min-width: 800px) {
+  span,
+  p {
+    width: 85%;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
 }
 
 /*****************************
@@ -197,10 +250,16 @@ h3 {
   text-align: center;
 }
 
+@media (min-width: 800px) {    
+  h3 {
+    font-size: 1.15rem;
+  }
+}
+
 /*****************************
 *          MODAL
 *****************************/
-.modal {
+/* .modal {
   position: absolute;
   margin: 0 auto;
   padding: 10px;
@@ -211,53 +270,41 @@ h3 {
   z-index: 100;
   background-color: #1C1C1C;
   border: 3px solid orange;
-}
+} */
 
-.event-modal {
-  position: absolute;
+.event-modal, .game-over-modal {
+  position: fixed;
+  padding: 10px;
   margin: 0 auto;
-  padding: 0;
-  top: 5vh;
-  bottom: 0;
-  left: 5vw;
-  right: 0;
   width: 80vw;
   border: 12px solid orange;
-  height: 98vh;
+  height: 90%;
   z-index: 100;
   background-color: #1c1c1c;
-  overflow: auto;
-}
-
-.game-over-modal {
-  position: absolute;
-  margin: 0 auto;
-  padding: 0;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  background-color: #1c1c1c;
-  background: cover;
-  overflow: auto;
+  text-align: center;
+  overflow-x: auto;
 }
 
 
 /*****************************
 *        INVENTORY
 *****************************/
-#inventory {
+.controls {
   position: fixed;
   z-index: 50;
   top: 0;
   left: 0;
-  display: inline-block;
   margin: 10px;
+}
+
+.controls div .btn-audio {
+  border: 4px solid rgba(173, 216, 230, 0.726);
+  border-radius: 5px;
+  background-color:rgba(0, 0, 0, 0.3);  
+  width: 60px;
+  height: 60px;
+  color: #cdcdcd;
+  margin: 5px 0;
 }
 
 #inventory span {
@@ -267,6 +314,8 @@ h3 {
   height: 60px;
   line-height: 60px;
   border-radius: 10px;
+  margin: 5px 0;
+  display: block;
 }
 
 #inventory #gold-key {
@@ -280,67 +329,3 @@ h3 {
 /*****************************
 *      MEDIA QUERIES
 *****************************/
-
-/* Screens that start at 320px */
-@media (min-width: 320px) {
-  img {
-    max-height: 150px;
-    max-width: 70%;
-  }
-
-  span,
-  p {
-    font-size: 0.55rem;
-  }
-
-  button {
-    font-size: .8rem;
-    padding: 7px;
-    border: 3px solid #63C328;
-  }
-
-  /* Video */
-  .player {
-    padding-bottom: 45%;
-  }
-}
-
-/* Screens that start at 800px */
-@media (min-width: 800px) {
-
-  .App {
-    margin: 5px auto;
-  }
-
-  img {
-    height: 400px;
-    filter: blur(1px) opacity(80%) hue-rotate(240deg);
-  }
-
-  span,
-  p {
-    width: 85%;
-    font-size: 1.1rem;
-    line-height: 1.4;
-  }
-
-  #button-bar {
-    flex-direction: row;
-  }
-
-  button {
-    font-size: 1.2rem;
-  }
-
-  #root div.header-div {
-    height: 200px;
-  }
-
-  .main-style-header {
-    font-size: 45px; /* Changed for desktop */
-  }
-    
-  h3 {
-    font-size: 1.15rem; /* Changed for desktop */
-  }
-}
