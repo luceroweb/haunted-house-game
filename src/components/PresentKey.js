@@ -5,7 +5,6 @@ import gameWin from "../sounds/game-over-win.mp3";
 
 function PresentKey(props) {
   const [presentSilverKey, setPresentSilverKey] = useState(false);
-  const [play] = useSound(gameWin);
 
   return (
     <div className="btn-wrap">
@@ -24,7 +23,7 @@ function PresentKey(props) {
           hasGoldKey={props.hasGoldKey}
           hasSilverKey={props.hasSilverKey}
           setHasGoldKey={props.setHasGoldKey}
-          //   onClick={play}
+          audioOn={props.audioOn}
         />
       )}
     </div>
