@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
+import { Link } from 'react-router-dom'
 
 export const TrailerEmbed = () => {
     console.log(ReactPlayer)
@@ -19,7 +20,7 @@ export const TrailerEmbed = () => {
             </div>
             
             <div className="btn-wrap">
-                <a href="/startgame"><button>Are You Ready?</button></a>
+                <Link to="/startgame"><button>Are You Ready?</button></Link>
             </div>
         </div>
     )
