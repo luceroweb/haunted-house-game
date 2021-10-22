@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import RoomData from "./components/RoomData.js";
 import EventsData from "./components/EventsData";
@@ -18,7 +18,7 @@ function App() {
 	const [hasSilverKey, setHasSilverKey] = useState(false);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
     <div className="controls">
       <AudioMute audioOn={audioOn} setAudioOn={setAudioOn} />
       <Inventory
@@ -62,7 +62,7 @@ function App() {
           <GameWon />
         </Route>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
