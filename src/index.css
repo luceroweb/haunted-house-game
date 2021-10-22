@@ -50,7 +50,6 @@ body {
 #start-game,
 #hallway,
 #room,
-#game-won,
 #trailer-embed {
   display: flex;
   flex-direction: column;
@@ -61,6 +60,13 @@ body {
   padding: 5px;
   margin: auto;
   /* border: 1px solid red; */
+}
+
+#game-won {
+  justify-content: center;
+  align-items: space-around;
+  padding: 10px;
+  text-align: center;
 }
 
 /*****************************
@@ -109,6 +115,7 @@ body {
 
 .btn-wrap {
   margin: 5px 20px;
+  display: inline-block;
 }
 
 button {
@@ -152,7 +159,6 @@ button.backToHomeBtn {
 *          IMAGES
 *****************************/
 .img-wrap {
-  width: 80%;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -162,6 +168,7 @@ img {
   height: 300px;
   filter: opacity(80%) hue-rotate(240deg);
   border-radius: 10px;
+  margin: auto;
 }
 
 #key-display img {
@@ -239,7 +246,6 @@ p {
 @media (min-width: 800px) {
   span,
   p {
-    width: 85%;
     font-size: 1.1rem;
     line-height: 1.4;
   }
@@ -272,7 +278,7 @@ h3 {
   position: absolute;
   padding: 10px;
   margin: 0 auto;
-  width: 85vw;
+  width: 90%;
   border: 12px solid orange;
   height: 90%;
   z-index: 100;
@@ -280,18 +286,6 @@ h3 {
   text-align: center;
   overflow: auto;
 }
-
-/* .game-over-modal {
-  position: absolute;
-  margin: 0 auto;
-  padding: 10px;
-  width: 90%;
-  height: 90%;
-  z-index: 100;
-  background-color: #1c1c1c;
-  background: cover;
-  overflow: auto;
-} */
 
 
 /*****************************
