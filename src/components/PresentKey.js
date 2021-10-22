@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ShowKey from "./ShowKey";
 
 function PresentKey(props) {
@@ -6,7 +7,7 @@ function PresentKey(props) {
 
   return (
     <div className="btn-wrap">
-      <a href="/gamewon">
+      <Link to="/gamewon">
         <button
           className="presentKey"
           onClick={() => {
@@ -15,7 +16,7 @@ function PresentKey(props) {
         >
           Present Key
         </button>
-      </a>
+      </Link>
       {presentSilverKey && (
         <ShowKey
           hasGoldKey={props.hasGoldKey}
