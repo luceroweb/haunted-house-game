@@ -10,7 +10,7 @@ import GoldKeyMessage from "./GoldKeyMessage";
     }
     // real key and win
     else if (props.hasSilverKey) {
-      winMessage= <GameWon />
+      winMessage= <GameWon audioOn={props.audioOn} />
     }
     else {
       winMessage='';
