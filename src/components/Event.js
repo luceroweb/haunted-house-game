@@ -1,31 +1,54 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import GameOver from "./GameOver";
+import EventModal from "./EventModal";
 
+const Event = ({
+  event,
+  isGameOver,
+  setIsGameOver,
+  hasSilverKey,
+  hasGoldKey,
+  setHasGoldKey,
+  setHasSilverKey,
+  setShowDialog,
+  showDialog,
+  events,
+}) => {
+  const [action, setAction] = useState({});
+  const [selectedAction, setSelectedAction] = useState(-1);
+  const [hasChosenAction, setHasChosenAction] = useState(false);
+  const [deathNote, setDeathNote] = useState("");
 
+  const closeEvent = () => {
+    setShowDialog(false);
+  };
 
-const Event = ({ event }) => {
-    //const [event, setEvent] = useState();
-    const [action,setAction] = useState();
-    const [newEventDisplay, selectNewEventDisplay] = useState("");
-    //const [gamePlay, setGamePlay] = useState(game.display)
-    //const generateList = events.map((event, )) => {}
-    
-    //const selectedEvent = Random.selectEvent()
-  //setEvent(selectedEvent);
-        //setNewEventDisplay('');
-        console.log(event)
-  
-    return(
-      <div>
-        <h3>{event.name}</h3>
-        <img src= {event.image} />
-        <p>{event.description}</p>
-        {event.actions.map((action, i) => <button key={i} onClick={() =>{setAction(action)}}>{action.action}</button>)}
-      </div>
-    )
-};       
-    
-export default Event
+  return (
+    <>
+      {showDialog && (
+        <EventModal
+          event={event}
+          isGameOver={isGameOver}
+          setAction={setAction}
+          setSelectedAction={setSelectedAction}
+          selectedAction={selectedAction}
+          setHasSilverKey={setHasSilverKey}
+          setHasGoldKey={setHasGoldKey}
+          setIsGameOver={setIsGameOver}
+          hasGoldKey={hasGoldKey}
+          hasSilverKey={hasSilverKey}
+          closeEvent={closeEvent}
+          setDeathNote={setDeathNote}
+          setShowDialog={setShowDialog}
+          action={action}
+          hasChosenAction={hasChosenAction}
+          setHasChosenAction={setHasChosenAction}
+          events={events}
+        />
+      )}
+      <GameOver isGameOver={isGameOver} message={deathNote} />
+    </>
+  );
+};
 
-  
- 
-    
+export default Event;

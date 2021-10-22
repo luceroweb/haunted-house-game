@@ -1,5 +1,15 @@
+/* Importing the Press Start 2P font from google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+/*****************************
+*      SITE GLOBALS
+*****************************/
 *,
 *::after,
 *::before {
@@ -8,126 +18,315 @@
   box-sizing: border-box;
 }
 
-/*Header div*/
-#root div.header-div {
-  border: 5px dashed #63C328;
-  margin-bottom: 1em;
-}
-
-.main-style-header {
-  font-size: 40px;
-  font-weight: 700;
-}
-
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   /* Background Color */
   background-color: #1C1C1C;
+
   /* Primary font color */
   color: #EEEB27;
+
+  /* Font and text settings */
   font-size: 16px;
   font-family: 'Press Start 2P';
   text-shadow: 2px 2px #902EBB;
   line-height: 1.2;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-#root {
+  /* Setting viewport width and height */
   width:100vw;
-  height: 100vh;
-  margin: auto;
+  min-height: 100vh;
 }
 
-#root div {
+/*****************************
+*      PAGE GLOBALS
+*****************************/
+#root {
+  width: 95%;
+  margin: 0 auto;
   height: 100vh;
+  padding: 20px 0;
+}
+
+#start-game,
+#hallway,
+#room,
+#game-won,
+#trailer-embed {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 95%;
-  margin: auto;
-  padding: 20px 0;
+  width: 90%;
+  height: 100vh;
+  padding: 5px;
   /* border: 1px solid red; */
 }
 
-button {
+/*****************************
+*         HEADER
+*****************************/
+.header-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 5px dashed #63C328;
+  margin-bottom: 1em;
+  padding: 1rem;
+  margin-top: 0;
+  max-height: 310px;
+}
 
+.main-style-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.header-div h3 {
+  text-align: center;
+  font-size: .8rem;
+}
+
+@media (min-width: 800px) {
+  #root div.header-div {
+    height: 200px;
+  }
+
+  .main-style-header {
+    font-size: 45px; 
+  }
+}
+
+/*****************************
+*          BUTTONS
+*****************************/
+#button-bar {
+  display: flex;
+}
+
+.btn-wrap {
+  margin: 5px 20px;
+}
+
+button {
   border: 5px solid #63C328;
-  padding: 10px 10px;
+  padding: 10px;
   background-color: #cf7017;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: .6rem;
   font-family: 'Press Start 2P';
   color: rgba(0, 0, 0, 0.7);
-  /* width: 400px; */
   margin-bottom: .5rem;
+  cursor: pointer;
+  margin: 5px 20px;
 }
 
-img {
-  max-width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  object-position: center;
-  filter: opacity(80%) hue-rotate(240deg);
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-p {
-  font-size: .6rem;
-  text-align: center;
-  width: 90%;
-  margin-bottom: 1em;
-}
-
-h1 {
-  font-size: 1.5rem;
-  margin-bottom: .5rem;
+button.backToHomeBtn {
+  border: 5px solid #63C328;
+  color: #cf7017;
+  background-color: #000;
 }
 
 @media (min-width: 320px) {
-  p {
-    font-size: 0.55rem;
-  }
-
   button {
-    font-size: 1rem;
-  }
-
-  img {
-    max-height: 200px;
-    width: 70%;
-    object-position: center;
+    font-size: .8rem;
+    padding: 7px;
+    border: 3px solid #63C328;
   }
 }
 
 @media (min-width: 800px) {
-
-  .App {
-    margin: 5px auto;
+  #button-bar {
+    flex-direction: row;
   }
 
+  button {
+    font-size: 1.2rem;
+  }
+}
+
+/*****************************
+*          IMAGES
+*****************************/
+.img-wrap {
+  /* width: 80%; */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: 300px;
+  filter: opacity(80%) hue-rotate(240deg);
+  border-radius: 10px;
+}
+
+#key-display img {
+  filter: hue-rotate(0deg);
+}
+
+
+/* Screens that start at 320px */
+@media (min-width: 320px) {
+  img {
+    max-height: 150px;
+    max-width: 70%;
+  }
+}
+
+/* Screens that start at 800px */
+@media (min-width: 800px) {
   img {
     max-height: 400px;
     filter: blur(1px) opacity(80%) hue-rotate(240deg);
   }
+}
 
+
+/*****************************
+*          VIDEO
+*****************************/
+.player {
+  position: relative;
+  padding-top: 56.25%;
+  width: 100%;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media (min-width: 320px) {
+  Video
+  .player {
+    padding-bottom: 45%;
+  }
+}
+
+/*****************************
+*    PARAGRAPHS & SPANS
+*****************************/
+span,
+p {
+  /* Changing the text itself */
+  font-size: .6rem;
+  text-align: center;
+  margin-bottom: 1em;
+  /* width: 80%; */
+}
+
+/* Screens that start at 320px */
+@media (min-width: 320px) {
+  span,
+  p {
+    font-size: 0.55rem;
+  }
+}
+
+.event-modal p {
+  text-align: center;
+  margin: 0;
+}
+
+/* Screens that start at 800px */
+@media (min-width: 800px) {
+  span,
   p {
     width: 85%;
     font-size: 1.1rem;
     line-height: 1.4;
   }
+}
 
-  button {
-    font-size: 1.6rem;
+/*****************************
+*         HEADINGS
+*****************************/
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+h3 {
+  text-align: center;
+}
+
+@media (min-width: 800px) {    
+  h3 {
+    font-size: 1.15rem;
   }
 }
+
+/*****************************
+*          MODAL
+*****************************/
+/* .modal {
+  position: absolute;
+  margin: 0 auto;
+  padding: 10px;
+  width: 95%;
+  height: 93%;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  background-color: #1C1C1C;
+  border: 3px solid orange;
+} */
+
+.event-modal, .game-over-modal {
+  position: fixed;
+  padding: 10px;
+  margin: 0 auto;
+  width: 80vw;
+  border: 12px solid orange;
+  height: 90%;
+  z-index: 100;
+  background-color: #1c1c1c;
+  text-align: center;
+  overflow-x: auto;
+}
+
+
+/*****************************
+*        INVENTORY
+*****************************/
+.controls {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  margin: 10px;
+}
+
+.controls div .btn-audio {
+  border: 4px solid rgba(173, 216, 230, 0.726);
+  border-radius: 5px;
+  background-color:rgba(0, 0, 0, 0.3);  
+  width: 60px;
+  height: 60px;
+  color: #cdcdcd;
+  margin: 5px 0;
+}
+
+#inventory span {
+  display: block;
+  border: 2px solid orange;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 10px;
+  margin: 5px 0;
+  display: block;
+}
+
+#inventory #gold-key {
+  border-color: gold;
+}
+
+#inventory #silver-key {
+  border-color: silver;
+}
+
+/*****************************
+*      MEDIA QUERIES
+*****************************/
