@@ -70,9 +70,6 @@ function App() {
 						audioOn={audioOn}
 					/>
 				</Route>
-				<Route path="/gamewon">
-					<GameWon audioOn={audioOn} />
-				</Route>
 			</Switch>
 		</BrowserRouter>
 	);
