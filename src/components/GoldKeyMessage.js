@@ -3,7 +3,7 @@ import React from 'react'
 function GoldKeyMessage() {
     return (
         <div>
-            <p>Gold Key Message</p>
+            <p>False key presented</p>
         </div>
     )
 }
