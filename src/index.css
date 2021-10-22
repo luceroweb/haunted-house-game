@@ -148,7 +148,7 @@ button.backToHomeBtn {
 *          IMAGES
 *****************************/
 .img-wrap {
-  width: 80%;
+  /* width: 80%; */
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -213,7 +213,6 @@ p {
   font-size: .6rem;
   text-align: center;
   margin-bottom: 1em;
-  width: 80%;
 }
 
 /* Screens that start at 320px */
@@ -273,7 +272,8 @@ h3 {
   border: 3px solid orange;
 } */
 
-.event-modal {
+.event-modal, .game-over-modal {
+  position: fixed;
   padding: 10px;
   margin: 0 auto;
   width: 80vw;
@@ -282,19 +282,8 @@ h3 {
   z-index: 100;
   background-color: #1c1c1c;
   text-align: center;
+  overflow-x: auto;
 }
-
-/* .game-over-modal {
-  position: absolute;
-  margin: 0 auto;
-  padding: 10px;
-  width: 90%;
-  height: 90%;
-  z-index: 100;
-  background-color: #1c1c1c;
-  background: cover;
-  overflow: auto;
-} */
 
 
 /*****************************
