@@ -6,12 +6,9 @@ import EventsData from "./components/EventsData";
 import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
-import AudioDemo from "./components/AudioDemo";
-import DoorOpen from "./components/DoorOpen";
 import GameWon from "./components/GameWon";
 import AudioMute from "./components/AudioMute";
 import Inventory from "./components/Inventory";
-import FalseEnding from "./components/FalseEnding";
 
 function App() {
 	const rooms = RoomData;
@@ -42,9 +39,6 @@ function App() {
           <StartGame audioOn={audioOn} />
         </Route>
         <Route path="/hallway/:page">
-          <Hallway audioOn={audioOn} />
-        </Route>
-        <Route exact path="/hallway">
           <Hallway
             audioOn={audioOn}
             rooms={rooms}
