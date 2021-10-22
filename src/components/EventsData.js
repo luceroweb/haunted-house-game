@@ -48,7 +48,7 @@ const eventData = [
           { 
           type: "pass",
           action: "Tell her a joke to lighten the mood in the room.", 
-          response: "alternate response", //myles please add
+          response: "The ghost laughs at the joke and lets you go", //myles please add
           },
           { 
           type: "redo",
@@ -100,7 +100,7 @@ const eventData = [
         type: "pass",
         action: "Gun",
         response:
-          "alternate response", //myles please add
+          "The gun contains a silver bullet. You kill the werewolf and run out of the room", //myles please add
       },
       {
         type: "redo",
@@ -147,13 +147,13 @@ const eventData = [
         type: "fail",
         action: "Dodge",
         response:
-          "alternate response", //myles please add
+          "You stumble trying to dodge the zombie and you crack your head open and game over", //myles please add
       },
       {
         type: "pass",
         action: "Attack",
         response:
-          "alternate response", //myles please add
+          "You overpower the zombie in a test of strength and win the battle ", //myles please add
       },
       {
         type: "redo",
