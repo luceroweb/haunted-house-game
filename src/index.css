@@ -126,14 +126,6 @@ button.backToHomeBtn {
   background-color: #000;
 }
 
-/* .btn-audio {
-  border: 4px solid rgba(173, 216, 230, 0.726);
-  border-radius: 5px;
-  background-color:rgba(0, 0, 0, 0.3);  
-  width: 60px;
-  height: 60px;
-} */
-
 @media (min-width: 320px) {
   button {
     font-size: .8rem;
@@ -161,16 +153,12 @@ button.backToHomeBtn {
   text-align: center;
 }
 
-img{
-  border-radius: 10px;
-}
-
-/* img {
+img {
   max-width: 100%;
   height: 300px;
   filter: opacity(80%) hue-rotate(240deg);
   border-radius: 10px;
-} */
+}
 
 #key-display img {
   filter: hue-rotate(0deg);
@@ -236,6 +224,11 @@ p {
   }
 }
 
+.event-modal p {
+  text-align: center;
+  margin: 0;
+}
+
 /* Screens that start at 800px */
 @media (min-width: 800px) {
   span,
@@ -281,21 +274,17 @@ h3 {
 } */
 
 .event-modal {
-  position: absolute;
+  padding: 10px;
   margin: 0 auto;
-  padding: 0;
   width: 80vw;
   border: 12px solid orange;
   height: 90%;
   z-index: 100;
   background-color: #1c1c1c;
-  overflow: auto;
   text-align: center;
-  display: flex;
-  align-content: center;
 }
 
-.game-over-modal {
+/* .game-over-modal {
   position: absolute;
   margin: 0 auto;
   padding: 10px;
@@ -305,7 +294,7 @@ h3 {
   background-color: #1c1c1c;
   background: cover;
   overflow: auto;
-}
+} */
 
 
 /*****************************
