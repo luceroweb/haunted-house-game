@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useSound from "use-sound";
 import { gameOverWin, gameOverWinTwo } from "../sounds";
 import image from "../img/events/win.jpeg";
@@ -39,9 +40,9 @@ function GameWon() {
       </p>
 
       <div className="btn-wrap">
-        <a href="/">
+        <Link to="/">
           <button className="backToHomeBtn">Restart the Game</button>
-        </a>
+        </Link>
       </div>
       <Header />
     </div>

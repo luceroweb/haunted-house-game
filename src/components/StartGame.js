@@ -2,7 +2,6 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import useSound from "use-sound";
-
 import Header from "./Header";
 import house from "../img/rooms/house.jpeg";
 import { ambienceHauntedCave } from "../sounds";
