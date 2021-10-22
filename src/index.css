@@ -16,7 +16,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 body {
@@ -168,6 +168,9 @@ img {
   filter: hue-rotate(0deg);
 }
 
+.event-modal img {
+  filter: hue-rotate(0);
+}
 
 /* Screens that start at 320px */
 @media (min-width: 320px) {
