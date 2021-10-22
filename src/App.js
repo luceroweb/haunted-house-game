@@ -6,10 +6,7 @@ import EventsData from "./components/EventsData";
 import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
-import DoorOpen from "./components/DoorOpen";
-import GameWon from "./components/GameWon";
 import Inventory from "./components/Inventory";
-import FalseEnding from "./components/FalseEnding";
 import useSound from "use-sound";
 import { ambienceHauntedCave } from "./sounds";
 
