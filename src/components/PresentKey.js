@@ -1,26 +1,22 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ShowKey from "./ShowKey";
-import useSound from "use-sound";
-//import KeyDisplay from './KeyDisplay';
-import gameWin from "../sounds/game-over-win.mp3";
 
 function PresentKey(props) {
   const [presentSilverKey, setPresentSilverKey] = useState(false);
-  const [play] = useSound(gameWin);
 
   return (
     <div className="btn-wrap">
-      <a href="/gamewon">
+      <Link to="/gamewon">
         <button
           className="presentKey"
           onClick={() => {
             setPresentSilverKey(props.hasSilverKey ? true : false);
-            //   play()
           }}
         >
           Present Key
         </button>
-      </a>
+      </Link>
       {presentSilverKey && (
         <ShowKey
           hasGoldKey={props.hasGoldKey}

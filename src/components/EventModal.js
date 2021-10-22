@@ -51,7 +51,9 @@ function EventModal(props) {
         <div className="event-modal" id="event" onMouseEnter={()=>playSound()}>
           <div style={{ margin: "0" }}>
             <h3>{props.event.name}</h3>
-            <img src={props.event.image} alt="" />
+            <div className="img-wrap">
+              <img src={props.event.image} alt="" />
+            </div>
             <p>{props.event.description}</p>
             {props.event.actions.map((currentAction, i) => (
               <div key={i}>
@@ -84,6 +86,8 @@ function EventModal(props) {
                   setInformedOfSilverKey={setInformedOfSilverKey}
                   informedOfGoldKey={informedOfGoldKey}
                   informedOfSilverKey={informedOfSilverKey}
+                  event={props.event}
+                  events={props.events}
                 />
               </div>
             ))}
@@ -94,13 +98,12 @@ function EventModal(props) {
         !props.isGameOver &&
         informedOfSilverKey &&
         informedOfGoldKey && (
-          // !props.hasSilverKey &&
-          // !props.hasGoldKey && (
           <div className="event-modal" id="event">
             <div style={{ margin: "0" }}>
               <h3>{props.event.name}</h3>
-              <img src={props.event.image} alt="" />
-
+              <div className="img-wrap">
+                <img src={props.event.image} alt="" />
+              </div>
               <ResultAction
                 i={props.selectedAction}
                 action={props.action}
@@ -118,6 +121,8 @@ function EventModal(props) {
                 setInformedOfSilverKey={setInformedOfSilverKey}
                 informedOfGoldKey={informedOfGoldKey}
                 informedOfSilverKey={informedOfSilverKey}
+                event={props.event}
+                events={props.events}
               />
             </div>
           </div>
