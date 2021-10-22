@@ -213,7 +213,7 @@ p {
   font-size: .6rem;
   text-align: center;
   margin-bottom: 1em;
-  width: 80%;
+  /* width: 80%; */
 }
 
 /* Screens that start at 320px */
@@ -274,6 +274,7 @@ h3 {
 } */
 
 .event-modal {
+  position: absolute;
   padding: 10px;
   margin: 0 auto;
   width: 80vw;
@@ -284,7 +285,7 @@ h3 {
   text-align: center;
 }
 
-/* .game-over-modal {
+.game-over-modal {
   position: absolute;
   margin: 0 auto;
   padding: 10px;
@@ -294,7 +295,7 @@ h3 {
   background-color: #1c1c1c;
   background: cover;
   overflow: auto;
-} */
+}
 
 
 /*****************************
