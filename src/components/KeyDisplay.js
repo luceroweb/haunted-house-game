@@ -1,5 +1,4 @@
 import React from "react";
-import ShowKey from "./ShowKey";
 
 //images
 import silverKey from "../img/events/silver-key.jpg";

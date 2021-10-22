@@ -1,34 +1,32 @@
-import { useState } from 'react';
-import ShowKey from './ShowKey';
-//import KeyDisplay from './KeyDisplay';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import ShowKey from "./ShowKey";
 
 function PresentKey(props) {
-    const [presentSilverKey, setPresentSilverKey] = useState(false);
+  const [presentSilverKey, setPresentSilverKey] = useState(false);
 
-
-
-    
-    return (
-        <div className="btn-wrap">
-            <button 
-                className="presentKey" 
-                onClick={()=> {
-                    setPresentSilverKey(
-                        props.hasSilverKey ? true : false
-                        )
-                    }
-                }
-            >
-                Present Key
-            </button> 
-            {presentSilverKey && 
-            <ShowKey
-                hasGoldKey={props.hasGoldKey}
-                hasSilverKey={props.hasSilverKey}
-                setHasGoldKey={props.setHasGoldKey}
-            />}
-        </div>
-    )
+  return (
+    <div className="btn-wrap">
+      <Link to="/gamewon">
+        <button
+          className="presentKey"
+          onClick={() => {
+            setPresentSilverKey(props.hasSilverKey ? true : false);
+          }}
+        >
+          Present Key
+        </button>
+      </Link>
+      {presentSilverKey && (
+        <ShowKey
+          hasGoldKey={props.hasGoldKey}
+          hasSilverKey={props.hasSilverKey}
+          setHasGoldKey={props.setHasGoldKey}
+          //   onClick={play}
+        />
+      )}
+    </div>
+  );
 }
 
 export default PresentKey;
