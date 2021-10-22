@@ -8,12 +8,14 @@ function Room(props) {
   const [isGameOver, setIsGameOver] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
   const [beginEvent, setBeginEvent] = useState(true);
+  const [randomEvent, setRandomEvent] = useState({});
 
   const found = props.rooms.filter(
     (room) => room.name.toLowerCase() === name.toLowerCase()
   );
 
   const searchRoom = () => {
+    setRandomEvent(Random.selectEvent(props.events));
     setShowDialog(true);
     setBeginEvent(false);
   };
@@ -41,7 +43,7 @@ function Room(props) {
         </div>
       )}
       <Event
-        event={Random.selectEvent(props.events)}
+        event={randomEvent}
         isGameOver={isGameOver}
         setIsGameOver={setIsGameOver}
         hasGoldKey={props.hasGoldKey}
@@ -53,12 +55,13 @@ function Room(props) {
         setShowDialog={setShowDialog}
         showDialog={showDialog}
         events={props.events}
+        audioOn={props.audioOn}
       />
 
       {(!isGameOver || !props.hasSilverKey) && (
-        <a href="/">
+        <Link to="/">
           <button className="backToHomeBtn">Restart Game!</button>
-        </a>
+        </Link>
       )}
     </div>
   );

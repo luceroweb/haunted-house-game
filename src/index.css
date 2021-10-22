@@ -213,6 +213,7 @@ p {
   font-size: .6rem;
   text-align: center;
   margin-bottom: 1em;
+  /* width: 80%; */
 }
 
 /* Screens that start at 320px */

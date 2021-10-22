@@ -9,6 +9,8 @@ import PresentKey from "./PresentKey";
 const Hallway = (props) => {
 	const [playDoorCreak, doorCreakSoundData] = useSound(doorCreak, {
 		soundEnabled: props.audioOn,
+		volume: 0.80,
+		interrupt: true
 	});
 	let { page } = useParams();
 	page = parseInt(page || 0);
@@ -29,6 +31,7 @@ const Hallway = (props) => {
 		],
 	];
 
+	// stop doorCreak sound when speaker button is toggled off
 	if (!props.audioOn) {
 		doorCreakSoundData.stop();
 	}
@@ -50,7 +53,7 @@ const Hallway = (props) => {
 			/>
 			<div id="button-bar">
 				{page === 0 ? (
-					<Link to={`/hallway/${page - 1}`}>
+					<Link to={`/hallway/${page + 1}`}>
 						<button id="btn">Continue...</button>
 					</Link>
 				) : (
@@ -69,6 +72,7 @@ const Hallway = (props) => {
 					hasSilverKey={props.hasSilverKey}
 					setHasGoldKey={props.setHasGoldKey}
 					setHasSilverKey={props.setHasSilverKey}
+					audioOn={props.audioOn}
 				/>
 			)}
 		</div>
