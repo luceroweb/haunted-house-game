@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/haunted-house-game/static/css/main.72e51cc5.chunk.css",
-    "main.js": "/haunted-house-game/static/js/main.f5306db0.chunk.js",
-    "main.js.map": "/haunted-house-game/static/js/main.f5306db0.chunk.js.map",
+    "main.js": "/haunted-house-game/static/js/main.f7b0e7ad.chunk.js",
+    "main.js.map": "/haunted-house-game/static/js/main.f7b0e7ad.chunk.js.map",
     "runtime-main.js": "/haunted-house-game/static/js/runtime-main.b20db8f1.js",
     "runtime-main.js.map": "/haunted-house-game/static/js/runtime-main.b20db8f1.js.map",
-    "static/js/2.cdeb5f39.chunk.js": "/haunted-house-game/static/js/2.cdeb5f39.chunk.js",
-    "static/js/2.cdeb5f39.chunk.js.map": "/haunted-house-game/static/js/2.cdeb5f39.chunk.js.map",
+    "static/js/2.da1e2eb2.chunk.js": "/haunted-house-game/static/js/2.da1e2eb2.chunk.js",
+    "static/js/2.da1e2eb2.chunk.js.map": "/haunted-house-game/static/js/2.da1e2eb2.chunk.js.map",
     "static/js/3.52b1b5e0.chunk.js": "/haunted-house-game/static/js/3.52b1b5e0.chunk.js",
     "static/js/3.52b1b5e0.chunk.js.map": "/haunted-house-game/static/js/3.52b1b5e0.chunk.js.map",
     "static/js/4.e8e833b1.chunk.js": "/haunted-house-game/static/js/4.e8e833b1.chunk.js",
     "static/js/4.e8e833b1.chunk.js.map": "/haunted-house-game/static/js/4.e8e833b1.chunk.js.map",
     "index.html": "/haunted-house-game/index.html",
     "static/css/main.72e51cc5.chunk.css.map": "/haunted-house-game/static/css/main.72e51cc5.chunk.css.map",
-    "static/js/2.cdeb5f39.chunk.js.LICENSE.txt": "/haunted-house-game/static/js/2.cdeb5f39.chunk.js.LICENSE.txt",
+    "static/js/2.da1e2eb2.chunk.js.LICENSE.txt": "/haunted-house-game/static/js/2.da1e2eb2.chunk.js.LICENSE.txt",
     "static/js/3.52b1b5e0.chunk.js.LICENSE.txt": "/haunted-house-game/static/js/3.52b1b5e0.chunk.js.LICENSE.txt",
     "static/media/Chainsaw_Madman.5bcc66a1.jpg": "/haunted-house-game/static/media/Chainsaw_Madman.5bcc66a1.jpg",
     "static/media/Hall-option-1.b1154b66.jpg": "/haunted-house-game/static/media/Hall-option-1.b1154b66.jpg",
@@ -46,8 +46,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b20db8f1.js",
-    "static/js/2.cdeb5f39.chunk.js",
+    "static/js/2.da1e2eb2.chunk.js",
     "static/css/main.72e51cc5.chunk.css",
-    "static/js/main.f5306db0.chunk.js"
+    "static/js/main.f7b0e7ad.chunk.js"
   ]
 }
