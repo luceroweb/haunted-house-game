@@ -8,6 +8,7 @@ function Room(props) {
   const [isGameOver, setIsGameOver] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
   const [beginEvent, setBeginEvent] = useState(true);
+  const [hasEvent, setHasEvent] = useState([]);
 
   const found = props.rooms.filter(
     (room) => room.name.toLowerCase() === name.toLowerCase()
@@ -16,6 +17,12 @@ function Room(props) {
   const searchRoom = () => {
     setShowDialog(true);
     setBeginEvent(false);
+
+    rollEvent();
+  };
+
+  const rollEvent = () => {
+    setHasEvent(Random.selectEvent(props.events));
   };
 
   return (
@@ -40,8 +47,9 @@ function Room(props) {
           </Link>
         </div>
       )}
+      { hasEvent &&
       <Event
-        event={Random.selectEvent(props.events)}
+        event={hasEvent}
         isGameOver={isGameOver}
         setIsGameOver={setIsGameOver}
         hasGoldKey={props.hasGoldKey}
@@ -52,7 +60,10 @@ function Room(props) {
         beginEvent={beginEvent}
         setShowDialog={setShowDialog}
         showDialog={showDialog}
+        setHasEvent={setHasEvent}
       />
+    }
+          {localStorage.setItem('hasEvent', JSON.stringify(hasEvent))}
     </div>
   );
 }

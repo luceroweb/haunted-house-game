@@ -49,6 +49,8 @@ function EventModal(props) {
                       props.setSelectedAction(i);
                       if (currentAction.type !== "redo")
                         props.setHasChosenAction(true);
+                        // clear hasEvent state
+                        props.setHasEvent(false);
                     }}
                   >
                     {currentAction.action}
