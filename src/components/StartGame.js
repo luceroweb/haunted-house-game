@@ -1,17 +1,11 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
-import useSound from "use-sound";
 
 import Header from "./Header";
 import house from "../img/rooms/house.jpeg";
-import { ambienceHauntedCave } from "../sounds";
 
-export default function StartGame({ hallway, audioOn }) {
-	const [playAmbience, ambienceSoundData] = useSound(ambienceHauntedCave, {
-		soundEnabled: audioOn,
-		volume: 0.7,
-	});
+export default function StartGame({ hallway }) {
 	let { page } = useParams();
 	page = parseInt(page || 0);
 	const pages = [
@@ -27,12 +21,8 @@ export default function StartGame({ hallway, audioOn }) {
 		],
 	];
 
-	if (!audioOn) {
-		ambienceSoundData.stop();
-	}
-
 	return (
-		<div id="start-game" onMouseEnter={() => playAmbience()}>
+		<div id="start-game" >
 			{page === 0 && <Header />}
 			<img src={house} alt="" />
 			<Typewriter
