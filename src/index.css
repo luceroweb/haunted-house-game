@@ -16,6 +16,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  border: 1px solid red;
 }
 
 body {
@@ -33,7 +34,7 @@ body {
 
   /* Setting viewport width and height */
   width:100vw;
-  min-height: 100vh;
+  max-height: 100vh;
 }
 
 /*****************************
@@ -42,7 +43,7 @@ body {
 #root {
   width: 95%;
   margin: 0 auto;
-  height: 100vh;
+  max-height: 100vh;
   padding: 20px 0;
 }
 
@@ -54,10 +55,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 90%;
   height: 100vh;
   padding: 5px;
+  margin: auto;
   /* border: 1px solid red; */
 }
 
@@ -101,6 +103,8 @@ body {
 *****************************/
 #button-bar {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-wrap {
@@ -181,7 +185,6 @@ img {
   }
 }
 
-
 /*****************************
 *          VIDEO
 *****************************/
@@ -247,6 +250,7 @@ h1 {
   margin-bottom: .5rem;
 }
 
+h2,
 h3 {
   text-align: center;
 }
@@ -260,31 +264,31 @@ h3 {
 /*****************************
 *          MODAL
 *****************************/
-/* .modal {
+.event-modal,
+.game-over-modal {
   position: absolute;
-  margin: 0 auto;
-  padding: 10px;
-  width: 95%;
-  height: 93%;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  background-color: #1C1C1C;
-  border: 3px solid orange;
-} */
-
-.event-modal, .game-over-modal {
-  position: fixed;
   padding: 10px;
   margin: 0 auto;
-  width: 80vw;
+  width: 85vw;
   border: 12px solid orange;
   height: 90%;
   z-index: 100;
   background-color: #1c1c1c;
   text-align: center;
-  overflow-x: auto;
+  overflow: auto;
 }
+
+/* .game-over-modal {
+  position: absolute;
+  margin: 0 auto;
+  padding: 10px;
+  width: 90%;
+  height: 90%;
+  z-index: 100;
+  background-color: #1c1c1c;
+  background: cover;
+  overflow: auto;
+} */
 
 
 /*****************************
@@ -302,8 +306,8 @@ h3 {
   border: 4px solid rgba(173, 216, 230, 0.726);
   border-radius: 5px;
   background-color:rgba(0, 0, 0, 0.3);  
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   color: #cdcdcd;
   margin: 5px 0;
 }
@@ -311,9 +315,9 @@ h3 {
 #inventory span {
   display: block;
   border: 2px solid orange;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   border-radius: 10px;
   margin: 5px 0;
   display: block;
@@ -326,7 +330,3 @@ h3 {
 #inventory #silver-key {
   border-color: silver;
 }
-
-/*****************************
-*      MEDIA QUERIES
-*****************************/
