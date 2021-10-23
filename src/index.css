@@ -42,9 +42,8 @@ body {
 *****************************/
 #root {
   width: 95%;
-  margin: 0 auto;
-  max-height: 100vh;
-  padding: 20px 0;
+  margin: 20px auto;
+  max-height: calc(100vh - 40px);
 }
 
 #start-game,
@@ -54,12 +53,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 90%;
-  height: 100vh;
+  max-height: 100vh;
   padding: 5px;
-  margin: auto;
-  /* border: 1px solid red; */
+  /* margin: auto;
+  border: 1px solid red; */
 }
 
 #game-won {
