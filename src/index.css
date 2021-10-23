@@ -293,9 +293,11 @@ h3 {
 .controls {
   position: fixed;
   z-index: 50;
-  top: 0;
+  bottom: 0;
   left: 0;
   margin: 10px;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .controls div .btn-audio {
@@ -325,4 +327,15 @@ h3 {
 
 #inventory #silver-key {
   border-color: silver;
+}
+
+@media (min-width: 800px) {
+  .controls {
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    flex-direction: column;
+  }
 }
