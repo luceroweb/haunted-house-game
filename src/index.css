@@ -57,8 +57,8 @@ body {
   width: 90%;
   max-height: 100vh;
   padding: 5px;
-  /* margin: auto;
-  border: 1px solid red; */
+  margin: auto;
+  /* border: 1px solid red; */
 }
 
 #game-won {
