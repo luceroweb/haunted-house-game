@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import RoomData from "./components/RoomData.js";
 import EventsData from "./components/EventsData";
@@ -32,17 +32,18 @@ function App() {
 		}, 0);
 	}
 	return (
-		<BrowserRouter>
-			<div className="controls">
-				<Inventory
-					audioOn={audioOn}
-					setAudio={setAudio}
-					goldKey={hasGoldKey}
-					silverKey={hasSilverKey}
-				/>
-			</div>
+		<HashRouter>
+			<Inventory
+				audioOn={audioOn}
+				setAudio={setAudio}
+				goldKey={hasGoldKey}
+				silverKey={hasSilverKey}
+			/>
 			<Switch>
 				<Route exact path="/">
+					<StartGame />
+				</Route>
+				<Route exact path="/haunted-house-game">
 					<StartGame />
 				</Route>
 				<Route path="/startgame/:page">
@@ -70,7 +71,7 @@ function App() {
 					/>
 				</Route>
 			</Switch>
-		</BrowserRouter>
+		</HashRouter>
 	);
 }
 
