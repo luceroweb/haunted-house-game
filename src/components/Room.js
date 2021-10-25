@@ -64,12 +64,6 @@ function Room(props) {
         events={props.events}
         audioOn={props.audioOn}
       />
-
-      {(!isGameOver || !props.hasSilverKey) && (
-        <Link to="/">
-          <button className="backToHomeBtn">Restart Game!</button>
-        </Link>
-      )}
     </div>
   );
 }
