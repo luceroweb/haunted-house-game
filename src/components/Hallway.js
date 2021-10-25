@@ -9,8 +9,8 @@ import PresentKey from "./PresentKey";
 const Hallway = (props) => {
 	const [playDoorCreak, doorCreakSoundData] = useSound(doorCreak, {
 		soundEnabled: props.audioOn,
-		volume: 0.80,
-		interrupt: true
+		volume: 0.8,
+		interrupt: true,
 	});
 	let { page } = useParams();
 	page = parseInt(page || 0);
@@ -45,8 +45,9 @@ const Hallway = (props) => {
 			<Typewriter
 				options={{
 					strings: pages[page],
-					deleteSpeed: 10,
-					pauseFor: 3000,
+					delay: 1,
+					deleteSpeed: 1,
+					pauseFor: 5000,
 					autoStart: true,
 					loop: false,
 				}}
