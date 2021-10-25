@@ -23,15 +23,16 @@ export default function StartGame({ hallway }) {
 	let finalNumber = pageNumber;
 
 	return (
-		<div id="start-game" >
+		<div id="start-game">
 			{page === 0 && <Header />}
 			<img src={house} alt="" />
 			<Typewriter
 				style={{ textAlign: "left" }}
 				options={{
 					strings: pages[page],
-					deleteSpeed: 10,
-					pauseFor: 3000,
+					delay: 1,
+					deleteSpeed: 1,
+					pauseFor: 5000,
 					autoStart: true,
 					loop: false,
 				}}
