@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 import useSound from "use-sound";
 import { doorCreak } from "../sounds";
 import PresentKey from "./PresentKey";
-import PageNumber from './StartGame'
+import PageNumber from './PageNumber'
 
 const Hallway = (props) => {
 	const [playDoorCreak, doorCreakSoundData] = useSound(doorCreak, {
@@ -13,9 +13,7 @@ const Hallway = (props) => {
 		volume: 0.8,
 		interrupt: true,
 	});
-	function PageNumber() {  
-		return <div>{props.finalNumber}</div>;
-		}
+
 	let { page } = useParams();
 	page = parseInt(page || 0);
 
@@ -59,8 +57,7 @@ const Hallway = (props) => {
 			<div id="button-bar">
 				{page === 0 ? (
 					<Link to={`/hallway/${page + 1}`}>
-						<button id="btn">Continue...</button>
-						{PageNumber()}
+						<PageNumber/>
 					</Link>
 				) : (
 					props.rooms.map((room, index) => (
