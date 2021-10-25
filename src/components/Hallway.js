@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import img from "../img/rooms/Hall-option-1.jpg";
 import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import useSound from "use-sound";
 import { doorCreak } from "../sounds";
 import PresentKey from "./PresentKey";
+import Random from '../util/Random';
 
 const Hallway = (props) => {
 	const [playDoorCreak, doorCreakSoundData] = useSound(doorCreak, {
@@ -12,6 +13,8 @@ const Hallway = (props) => {
 		volume: 0.80,
 		interrupt: true
 	});
+	const [randomEvents, setRandomEvents] = useState(Random.selectRandomEvents(props.events));
+  const [randomEventsIndex, setRandomEventsIndex] = useState(0);
 	let { page } = useParams();
 	page = parseInt(page || 0);
 
@@ -31,10 +34,25 @@ const Hallway = (props) => {
 		],
 	];
 
+	/**
+	 * called when user clicks continue after passing an event
+	 * @listens onClick EventModal
+	 */
+	const onEventPass = () => {
+		if (randomEventsIndex >= randomEvents.length) {
+			setRandomEvents(Random.selectRandomEvents(props.events));
+		} else {
+			setRandomEventsIndex(randomEventsIndex + 1);
+		}
+	}
+
 	// stop doorCreak sound when speaker button is toggled off
 	if (!props.audioOn) {
 		doorCreakSoundData.stop();
 	}
+
+	// only need setOnEventPass to run once
+	useEffect(() => props.setOnEventPass(onEventPass), []);
 
 	return (
 		<div id="hallway">
@@ -58,7 +76,13 @@ const Hallway = (props) => {
 					</Link>
 				) : (
 					props.rooms.map((room, index) => (
-						<Link to={`/room/${room.name}`} key={index}>
+						<Link
+							to={{
+								pathname: `/room/${room.name}`,
+								state: { randomEvent: randomEvents[randomEventsIndex], events: randomEvents },		
+								}}
+							key={index}
+						>
 							<button id="btn" onClick={() => playDoorCreak()}>
 								{room.name}
 							</button>
