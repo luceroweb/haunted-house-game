@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import Header from "./Header";
@@ -19,6 +19,8 @@ export default function StartGame({ hallway }) {
 			`"Ooohh… I think I see some Skittles in the hallway!" Darla exclaims, pointing deeper into the darkened space just beyond the door.`,
 		],
 	];
+	const [pageNumber, setPageNumber] = useState(1);
+	let finalNumber = pageNumber;
 
 	return (
 		<div id="start-game" >
@@ -37,14 +39,22 @@ export default function StartGame({ hallway }) {
 			<div id="btn-wrap">
 				{page === 1 ? (
 					<Link to={`/hallway/0`}>
-						<button>Continue...</button>
+						<button
+						onClick= {() => setPageNumber(pageNumber + 1)}
+						>Continue...</button>
+						<div>Page {finalNumber} / 3</div>
 					</Link>
 				) : (
 					<Link to={`/startgame/${page + 1}`}>
-						<button>Continue...</button>
+						<button
+						onClick= {() => setPageNumber(pageNumber + 1)}
+						>Continue...</button>
+						<div>Page {finalNumber} / 3</div>
 					</Link>
 				)}
 			</div>
 		</div>
 	);
 }
+
+// onClick + 1
