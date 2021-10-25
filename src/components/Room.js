@@ -18,12 +18,6 @@ function Room(props) {
     setRandomEvent(Random.selectEvent(props.events));
     setShowDialog(true);
     setBeginEvent(false);
-
-    rollEvent();
-  };
-
-  const rollEvent = () => {
-    setHasEvent(Random.selectEvent(props.events));
   };
 
   return (
@@ -48,7 +42,6 @@ function Room(props) {
           </Link>
         </div>
       )}
-      { hasEvent &&
       <Event
         event={randomEvent}
         isGameOver={isGameOver}

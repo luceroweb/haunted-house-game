@@ -5,8 +5,12 @@ import useSound from "use-sound";
 import gameOverLose from "../sounds/game-over-lose.wav";
 import Header from "./Header";
 
-const FalseEnding = () => {
-	const [play] = useSound(gameOverLose);
+const FalseEnding = (props) => {
+	const [play] = useSound(gameOverLose, {
+		soundEnabled: props.audioOn,
+		volume: 0.25,
+		interrupt: true
+	  });
 	return (
 		<div id="false-ending" onMouseOverCapture={play}>
 			<Header />
