@@ -11,9 +11,7 @@ function GameWon() {
 
   return (
     <div id="game-won" onMouseOverCapture={play}>
-      {/* <button onClick={play}>Play</button> */}
-      {/* {play} */}
-
+      
       <div className="img-wrap">
         <img src={silverKey} alt="silver key" />
       </div>

@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import ShowKey from './ShowKey';
+import { useState } from "react";
+import ShowKey from "./ShowKey";
+import useSound from "use-sound";
 import gameWin from "../sounds/game-over-win.mp3";
 
 function PresentKey(props) {
@@ -13,7 +14,6 @@ function PresentKey(props) {
           className="presentKey"
           onClick={() => {
             setPresentSilverKey(props.hasSilverKey ? true : false);
-            //   play()
           }}
         >
           Present Key
@@ -24,7 +24,7 @@ function PresentKey(props) {
           hasGoldKey={props.hasGoldKey}
           hasSilverKey={props.hasSilverKey}
           setHasGoldKey={props.setHasGoldKey}
-          //   onClick={play}
+          onClick={play}
         />
       )}
     </div>
