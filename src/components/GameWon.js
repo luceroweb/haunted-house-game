@@ -12,7 +12,7 @@ function GameWon({ audioOn }) {
   const [randomAudio, setRandomAudio] = useState(Random.selectEvent([gameOverWin, gameOverWinTwo]));
   const [playGameOverWin, gameOverWinSoundData] = useSound(randomAudio, {
     soundEnabled: audioOn,
-    volume: 0.15,
+    volume: 0.05,
     interrupt: true
   });
  
