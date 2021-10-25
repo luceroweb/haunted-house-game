@@ -34,9 +34,9 @@ export default class Random {
  * @param {number} amount
  * @return {Array}
  * call this function by passsing an array and the number of random elements you want back.
- * ex: Random.selectRandomElements([ 1,2,3,4 ], 2) could return [ 2,5 ]
+ * ex: Random.selectRandomElements([ 1,2,3,4 ], 2) could return [ 2,1 ]
  */
-  static selectRandomElements(list, amount) {
+  static selectRandomElements(list, amount = list.length) {
   // limit amount to list length if user sends amount greater than list.length
   if (amount > list.length) {
     amount -= (amount - list.length);
@@ -56,6 +56,27 @@ export default class Random {
     randomList[randomIndex] = tmp;
   }
   return randomList;
+  }
+
+  /**
+   * Returns a shuffled events array with exclusive (non-repeating) event names.
+   * @param {Array} events
+   * @returns {Object} a random event
+   * call this function by passing the events array.
+   * ex: Random.selectRandomEvents(events) could return [{ name: 'zombie' }, { name: 'ghost' }, ...]
+   */
+  static selectRandomEvents(events) {
+    const eventNames = {};
+    const shuffledEvents = Random.selectRandomElements(events);
+    const exclusiveEvents = shuffledEvents.filter(event => {
+      if (!eventNames[event.name]) {
+        eventNames[event.name] = 1;
+        return true;
+      }
+      return false;
+    });
+
+    return exclusiveEvents;
   }
 }
 
