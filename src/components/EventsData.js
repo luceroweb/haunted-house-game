@@ -140,20 +140,19 @@ const eventData = [
   {
     name: "Zombie",
     description:
-      "A foul, grimy, diseased zombie in blood-stained, tattered clothing approaches you.",
+      "A foul, grimy, diseased zombie in blood-stained, tattered clothing approaches you, mouth agape.  The stench of death and decay hits you and...",
     image: zombie,
     actions: [
       {
         type: "fail",
         action: "Dodge",
         response:
-          "You stumble trying to dodge the zombie and you crack your head open and game over", //myles please add
-      },
+          "You dodge the zombie, but in the meelee you stumble and fall to the ground.  The zombie takes its opportunity to attack, making your brains its dinner.  "
       {
         type: "pass",
         action: "Attack",
         response:
-          "You overpower the zombie in a test of strength and win the battle ", //myles please add
+          "The zombie lumbers towards you, as he looms over you, you manage to reach out and push him away, overpowering the zombie in a test of strength."
       },
       {
         type: "redo",

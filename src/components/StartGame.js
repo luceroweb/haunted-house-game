@@ -9,7 +9,7 @@ export default function StartGame({ hallway }) {
 	page = parseInt(page || 0);
 	const pages = [
 		[
-			`The Bitwise React Apprentices were out trick or treating on a dark and windy Halloween eve, when they stumbled across a creepy, rundown home at the end of a half-built construction site. Juan, the leader of the group, walked up to the door, rang the doorbell and no one answered.`,
+			`The Bitwise React Apprentices were out trick or treating on a dark and windy Halloween eve, when they stumbled across a creepy, rundown home at the end of a half-built construction site. Juan, the leader of the group, walked up to the door, rang the doorbell but no one answered.`,
 			`He jiggled the door and it swung open.`,
 			`"Is there anyone home?" asks Myles. "Do you think they have Skittles?"`,
 		],
