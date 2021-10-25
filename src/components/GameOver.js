@@ -7,7 +7,7 @@ import { gameOverFail } from '../sounds';
 function GameOver(props) {
   const [playGameOverFail, gameOverFailSoundData] = useSound(gameOverFail, {
     soundEnabled: props.audioOn,
-    volume: 0.15,
+    volume: 0.05,
     interrupt: true
   });
 
