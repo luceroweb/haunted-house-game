@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import img from "../img/rooms/Hall-option-1.jpg";
 import { useParams, Link } from "react-router-dom";
 import useSound from "use-sound";
@@ -88,7 +88,12 @@ const Hallway = (props) => {
 					</Link>
 				) : (
 					props.rooms.map((room, index) => (
-						<Link to={`/room/${room.name}`} key={index}>
+						<Link
+							to={{
+								pathname: `/room/${room.name}`,		
+								}}
+							key={index}
+						>
 							<button id="btn" onClick={() => playDoorCreak()}>
 								{room.name}
 							</button>
