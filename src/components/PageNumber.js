@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const PageNumber = () => {
-    const [pageNumber, setPageNumber] = useState(1);
-    let finalNumber = pageNumber;
-    let localStorageResult = localStorage.getItem('page')
-    localStorage.setItem('page', finalNumber)
+const PageNumber = ({page, pages, title}) => {
     
     return (
         <div>
-            <div>Page {localStorageResult} / 3</div>
+            <div>{title} {page + 1} / {pages.length}</div>
         </div>
     )
 }
