@@ -35,8 +35,6 @@ function App() {
 		// setTimeout hack to place playAmbience() in back of event queue 
     setTimeout(() => {
 			playAmbience()
-			console.log(ambienceSoundData.sound);
-			// ambienceSoundData.sound?.loop();
 		}, 0);
 	}
 
