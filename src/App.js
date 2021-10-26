@@ -23,6 +23,8 @@ function App() {
 		volume: 0.15,
 		interrupt: true
 	});
+	const [onEventPass, setOnEventPass] = useState(null);
+
 	// stop ambience sound when speaker button is toggled off
 	if (!audioOn) {
 		ambienceSoundData.stop();
@@ -65,17 +67,19 @@ function App() {
 						hasGoldKey={hasGoldKey}
 						setHasSilverKey={setHasSilverKey}
 						setHasGoldKey={setHasGoldKey}
+						events={events}
+						setOnEventPass={setOnEventPass}
 					/>
 				</Route>
 				<Route path="/room/:name">
 					<Room
 						rooms={rooms}
-						events={events}
 						hasSilverKey={hasSilverKey}
 						hasGoldKey={hasGoldKey}
 						setHasSilverKey={setHasSilverKey}
 						setHasGoldKey={setHasGoldKey}
 						audioOn={audioOn}
+						onEventPass={onEventPass}
 					/>
 				</Route>
 				<Route path="/falseending">
