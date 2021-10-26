@@ -1,11 +1,10 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import Typewriter from "typewriter-effect";
 import Header from "./Header";
 import house from "../img/rooms/house.jpeg";
 import PageNumber from './PageNumber';
 
-export default function StartGame({ hallway }) {
+export default function StartGame() {
 	let { page } = useParams();
 	page = parseInt(page || 0);
 	const pages = [[], []];
@@ -14,17 +13,6 @@ export default function StartGame({ hallway }) {
 		<div id="start-game">
 			{page === 0 && <Header />}
 			<img src={house} alt="" />
-			{/* <Typewriter
-				style={{ textAlign: "left" }}
-				options={{
-					strings: pages[page],
-					delay: 1,
-					deleteSpeed: 1,
-					pauseFor: 5000,
-					autoStart: true,
-					loop: false,
-				}}
-			/> */}
 			{pages[page]}
 			{page === 0 && (
 				<div>
