@@ -1,16 +1,22 @@
 import GameWon from "./GameWon";
-import GoldKeyMessage from "./GoldKeyMessage";
+import FalseEnding from "./FalseEnding";
+import { useHistory } from "react-router-dom";
+
 
 // triggers when hasGoldKey or hasSilverKey are true
   export default function ShowKey (props) {
+
+    const history=useHistory();
+
     var winMessage = '';
     // fake key and keep playing
     if (props.hasGoldKey) {
-      <GoldKeyMessage /> 
+      
     }
     // real key and win
     else if (props.hasSilverKey) {
-      winMessage= <GameWon audioOn={props.audioOn} />
+      winMessage= history.push("/gamewon")
+
     }
     else {
       winMessage='';
@@ -20,7 +26,7 @@ import GoldKeyMessage from "./GoldKeyMessage";
         {winMessage}
         {props.hasGoldKey && 
         <>
-        <GoldKeyMessage /> 
+        <FalseEnding /> 
         <div className="btn-wrap">
           <button onClick={()=>props.setHasGoldKey(false)}>Keep trying</button>
         </div>

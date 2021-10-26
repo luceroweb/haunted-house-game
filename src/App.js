@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import RoomData from "./components/RoomData.js";
 import EventsData from "./components/EventsData";
 import StartGame from "./components/StartGame";
 import Hallway from "./components/Hallway";
 import Room from "./components/Room";
-import DoorOpen from "./components/DoorOpen";
-import GameWon from "./components/GameWon";
 import Inventory from "./components/Inventory";
-import FalseEnding from "./components/FalseEnding";
 import useSound from "use-sound";
 import { ambienceHauntedCave } from "./sounds";
+import GameWon from "./components/GameWon";
 
 function App() {
 	const rooms = RoomData;
@@ -35,7 +33,7 @@ function App() {
 		}, 0);
 	}
 	return (
-		<BrowserRouter>
+		<HashRouter>
 			<Inventory
 				audioOn={audioOn}
 				setAudio={setAudio}
@@ -44,6 +42,9 @@ function App() {
 			/>
 			<Switch>
 				<Route exact path="/">
+					<StartGame />
+				</Route>
+				<Route exact path="/haunted-house-game">
 					<StartGame />
 				</Route>
 				<Route path="/startgame/:page">
@@ -70,8 +71,11 @@ function App() {
 						audioOn={audioOn}
 					/>
 				</Route>
+				<Route path="/gamewon">
+					<GameWon />
+				</Route>
 			</Switch>
-		</BrowserRouter>
+		</HashRouter>
 	);
 }
 
