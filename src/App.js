@@ -9,6 +9,8 @@ import Room from "./components/Room";
 import Inventory from "./components/Inventory";
 import useSound from "use-sound";
 import { ambienceHauntedCave } from "./sounds";
+import FalseEnding from "./components/FalseEnding";
+import GameWon from "./components/GameWon";
 
 function App() {
 	const rooms = RoomData;
@@ -75,6 +77,12 @@ function App() {
 						setHasGoldKey={setHasGoldKey}
 						audioOn={audioOn}
 					/>
+				</Route>
+				<Route path="/falseending">
+					<FalseEnding/>
+				</Route>
+				<Route path="/gamewon">
+					<GameWon />
 				</Route>
 			</Switch>
 		</HashRouter>
