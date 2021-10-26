@@ -12,7 +12,8 @@ import { useHistory } from "react-router-dom";
     }
     // real key and win
     else if (props.hasSilverKey) {
-      winMessage= <GameWon audioOn={props.audioOn} />
+      winMessage= history.push("/gamewon")
+
     }
     else {
       winMessage='';
