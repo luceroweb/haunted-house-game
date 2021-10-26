@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import img from "../img/rooms/Hall-option-1.jpg";
 import { useParams, Link } from "react-router-dom";
 import useSound from "use-sound";
@@ -74,14 +74,15 @@ const Hallway = (props) => {
 			{page === 2 && <div>{pages[2]}</div>}
 			{page === 3 && <div>{pages[3]}</div>}
 			{page === 4 && <div>{pages[4]}</div>}
-			{page !== 4 && (
-				<div id="btn-wrap">
-					<Link to={`/hallwayreroute`}>
-						<button> Skip to Gameplay </button>
-					</Link>
-				</div>
-			)}
+			
 			<div id="button-bar">
+        {page !== 4 && (
+          <div className="btn-wrap">
+            <Link to={`/hallwayreroute`}>
+              <button> Skip to Gameplay </button>
+            </Link>
+          </div>
+        )}
 				{page !== 4 ? (
 					<Link to={`/hallway/${page + 1}`}>
 						<button id="btn">Continue Story</button>

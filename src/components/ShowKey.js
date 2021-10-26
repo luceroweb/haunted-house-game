@@ -1,5 +1,3 @@
-import GameWon from "./GameWon";
-import FalseEnding from "./FalseEnding";
 import { useHistory } from "react-router-dom";
 
 // triggers when hasGoldKey or hasSilverKey are true
@@ -22,11 +20,7 @@ import { useHistory } from "react-router-dom";
       <div>
         {winMessage}
         {props.hasGoldKey && 
-        history.push("/falseending")
-        
-        // <div className="btn-wrap">
-        //   <button onClick={()=>props.setHasGoldKey(false)}>Keep trying</button>
-        // </div>
+          history.push("/falseending")
         }
       </div>
     );

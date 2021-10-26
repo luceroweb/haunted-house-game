@@ -48,22 +48,24 @@ export default function StartGame({ setHasSilverKey, setHasGoldKey }) {
 			{page === 0 && <div>{pages[0]}</div>}
 			{page === 1 && <div>{pages[1]}</div>}
 
-			<div id="btn-wrap">
-				<Link to={`/hallwayreroute`}>
-					<button> Skip to Gameplay </button>
-				</Link>
-			</div>
-			<div id="btn-wrap">
-				{page === 1 ? (
-					<Link to={`/hallway/0`}>
-						<button>Continue Story</button>
-					</Link>
-				) : (
-					<Link to={`/startgame/${page + 1}`}>
-						<button>Continue Story</button>
-					</Link>
-				)}
-			</div>
+      <div id="btn-bar">
+        <div className="btn-wrap">
+          <Link to={`/hallwayreroute`}>
+            <button> Skip to Gameplay </button>
+          </Link>
+        </div>
+        <div className="btn-wrap">
+          {page === 1 ? (
+            <Link to={`/hallway/0`}>
+              <button>Continue Story</button>
+            </Link>
+          ) : (
+            <Link to={`/startgame/${page + 1}`}>
+              <button>Continue Story</button>
+            </Link>
+          )}
+        </div>
+      </div>
 			<PageNumber pages={pages} page={page} title="Start Game" />
 		</div>
 	);
