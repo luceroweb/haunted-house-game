@@ -18,7 +18,7 @@ const FalseEnding = ({setHasGoldKey}) => {
 			<Header />
 			<img id="gold-key" src={GoldKey} alt="" />
 
-      {falseEndingText}
+    {falseEndingText}
 			
 			<Link to="/hallwayreroute">
 				<button className="backToHomeBtn" onClick={() => setHasGoldKey(false)}>Keep Trying</button>
