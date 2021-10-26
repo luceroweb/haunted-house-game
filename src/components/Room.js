@@ -32,7 +32,7 @@ function Room(props) {
 
       {(!isGameOver || !props.hasSilverKey) && (
         <div className="btn-wrap">
-          <Link to="/hallway/4">
+          <Link to="/hallway/1">
             <button
               className="backToHomeBtn"
               onClick={() => setBeginEvent(true)}

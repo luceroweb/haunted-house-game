@@ -12,7 +12,7 @@ const FalseEnding = () => {
 			<Header />
 			<img src={GoldKey} alt="" />
 			<p>You were tricked by the alien, play again to win the Silver Key</p>
-			<Link to="/hallway/4">
+			<Link to="/hallway/1">
 				<button className="backToHomeBtn">Restart</button>
 			</Link>
 		</div>

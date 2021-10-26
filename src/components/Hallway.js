@@ -5,6 +5,7 @@ import Typewriter from "typewriter-effect";
 import useSound from "use-sound";
 import { doorCreak } from "../sounds";
 import PresentKey from "./PresentKey";
+import PageNumber from './PageNumber';
 
 const Hallway = (props) => {
 	const [playDoorCreak, doorCreakSoundData] = useSound(doorCreak, {
@@ -119,6 +120,11 @@ const Hallway = (props) => {
 					audioOn={props.audioOn}
 				/>
 			)}
+			<PageNumber
+				pages={pages}
+				page={page}
+				title='Hallway'
+			/>
 		</div>
 	);
 };

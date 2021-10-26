@@ -19,16 +19,16 @@ function App() {
 	const [hasSilverKey, setHasSilverKey] = useState(false);
 	const [playAmbience, ambienceSoundData] = useSound(ambienceHauntedCave, {
 		soundEnabled: audioOn,
-		volume: 0.2,
-		interrupt: true,
+		volume: 0.15,
+		interrupt: true
 	});
 	// stop ambience sound when speaker button is toggled off
 	if (!audioOn) {
 		ambienceSoundData.stop();
 	} else {
-		// setTimeout hack to place playAmbience() in back of event queue
-		setTimeout(() => {
-			playAmbience();
+		// setTimeout hack to place playAmbience() in back of event queue 
+    setTimeout(() => {
+			playAmbience()
 			// ambienceSoundData.sound?.loop();
 		}, 0);
 	}

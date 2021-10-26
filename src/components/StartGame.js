@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import Header from "./Header";
 import house from "../img/rooms/house.jpeg";
+import PageNumber from './PageNumber';
 
 export default function StartGame({ hallway }) {
 	let { page } = useParams();
@@ -70,6 +71,11 @@ export default function StartGame({ hallway }) {
 					</Link>
 				)}
 			</div>
+			<PageNumber
+				pages={pages}
+				page={page}
+				title='Start Game'
+			/>
 		</div>
 	);
 }
