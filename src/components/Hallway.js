@@ -76,7 +76,7 @@ const Hallway = (props) => {
 			{page === 4 && <div>{pages[4]}</div>}
 			{page !== 4 && (
 				<div id="btn-wrap">
-					<Link to={`/hallway/4`}>
+					<Link to={`/hallwayreroute`}>
 						<button> Skip to Gameplay </button>
 					</Link>
 				</div>

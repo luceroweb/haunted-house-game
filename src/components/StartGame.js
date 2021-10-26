@@ -42,7 +42,7 @@ export default function StartGame() {
 			{page === 1 && <div>{pages[1]}</div>}
 
 			<div id="btn-wrap">
-				<Link to={`/hallway/4`}>
+				<Link to={`/hallwayreroute`}>
 					<button> Skip to Gameplay </button>
 				</Link>
 			</div>
