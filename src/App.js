@@ -10,6 +10,7 @@ import Inventory from "./components/Inventory";
 import useSound from "use-sound";
 import { ambienceHauntedCave } from "./sounds";
 import GameWon from "./components/GameWon";
+import HallwayReroute from "./components/HallwayReroute";
 
 function App() {
 	const rooms = RoomData;
@@ -52,6 +53,16 @@ function App() {
 				</Route>
 				<Route path="/hallway/:page">
 					<Hallway
+						audioOn={audioOn}
+						rooms={rooms}
+						hasSilverKey={hasSilverKey}
+						hasGoldKey={hasGoldKey}
+						setHasSilverKey={setHasSilverKey}
+						setHasGoldKey={setHasGoldKey}
+					/>
+				</Route>
+				<Route path="/hallwayreroute">
+					<HallwayReroute
 						audioOn={audioOn}
 						rooms={rooms}
 						hasSilverKey={hasSilverKey}
