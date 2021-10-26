@@ -38,14 +38,16 @@ export default function StartGame({ hallway }) {
 			<div id="btn-wrap">
 				{page === 1 ? (
 					<Link to={`/hallway/0`}>
-						<PageNumber/>
 					</Link>
 				) : (
 					<Link to={`/startgame/${page + 1}`}>
-						<PageNumber/>
 					</Link>
 				)}
 			</div>
+			<PageNumber 
+			pages={pages}
+			title='Start Game'
+			/>
 		</div>
 	);
 }

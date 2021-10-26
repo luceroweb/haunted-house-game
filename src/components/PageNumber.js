@@ -8,9 +8,6 @@ const PageNumber = () => {
     
     return (
         <div>
-            <button
-            onClick={() => setPageNumber(finalNumber + 1)}
-            >Continue...</button>
             <div>Page {localStorageResult} / 3</div>
         </div>
     )

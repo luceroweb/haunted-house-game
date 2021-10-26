@@ -57,7 +57,6 @@ const Hallway = (props) => {
 			<div id="button-bar">
 				{page === 0 ? (
 					<Link to={`/hallway/${page + 1}`}>
-						<PageNumber/>
 					</Link>
 				) : (
 					props.rooms.map((room, index) => (
@@ -78,6 +77,10 @@ const Hallway = (props) => {
 					audioOn={props.audioOn}
 				/>
 			)}
+			<PageNumber 
+			pages={pages}
+			title='Hallway'
+			/>
 		</div>
 	);
 };
