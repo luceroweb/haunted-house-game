@@ -1,12 +1,19 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react/cjs/react.development";
 import Header from "./Header";
 import house from "../img/rooms/house.jpeg";
 import PageNumber from "./PageNumber";
 
-export default function StartGame() {
+export default function StartGame({ setHasSilverKey, setHasGoldKey }) {
 	let { page } = useParams();
 	page = parseInt(page || 0);
+
+  useEffect(() => {
+    setHasSilverKey(false);
+    setHasGoldKey(false);
+  });
+  
 	const pages = [
 		<div>
 			<p>
