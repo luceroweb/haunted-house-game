@@ -1,11 +1,10 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import Typewriter from "typewriter-effect";
 import Header from "./Header";
 import house from "../img/rooms/house.jpeg";
 import PageNumber from "./PageNumber";
 
-export default function StartGame({ hallway }) {
+export default function StartGame() {
 	let { page } = useParams();
 	page = parseInt(page || 0);
 	const pages = [
@@ -39,10 +38,11 @@ export default function StartGame({ hallway }) {
 			{page === 0 && <Header />}
 			<img src={house} alt="" />
 
-			{page === 0 && <div> {pages[0]} </div>}
+			{page === 0 && <div>{pages[0]}</div>}
 			{page === 1 && <div>{pages[1]}</div>}
+
 			<div id="btn-wrap">
-				<Link to={`/hallway/4`}>
+				<Link to={`/hallwayreroute`}>
 					<button> Skip to Gameplay </button>
 				</Link>
 			</div>

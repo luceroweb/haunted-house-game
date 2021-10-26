@@ -1,7 +1,6 @@
 import React from "react";
 import img from "../img/rooms/Hall-option-1.jpg";
 import { useParams, Link } from "react-router-dom";
-import Typewriter from "typewriter-effect";
 import useSound from "use-sound";
 import { doorCreak } from "../sounds";
 import PresentKey from "./PresentKey";
@@ -70,14 +69,14 @@ const Hallway = (props) => {
 			<div className="img-wrap">
 				<img className="hallway" src={img} alt="" />
 			</div>
-			{page === 0 && <div> {pages[0]} </div>}
+			{page === 0 && <div>{pages[0]}</div>}
 			{page === 1 && <div>{pages[1]}</div>}
-			{page === 2 && <div> {pages[2]} </div>}
+			{page === 2 && <div>{pages[2]}</div>}
 			{page === 3 && <div>{pages[3]}</div>}
 			{page === 4 && <div>{pages[4]}</div>}
 			{page !== 4 && (
 				<div id="btn-wrap">
-					<Link to={`/hallway/4`}>
+					<Link to={`/hallwayreroute`}>
 						<button> Skip to Gameplay </button>
 					</Link>
 				</div>
