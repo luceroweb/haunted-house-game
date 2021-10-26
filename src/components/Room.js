@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Event from "./Event";
 
 function Room(props) {
@@ -7,7 +7,6 @@ function Room(props) {
   const [isGameOver, setIsGameOver] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
   const [beginEvent, setBeginEvent] = useState(true);
-  const location = useLocation();
 
   const found = props.rooms.filter(
     (room) => room.name.toLowerCase() === name.toLowerCase()
@@ -44,7 +43,7 @@ function Room(props) {
         </div>
       )}
       <Event
-        event={location.state.randomEvent}
+        event={props.randomEvent}
         isGameOver={isGameOver}
         setIsGameOver={setIsGameOver}
         hasGoldKey={props.hasGoldKey}
@@ -55,7 +54,7 @@ function Room(props) {
         beginEvent={beginEvent}
         setShowDialog={setShowDialog}
         showDialog={showDialog}
-        events={location.state.events}
+        events={props.events}
         audioOn={props.audioOn}
       />
     </div>
