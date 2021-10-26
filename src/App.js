@@ -41,13 +41,19 @@ function App() {
 			/>
 			<Switch>
 				<Route exact path="/">
-					<StartGame />
+					<StartGame
+					setHasSilverKey={setHasSilverKey}
+					setHasGoldKey={setHasGoldKey} />
 				</Route>
 				<Route exact path="/haunted-house-game">
-					<StartGame />
+					<StartGame
+					setHasSilverKey={setHasSilverKey}
+					setHasGoldKey={setHasGoldKey} />
 				</Route>
 				<Route path="/startgame/:page">
-					<StartGame />
+					<StartGame
+					setHasSilverKey={setHasSilverKey}
+					setHasGoldKey={setHasGoldKey} />
 				</Route>
 				<Route path="/hallway/:page">
 					<Hallway
