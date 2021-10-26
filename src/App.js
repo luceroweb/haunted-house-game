@@ -9,6 +9,7 @@ import Room from "./components/Room";
 import Inventory from "./components/Inventory";
 import useSound from "use-sound";
 import { ambienceHauntedCave } from "./sounds";
+import Random from './util/Random';
 
 function App() {
 	const rooms = RoomData;
@@ -21,7 +22,8 @@ function App() {
 		volume: 0.15,
 		interrupt: true
 	});
-	const [onEventPass, setOnEventPass] = useState(null);
+	const [randomEvents, setRandomEvents] = useState(Random.selectRandomEvents(events));
+  const [randomEventsIndex, setRandomEventsIndex] = useState(0);
 
 	// stop ambience sound when speaker button is toggled off
 	if (!audioOn) {
@@ -30,9 +32,24 @@ function App() {
 		// setTimeout hack to place playAmbience() in back of event queue 
     setTimeout(() => {
 			playAmbience()
+			console.log(ambienceSoundData.sound);
 			// ambienceSoundData.sound?.loop();
 		}, 0);
 	}
+
+	/**
+	 * called when user clicks continue after passing an event
+	 * @listens onClick EventModal
+	 */
+	 const onEventPass = () => {
+		if (randomEventsIndex + 1 >= randomEvents.length) {
+			setRandomEvents(Random.selectRandomEvents(events));
+			setRandomEventsIndex(0);
+		} else {
+			setRandomEventsIndex(randomEventsIndex + 1);
+		}
+	}
+
 	return (
 		<HashRouter>
 			<Inventory
@@ -59,8 +76,6 @@ function App() {
 						hasGoldKey={hasGoldKey}
 						setHasSilverKey={setHasSilverKey}
 						setHasGoldKey={setHasGoldKey}
-						events={events}
-						setOnEventPass={setOnEventPass}
 					/>
 				</Route>
 				<Route path="/room/:name">
@@ -71,6 +86,8 @@ function App() {
 						setHasSilverKey={setHasSilverKey}
 						setHasGoldKey={setHasGoldKey}
 						audioOn={audioOn}
+						events={events}
+						randomEvent={randomEvents[randomEventsIndex]}
 						onEventPass={onEventPass}
 					/>
 				</Route>
