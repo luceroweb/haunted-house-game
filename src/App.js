@@ -111,7 +111,9 @@ function App() {
 					/>
 				</Route>
 				<Route path="/falseending">
-					<FalseEnding/>
+					<FalseEnding
+            setHasGoldKey={setHasGoldKey}
+          />
 				</Route>
 				<Route path="/gamewon">
 					<GameWon />
