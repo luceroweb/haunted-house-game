@@ -10,6 +10,8 @@ import Inventory from "./components/Inventory";
 import useSound from "use-sound";
 import { ambienceHauntedCave } from "./sounds";
 import Random from './util/Random';
+import FalseEnding from "./components/FalseEnding";
+import GameWon from "./components/GameWon";
 
 function App() {
 	const rooms = RoomData;
@@ -60,13 +62,19 @@ function App() {
 			/>
 			<Switch>
 				<Route exact path="/">
-					<StartGame />
+					<StartGame
+					setHasSilverKey={setHasSilverKey}
+					setHasGoldKey={setHasGoldKey} />
 				</Route>
 				<Route exact path="/haunted-house-game">
-					<StartGame />
+					<StartGame
+					setHasSilverKey={setHasSilverKey}
+					setHasGoldKey={setHasGoldKey} />
 				</Route>
 				<Route path="/startgame/:page">
-					<StartGame />
+					<StartGame
+					setHasSilverKey={setHasSilverKey}
+					setHasGoldKey={setHasGoldKey} />
 				</Route>
 				<Route path="/hallway/:page">
 					<Hallway
@@ -90,6 +98,12 @@ function App() {
 						randomEvent={randomEvents[randomEventsIndex]}
 						onEventPass={onEventPass}
 					/>
+				</Route>
+				<Route path="/falseending">
+					<FalseEnding/>
+				</Route>
+				<Route path="/gamewon">
+					<GameWon />
 				</Route>
 			</Switch>
 		</HashRouter>
