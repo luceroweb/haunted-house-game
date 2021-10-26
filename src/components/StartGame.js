@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { useEffect } from "react/cjs/react.development";
 import Header from "./Header";
 import house from "../img/rooms/house.jpeg";
 import PageNumber from "./PageNumber";
