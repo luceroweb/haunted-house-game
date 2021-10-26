@@ -1,21 +1,18 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Event from "./Event";
-import Random from "../util/Random";
 
 function Room(props) {
   const { name } = useParams();
   const [isGameOver, setIsGameOver] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
   const [beginEvent, setBeginEvent] = useState(true);
-  const [randomEvent, setRandomEvent] = useState({});
 
   const found = props.rooms.filter(
     (room) => room.name.toLowerCase() === name.toLowerCase()
   );
 
   const searchRoom = () => {
-    setRandomEvent(Random.selectEvent(props.events));
     setShowDialog(true);
     setBeginEvent(false);
   };
@@ -32,10 +29,13 @@ function Room(props) {
 
       {(!isGameOver || !props.hasSilverKey) && (
         <div className="btn-wrap">
-          <Link to="/hallway/1">
+          <Link to="/hallwayreroute">
             <button
               className="backToHomeBtn"
-              onClick={() => setBeginEvent(true)}
+              onClick={() => {
+                setBeginEvent(true);
+                props.onEventPass();
+              }}
             >
               Back to Hallway
             </button>
@@ -43,7 +43,7 @@ function Room(props) {
         </div>
       )}
       <Event
-        event={randomEvent}
+        event={props.randomEvent}
         isGameOver={isGameOver}
         setIsGameOver={setIsGameOver}
         hasGoldKey={props.hasGoldKey}
@@ -57,12 +57,6 @@ function Room(props) {
         events={props.events}
         audioOn={props.audioOn}
       />
-
-      {(!isGameOver || !props.hasSilverKey) && (
-        <Link to="/">
-          <button className="backToHomeBtn">Restart Game!</button>
-        </Link>
-      )}
     </div>
   );
 }

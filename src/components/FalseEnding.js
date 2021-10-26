@@ -1,19 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import GoldKey from "../img/events/gold-key.jpeg";
-import useSound from "use-sound";
-import gameOverLose from "../sounds/game-over-lose.wav";
+// import useSound from "use-sound";
+// import gameOverLose from "../sounds/game-over-lose.wav";
 import Header from "./Header";
 
-const FalseEnding = () => {
-	const [play] = useSound(gameOverLose);
+const FalseEnding = ({setHasGoldKey}) => {
+	// const [play] = useSound(gameOverLose);
+
+  const falseEndingText = <div>
+      <p>Juan takes the key out of his pocket and inserts it into the keyhole, but just as the tip of the key touches the lock, it smashes into the lock, the gold wrapping peels away and reveals semi-melted chocolate.</p>
+      <p>You were tricked by the alien, keep trying to win the Silver Key</p>
+    </div>
+
 	return (
-		<div id="false-ending" onMouseOverCapture={play}>
+		<div id="false-ending">
 			<Header />
-			<img src={GoldKey} alt="" />
-			<p>You were tricked by the alien, play again to win the Silver Key</p>
-			<Link to="/hallway/1">
-				<button className="backToHomeBtn">Restart</button>
+			<img id="gold-key" src={GoldKey} alt="" />
+
+      {falseEndingText}
+			
+			<Link to="/hallwayreroute">
+				<button className="backToHomeBtn" onClick={() => setHasGoldKey(false)}>Keep Trying</button>
 			</Link>
 		</div>
 	);
