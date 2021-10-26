@@ -40,15 +40,14 @@ const HallwayReroute = (props) => {
 					))
 				)}
 			</div>
-			{page === 1 && (
-				<PresentKey
+			{<PresentKey
 					hasGoldKey={props.hasGoldKey}
 					hasSilverKey={props.hasSilverKey}
 					setHasGoldKey={props.setHasGoldKey}
 					setHasSilverKey={props.setHasSilverKey}
 					audioOn={props.audioOn}
 				/>
-			)}
+			}
 		</div>
 	);
 };
