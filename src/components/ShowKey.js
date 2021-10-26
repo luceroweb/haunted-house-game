@@ -2,12 +2,9 @@ import GameWon from "./GameWon";
 import FalseEnding from "./FalseEnding";
 import { useHistory } from "react-router-dom";
 
-
 // triggers when hasGoldKey or hasSilverKey are true
   export default function ShowKey (props) {
-
-    const history=useHistory();
-
+    const history = useHistory();
     var winMessage = '';
     // fake key and keep playing
     if (props.hasGoldKey) {
@@ -25,12 +22,11 @@ import { useHistory } from "react-router-dom";
       <div>
         {winMessage}
         {props.hasGoldKey && 
-        <>
-        <FalseEnding /> 
-        <div className="btn-wrap">
-          <button onClick={()=>props.setHasGoldKey(false)}>Keep trying</button>
-        </div>
-        </>
+        history.push("/falseending")
+        
+        // <div className="btn-wrap">
+        //   <button onClick={()=>props.setHasGoldKey(false)}>Keep trying</button>
+        // </div>
         }
       </div>
     );

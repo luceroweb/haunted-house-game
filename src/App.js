@@ -9,6 +9,8 @@ import Room from "./components/Room";
 import Inventory from "./components/Inventory";
 import useSound from "use-sound";
 import { ambienceHauntedCave } from "./sounds";
+import Random from './util/Random';
+import FalseEnding from "./components/FalseEnding";
 import GameWon from "./components/GameWon";
 import HallwayReroute from "./components/HallwayReroute";
 
@@ -23,6 +25,9 @@ function App() {
 		volume: 0.15,
 		interrupt: true
 	});
+	const [randomEvents, setRandomEvents] = useState(Random.selectRandomEvents(events));
+  const [randomEventsIndex, setRandomEventsIndex] = useState(0);
+
 	// stop ambience sound when speaker button is toggled off
 	if (!audioOn) {
 		ambienceSoundData.stop();
@@ -30,9 +35,24 @@ function App() {
 		// setTimeout hack to place playAmbience() in back of event queue 
     setTimeout(() => {
 			playAmbience()
+			console.log(ambienceSoundData.sound);
 			// ambienceSoundData.sound?.loop();
 		}, 0);
 	}
+
+	/**
+	 * called when user clicks continue after passing an event
+	 * @listens onClick EventModal
+	 */
+	 const onEventPass = () => {
+		if (randomEventsIndex + 1 >= randomEvents.length) {
+			setRandomEvents(Random.selectRandomEvents(events));
+			setRandomEventsIndex(0);
+		} else {
+			setRandomEventsIndex(randomEventsIndex + 1);
+		}
+	}
+
 	return (
 		<HashRouter>
 			<Inventory
@@ -43,13 +63,19 @@ function App() {
 			/>
 			<Switch>
 				<Route exact path="/">
-					<StartGame />
+					<StartGame
+					setHasSilverKey={setHasSilverKey}
+					setHasGoldKey={setHasGoldKey} />
 				</Route>
 				<Route exact path="/haunted-house-game">
-					<StartGame />
+					<StartGame
+					setHasSilverKey={setHasSilverKey}
+					setHasGoldKey={setHasGoldKey} />
 				</Route>
 				<Route path="/startgame/:page">
-					<StartGame />
+					<StartGame
+					setHasSilverKey={setHasSilverKey}
+					setHasGoldKey={setHasGoldKey} />
 				</Route>
 				<Route path="/hallway/:page">
 					<Hallway
@@ -74,13 +100,18 @@ function App() {
 				<Route path="/room/:name">
 					<Room
 						rooms={rooms}
-						events={events}
 						hasSilverKey={hasSilverKey}
 						hasGoldKey={hasGoldKey}
 						setHasSilverKey={setHasSilverKey}
 						setHasGoldKey={setHasGoldKey}
 						audioOn={audioOn}
+						events={events}
+						randomEvent={randomEvents[randomEventsIndex]}
+						onEventPass={onEventPass}
 					/>
+				</Route>
+				<Route path="/falseending">
+					<FalseEnding/>
 				</Route>
 				<Route path="/gamewon">
 					<GameWon />
