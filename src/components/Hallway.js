@@ -77,11 +77,11 @@ const Hallway = (props) => {
 			
 			<div id="button-bar">
         {page !== 4 && (
-          <div className="btn-wrap">
-            <Link to={`/hallwayreroute`}>
-              <button> Skip to Gameplay </button>
-            </Link>
-          </div>
+			<div className="btn-wrap">
+				<Link to={`/hallwayreroute`}>
+					<button> Skip to Gameplay </button>
+				</Link>
+			</div>
         )}
 				{page !== 4 ? (
 					<Link to={`/hallway/${page + 1}`}>
