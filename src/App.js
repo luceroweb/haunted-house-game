@@ -74,12 +74,6 @@ function App() {
 
 	return (
 		<HashRouter>
-			<Inventory
-				audioOn={audioOn}
-				setAudio={setAudio}
-				goldKey={hasGoldKey}
-				silverKey={hasSilverKey}
-			/>
 			<Switch>
 				<Route exact path="/">
 					<StartGame
@@ -141,6 +135,12 @@ function App() {
 					<GameWon onGameOver={onGameOver}/>
 				</Route>
 			</Switch>
+			<Inventory
+				audioOn={audioOn}
+				setAudio={setAudio}
+				goldKey={hasGoldKey}
+				silverKey={hasSilverKey}
+			/>
 		</HashRouter>
 	);
 }

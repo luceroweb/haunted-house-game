@@ -59,7 +59,8 @@ body {
   width: 90%;
   max-height: 100vh;
   padding: 5px;
-  margin: 60px auto;
+  margin: auto;
+  padding-bottom: 60px;
 }
 
 @media (min-width: 800px) {
@@ -69,7 +70,7 @@ body {
   #trailer-embed,
   #false-ending,
   #game-won {
-    margin: 0 auto;
+    margin: auto;
   }
 }
 
@@ -246,8 +247,8 @@ h3 {
   margin: 0 auto;
   width: 84%;
   border: 12px solid orange;
-  height: 90%;
-  z-index: 200;
+  /* height: 90%; */
+  /* z-index: 200; */
   background-color: #1c1c1c;
   text-align: center;
   overflow: auto;
@@ -259,7 +260,7 @@ h3 {
 #inventory {
   position: fixed;
   z-index: 100;
-  top: 0;
+  bottom: 0;
   left: 0;
   margin: 10px auto;
   display: flex;
