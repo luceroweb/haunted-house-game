@@ -32,7 +32,7 @@ function GameWon({ audioOn }) {
 
   return (
     <div id="game-won">
-      
+      <Header />      
       <div className="img-wrap">
         <img src={silverKey} alt="silver key" />
       </div>
@@ -48,7 +48,6 @@ function GameWon({ audioOn }) {
           <button className="backToHomeBtn">Restart the Game</button>
         </Link>
       </div>
-      <Header />
     </div>
   );
 }
