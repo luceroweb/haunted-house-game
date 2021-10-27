@@ -102,9 +102,7 @@ const Hallway = (props) => {
 					))
 				)}
 			</div>
-			{page === 4 &&
-			(props.hasGoldKey || props.hasSilverKey) &&
-			(
+			{page === 4 && (props.hasGoldKey || props.hasSilverKey) && (
 				<PresentKey
 					hasGoldKey={props.hasGoldKey}
 					hasSilverKey={props.hasSilverKey}

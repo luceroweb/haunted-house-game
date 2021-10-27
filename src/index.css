@@ -33,19 +33,15 @@ body {
   line-height: 1.2;
 
   /* Setting viewport width and height */
-  width:100vw;
+  width: 95%;
+  margin: 20px auto;
+  max-height: calc(100vh - 80px);
+  overflow-x: auto;
 }
 
 /*****************************
 *      PAGE GLOBALS
 *****************************/
-#root {
-  width: 95%;
-  margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
 
 #start-game,
 #hallway,
@@ -58,6 +54,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   width: 90%;
+  height: calc(100% - 60px);
   padding: 5px;
   margin: auto;
 }
@@ -259,14 +256,14 @@ h3 {
 #inventory {
   /* position: absolute; */
   z-index: 100;
-  /* bottom: 0; */
-  /* left: 0; */
-  margin: 10px auto;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   width: 100%;
-  align-self: flex-end;
-  /* border: 1px solid red; */
+  background: #000;
+  border-top: solid 3px #FFF;
 }
 
 #inventory > div {
@@ -309,7 +306,11 @@ h3 {
     z-index: 50;
     top: 0;
     left: 0;
+    bottom: auto;
     margin: 10px;
     flex-direction: column;
+    background: none;
+    border-top: none;
+    width: 50px;
   }
 }
