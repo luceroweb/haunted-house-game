@@ -7,7 +7,7 @@ import Header from "./Header";
 import silverKey from "../img/events/silver-key.jpg";
 import Random from "../util/Random";
 
-function GameWon({ audioOn }) {
+function GameWon({ audioOn, onGameOver }) {
   // useState to prevent infinite loop bug when passing random sounds to useSound
   const [playGameOverWin, gameOverWinSoundData] = useSound(Random.selectEvent([gameOverWin, gameOverWinTwo]), {
     soundEnabled: audioOn,
@@ -45,7 +45,7 @@ function GameWon({ audioOn }) {
 
       <div className="btn-wrap">
         <Link to="/">
-          <button className="backToHomeBtn">Restart the Game</button>
+          <button className="backToHomeBtn" onClick={onGameOver}>Restart the Game</button>
         </Link>
       </div>
       <Header />
