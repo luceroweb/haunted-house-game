@@ -4,7 +4,7 @@ import Header from "./Header";
 import house from "../img/rooms/house.jpeg";
 import PageNumber from "./PageNumber";
 
-export default function StartGame({ setHasSilverKey, setHasGoldKey }) {
+export default function StartGame({ setHasSilverKey, setHasGoldKey, onStartGame }) {
 	let { page } = useParams();
 	page = parseInt(page || 0);
 
@@ -50,7 +50,7 @@ export default function StartGame({ setHasSilverKey, setHasGoldKey }) {
       <div id="btn-bar">
         <div className="btn-wrap">
           <Link to={`/hallwayreroute`}>
-            <button> Skip to Gameplay </button>
+            <button onClick={onStartGame}> Skip to Gameplay </button>
           </Link>
         </div>
         <div className="btn-wrap">
@@ -60,7 +60,7 @@ export default function StartGame({ setHasSilverKey, setHasGoldKey }) {
             </Link>
           ) : (
             <Link to={`/startgame/${page + 1}`}>
-              <button>Continue Story</button>
+              <button onClick={onStartGame}>Continue Story</button>
             </Link>
           )}
         </div>
