@@ -20,7 +20,7 @@ function App() {
 	const [hasSilverKey, setHasSilverKey] = useState(false);
 	const [playAmbience, ambienceSoundData] = useSound(ambienceHauntedCave, {
 		soundEnabled: audioOn,
-		volume: 0.15,
+		volume: 0.30,
 		interrupt: true
 	});
 	// stop ambience sound when speaker button is toggled off
