@@ -9,7 +9,7 @@ import PageNumber from "./PageNumber";
 const Hallway = (props) => {
 	const [playDoorCreak, doorCreakSoundData] = useSound(doorCreak, {
 		soundEnabled: props.audioOn,
-		volume: 0.8,
+		volume: 0.1,
 		interrupt: true,
 	});
 	let { page } = useParams();
@@ -102,7 +102,7 @@ const Hallway = (props) => {
 					))
 				)}
 			</div>
-			{page === 4 && (
+			{page === 4 && (props.hasGoldKey || props.hasSilverKey) && (
 				<PresentKey
 					hasGoldKey={props.hasGoldKey}
 					hasSilverKey={props.hasSilverKey}
