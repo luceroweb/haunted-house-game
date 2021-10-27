@@ -33,18 +33,15 @@ body {
   line-height: 1.2;
 
   /* Setting viewport width and height */
-  width:100vw;
-  max-height: 100vh;
+  width: 95%;
+  margin: 20px auto;
+  max-height: calc(100vh - 80px);
+  overflow-x: auto;
 }
 
 /*****************************
 *      PAGE GLOBALS
 *****************************/
-#root {
-  width: 95%;
-  margin: 20px auto;
-  max-height: calc(100vh - 40px);
-}
 
 #start-game,
 #hallway,
@@ -57,7 +54,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   width: 90%;
-  max-height: 100vh;
+  height: calc(100% - 60px);
   padding: 5px;
   margin: auto;
   padding-bottom: 60px;
@@ -262,10 +259,12 @@ h3 {
   z-index: 100;
   bottom: 0;
   left: 0;
-  margin: 10px auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   width: 100%;
+  background: #000;
+  border-top: solid 3px #FFF;
 }
 
 #inventory > div {
@@ -308,7 +307,11 @@ h3 {
     z-index: 50;
     top: 0;
     left: 0;
+    bottom: auto;
     margin: 10px;
     flex-direction: column;
+    background: none;
+    border-top: none;
+    width: 50px;
   }
 }
