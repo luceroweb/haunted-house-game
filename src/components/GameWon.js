@@ -32,7 +32,7 @@ function GameWon({ audioOn, onGameOver }) {
 
   return (
     <div id="game-won">
-      
+      <Header />      
       <div className="img-wrap">
         <img src={silverKey} alt="silver key" />
       </div>
@@ -48,7 +48,6 @@ function GameWon({ audioOn, onGameOver }) {
           <button className="backToHomeBtn" onClick={onGameOver}>Restart the Game</button>
         </Link>
       </div>
-      <Header />
     </div>
   );
 }
