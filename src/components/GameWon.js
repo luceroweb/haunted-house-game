@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link }from 'react-router-dom';
 import useSound from "use-sound";
 import { gameOverWin, gameOverWinTwo } from "../sounds";
@@ -7,12 +7,11 @@ import Header from "./Header";
 import silverKey from "../img/events/silver-key.jpg";
 import Random from "../util/Random";
 
-function GameWon({ audioOn }) {
+function GameWon({ audioOn, onGameOver }) {
   // useState to prevent infinite loop bug when passing random sounds to useSound
-  const [randomAudio, setRandomAudio] = useState(Random.selectEvent([gameOverWin, gameOverWinTwo]));
-  const [playGameOverWin, gameOverWinSoundData] = useSound(randomAudio, {
+  const [playGameOverWin, gameOverWinSoundData] = useSound(Random.selectEvent([gameOverWin, gameOverWinTwo]), {
     soundEnabled: audioOn,
-    volume: 0.15,
+    volume: 0.05,
     interrupt: true
   });
  
@@ -22,6 +21,14 @@ function GameWon({ audioOn }) {
     // setTimeout hack to place playGameOverWin() in back of event queue 
     setTimeout(() => playGameOverWin(), 0);
   }
+
+  const gameWonText = <div>
+    <p>You return to the group with the key. The cage containing Juan and the rest of the team lifts. The team rushes out of the cage, and passes you to the door. As you hold out the key, the group parts and you spot the door. You insert the key into the keyhole and turn. As the door unlocks, you push the heavy door open. Fresh air rushes past you and into the house. You and the team spill out into the street as you spot a figure strolling up the street to the house.</p>
+
+    <p>“Irma?! What are you doing here?!” Eyob questions.</p>
+
+    <p>“Hi everyone. You’re early for the Bitwise Haunted House!” Irma says, a smile plastered on her face as she points to the small “Bitwise Industries” sign just above the doorway.</p>
+  </div>
 
   return (
     <div id="game-won">
@@ -34,27 +41,11 @@ function GameWon({ audioOn }) {
         <img src={image} alt="" />
       </div>
 
-      <p>
-        You return to the group with the key. The cage containing Juan and the
-        rest of the team lifts. The team rushes out of the cage, and passes you
-        to the door. As you hold out the key, the group parts and you spot the
-        door. You insert the key into the keyhole and turn. As the door unlocks,
-        you push the heavy door open. Fresh air rushes past you and into the
-        house. You and the team spill out into the street as you spot a figure
-        strolling up the street to the house.
-      </p>
-
-      <p>“Irma?! What are you doing here?!” Eyob questions.</p>
-
-      <p>
-        “Hi everyone. You’re early for the Bitwise Haunted House!” Irma says, a
-        smile plastered on her face as she points to the small “Bitwise
-        Industries” sign just above the doorway.
-      </p>
+      {gameWonText}
 
       <div className="btn-wrap">
         <Link to="/">
-          <button className="backToHomeBtn">Restart the Game</button>
+          <button className="backToHomeBtn" onClick={onGameOver}>Restart the Game</button>
         </Link>
       </div>
       <Header />

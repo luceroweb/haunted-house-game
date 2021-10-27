@@ -1,7 +1,6 @@
 const AltResult = (props) => {
 	const alternateResponse = () => {
 		const playerRoll = Math.random() * 50;
-		console.log(playerRoll);
 		  if(playerRoll > props.altAction.chance){
 			props.setIsAlternate(true);
             return true;
