@@ -56,6 +56,7 @@ function Room(props) {
         showDialog={showDialog}
         events={props.events}
         audioOn={props.audioOn}
+        onGameOver={props.onGameOver}
       />
     </div>
   );

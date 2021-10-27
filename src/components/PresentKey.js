@@ -9,7 +9,7 @@ function PresentKey(props) {
     <div>
       <div className="btn-wrap">
         <button
-          className="presentKey"
+          className="presentKey backToHomeBtn"
           onClick={() => {
             setPresentedKey(true);
           }}

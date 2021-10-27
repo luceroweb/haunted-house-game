@@ -9,7 +9,7 @@ import PageNumber from "./PageNumber";
 const Hallway = (props) => {
 	const [playDoorCreak, doorCreakSoundData] = useSound(doorCreak, {
 		soundEnabled: props.audioOn,
-		volume: 0.8,
+		volume: 0.1,
 		interrupt: true,
 	});
 	let { page } = useParams();

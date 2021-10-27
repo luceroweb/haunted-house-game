@@ -40,8 +40,8 @@ const HallwayReroute = (props) => {
 					))
 				)}
 			</div>
-			{(props.hasGoldKey || props.hasSilverKey) &&
-				<PresentKey
+			{ (props.hasGoldKey || props.hasSilverKey) &&
+        <PresentKey
 					hasGoldKey={props.hasGoldKey}
 					hasSilverKey={props.hasSilverKey}
 					setHasGoldKey={props.setHasGoldKey}
