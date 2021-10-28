@@ -6,7 +6,6 @@ import clownPuppet from "../img/events/puppet-clown.jpg";
 import chainsawMurderer from "../img/events/Chainsaw_Madman.jpg";
 import skittles from "../img/events/skittles.jpg";
 import talkingHeads from "../img/events/talking-heads.jpg";
-import crystalOrbs from "../img/events/glowing-orbs.jpg";
 import alien from "../img/events/alien.jpg";
 
 const eventData = [
@@ -60,7 +59,7 @@ const eventData = [
     {
       name: "Werewolf",
       description:
-        "A snarling and ravenous werewolf attacks you from behind. You barely evade it. Just out your reach, you spot a gun, a haymaker, and a candlestick. You only have time to get to one.",
+        "A snarling and ravenous werewolf attacks you from behind. You barely evade it. Just out of your reach, you spot a gun, a haymaker, and a candlestick. You only have time to get to one.",
       image: werewolf,
       actions: [
         {
@@ -94,13 +93,13 @@ const eventData = [
         type: "pass",
         action: "Candlestick",
         response:
-          "You barely connect with the candlestick, but luckily it is made out of silver.  The werewolf is severely wounded and loses consciousness.  You escape unscathed and can continue your search for the key.",
+          "You barely connect with the candlestick, but luckily it is made out of silver.  The werewolf is severely wounded and loses consciousness.  You escape unscathed.",
       },
       {
         type: "pass",
         action: "Gun",
         response:
-          "The gun contains a silver bullet. You kill the werewolf and run out of the room", //myles please add
+          "The gun contains a silver bullet. As you pull the trigger, the gun recoils and a shot echos through the dusty space.  The werewolf falls to the floor in a large heap of fur.  Your are free.",
       },
       {
         type: "redo",
@@ -120,7 +119,7 @@ const eventData = [
         type: "pass",
         action: "Dodge",
         response:
-          "You dodge the zombie, and in the chaos, it stumbles and smashes it’s head open. You escape the zombie and continue to search for the silver key.",
+          "You dodge the zombie, and in the chaos, it stumbles and smashes it’s head open. You escape the zombie before he made your brains his dinner.",
       },
       {
         type: "fail",
@@ -184,7 +183,7 @@ const eventData = [
         type: "redo",
         action: "Take a closer look.",
         response:
-          "As the clown head finishes turning, you look down at its hand and you notice a small object.  You lunge to attack the clown puppet, and as you do it drops the object and smoke fills the room, allowing you to choose another way to overcome the clown puppet.",
+          "As the clown head finishes turning, you look down at its hand and you notice a small object.  You lunge to attack the clown puppet, and as you do it drops the object and smoke fills the room, allowing you an opportunity to choose another way to overcome the Clown Puppet.",
       },
     ],
   },
@@ -265,32 +264,9 @@ const eventData = [
     ],
   },
   {
-    name: "Crystal Orbs",
-    description:
-      "Hundreds of glowing crystal orbs fill the room.  You pluck one off the shelf and ask it where you can find the key.",
-    image: crystalOrbs,
-    actions: [
-      {
-        type: "pass",
-        action: "“Talk to the heads” ",
-        response: "“Yes, talk to the heads to help you find the key.”",
-      },
-      {
-        type: "redo",
-        action: "“Are you hungry?”",
-        response: "“I was mistaken, try again” .",
-      },
-      {
-        type: "redo",
-        action: "“Ask the puppet”",
-        response: "“I was mistaken, try again.”",
-      },
-    ],
-  },
-  {
     name: "Alien",
     description:
-      "A figure scurries across the floor and up to the team. “Here’s the key now you’re free!”  The figure holds out a gold key to the group.",
+      "A figure scurries across the floor and up to the team. “Here’s the key, now you’re free!”  The figure holds out a gold key.",
     image: alien,
     actions: [
       {
