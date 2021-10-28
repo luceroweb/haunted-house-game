@@ -1,4 +1,5 @@
 import { useHistory } from "react-router-dom";
+import FalseEnding from "./FalseEnding";
 
 // triggers when hasGoldKey or hasSilverKey are true
   export default function ShowKey (props) {
