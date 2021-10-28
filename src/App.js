@@ -65,7 +65,6 @@ function App() {
 			localStorage.setItem('Storage Index', 0);
 		}
 		if (audioOn && !ambienceSoundData.sound.playing()) {
-			console.log();
 			playAmbience();
 		}
 	}
