@@ -6,8 +6,6 @@ import { falseending } from "./storyData";
 
 const FalseEnding = ({setHasGoldKey}) => {
 
-  console.log("falseending", falseending);
-
 	return (
 		<div id="false-ending">
 			<Header />

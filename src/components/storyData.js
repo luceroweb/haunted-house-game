@@ -53,14 +53,15 @@ export const gamewon = [
 
 ]
     
-/* FalseEnding.js */
+    /* FalseEnding.js */
 export const falseending = [
-  `You were tricked by the alien, play again to win the Silver Key`,
-]
+        `You were tricked by the alien, play again to win the Silver Key!`,
+
+    ],
 
 /* HallwayReroute */
 export const hallwayreroute = [
-  `In front of you is a hallway filled with doors. Each room has a challenge for you to beat.   One room holds the key. Complete the challenge, find the key, and make your way back to the hallway to present the key and save your friends and escape!`
+    `In front of you is a hallway filled with doors. Each room has a challenge for you to beat.   One room holds the key. Complete the challenge, find the key, and make your way back to the hallway to present the key and save your friends and escape!`
 ]
     
 /* 
@@ -70,4 +71,4 @@ Hallway
 GameWin
 FalseEnding
 Hallway Reroute page
-*/
+*/ 
