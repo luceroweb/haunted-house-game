@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import KeyDisplay from "./KeyDisplay";
 import Random from "../util/Random";
-import { useEffect } from "react/cjs/react.development";
 
 const ResultAction = (props) => {
   useEffect(() => {

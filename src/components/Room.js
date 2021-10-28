@@ -7,7 +7,6 @@ function Room(props) {
   const [isGameOver, setIsGameOver] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
   const [beginEvent, setBeginEvent] = useState(true);
-  const [randomEvent, setRandomEvent] = useState({});
 
   const found = props.rooms.filter(
     (room) => room.name.toLowerCase() === name.toLowerCase()
@@ -30,7 +29,7 @@ function Room(props) {
 
       {(!isGameOver || !props.hasSilverKey) && (
         <div className="btn-wrap">
-          <Link to="/hallway/4">
+          <Link to="/hallwayreroute">
             <button
               className="backToHomeBtn"
               onClick={() => {
@@ -44,7 +43,7 @@ function Room(props) {
         </div>
       )}
       <Event
-        event={randomEvent}
+        event={props.randomEvent}
         isGameOver={isGameOver}
         setIsGameOver={setIsGameOver}
         hasGoldKey={props.hasGoldKey}
@@ -57,6 +56,7 @@ function Room(props) {
         showDialog={showDialog}
         events={props.events}
         audioOn={props.audioOn}
+        onGameOver={props.onGameOver}
       />
     </div>
   );

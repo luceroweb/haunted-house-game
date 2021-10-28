@@ -1,5 +1,3 @@
-import GameWon from "./GameWon";
-import FalseEnding from "./FalseEnding";
 import { useHistory } from "react-router-dom";
 
 // triggers when hasGoldKey or hasSilverKey are true
