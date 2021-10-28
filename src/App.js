@@ -22,7 +22,7 @@ function App() {
 	const [hasSilverKey, setHasSilverKey] = useState(false);
 	const [playAmbience, ambienceSoundData] = useSound(ambienceHauntedCave, {
 		soundEnabled: audioOn,
-		volume: 0.30,
+		volume: 0.50,
 		interrupt: true
 	});
 	const [randomEvents, setRandomEvents] = useState(Random.selectRandomEvents(events));
