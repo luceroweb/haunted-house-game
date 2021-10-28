@@ -7,7 +7,7 @@ import { gameOverFail } from '../sounds';
 function GameOver(props) {
   const [playGameOverFail, gameOverFailSoundData] = useSound(gameOverFail, {
     soundEnabled: props.audioOn,
-    volume: 0.25,
+    volume: 0.05,
     interrupt: true
   });
 
@@ -28,7 +28,7 @@ function GameOver(props) {
         <h1>Game Over</h1>
         <div className="btn-wrap">
           <Link to="/">
-            <button className="backToHomeBtn">Restart the Game </button>
+            <button className="backToHomeBtn" onClick={props.onGameOver}>Restart the Game </button>
           </Link>
         </div>
       </div>

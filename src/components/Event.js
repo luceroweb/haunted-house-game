@@ -14,6 +14,7 @@ const Event = ({
   showDialog,
   events,
   audioOn,
+  onGameOver,
 }) => {
   const [action, setAction] = useState({});
   const [selectedAction, setSelectedAction] = useState(-1);
@@ -48,7 +49,7 @@ const Event = ({
           audioOn={audioOn}
         />
       )}
-      <GameOver isGameOver={isGameOver} message={deathNote} audioOn={audioOn} />
+      <GameOver isGameOver={isGameOver} message={deathNote} audioOn={audioOn} onGameOver={onGameOver}/>
     </>
   );
 };
