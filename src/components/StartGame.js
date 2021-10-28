@@ -21,8 +21,13 @@ export default function StartGame({ setHasSilverKey, setHasGoldKey, onStartGame 
 			{page === 0 && <Header />}
 			<img src={house} alt="" />
 
-			{page === 0 && <p>{storyData[0]}</p>}
-			{page === 1 && <p>{storyData[1]}</p>}
+			{/* {page === 0 && <p>{storyData[0]}</p>}
+			{page === 1 && <p>{storyData[1]}</p>} */}
+
+		{storyData[page].map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          )
+        )}
 
       <div id="btn-bar">
         <div className="btn-wrap">
@@ -46,3 +51,10 @@ export default function StartGame({ setHasSilverKey, setHasGoldKey, onStartGame 
 		</div>
 	);
 }
+
+
+//  {falseending.map(
+//  (paragraph, index) => (
+//   <p key={index}>{paragraph}</p>
+//  )
+//  )}
