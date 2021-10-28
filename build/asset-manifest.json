@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/haunted-house-game/static/css/main.67778c06.chunk.css",
-    "main.js": "/haunted-house-game/static/js/main.133ef589.chunk.js",
-    "main.js.map": "/haunted-house-game/static/js/main.133ef589.chunk.js.map",
+    "main.js": "/haunted-house-game/static/js/main.e011f306.chunk.js",
+    "main.js.map": "/haunted-house-game/static/js/main.e011f306.chunk.js.map",
     "runtime-main.js": "/haunted-house-game/static/js/runtime-main.888181d3.js",
     "runtime-main.js.map": "/haunted-house-game/static/js/runtime-main.888181d3.js.map",
     "static/js/2.46275367.chunk.js": "/haunted-house-game/static/js/2.46275367.chunk.js",
@@ -48,6 +48,6 @@
     "static/js/runtime-main.888181d3.js",
     "static/js/2.46275367.chunk.js",
     "static/css/main.67778c06.chunk.css",
-    "static/js/main.133ef589.chunk.js"
+    "static/js/main.e011f306.chunk.js"
   ]
 }
