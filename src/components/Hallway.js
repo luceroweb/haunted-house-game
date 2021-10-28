@@ -20,7 +20,6 @@ const Hallway = (props) => {
 	if (!props.audioOn) {
 		doorCreakSoundData.stop();
 	}
-	console.log(hallway[page])
 
 	return (
 		<div id="hallway">

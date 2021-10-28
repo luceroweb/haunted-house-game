@@ -13,7 +13,6 @@ export default function StartGame({ setHasSilverKey, setHasGoldKey, onStartGame 
     setHasSilverKey(false);
     setHasGoldKey(false);
   });
-  console.log(storyData)
 
   
 	return (

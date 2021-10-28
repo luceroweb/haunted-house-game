@@ -41,8 +41,6 @@ function App() {
 	  // setTimeout hack to place playAmbience() in back of event queue 
   setTimeout(() => {
 		  playAmbience()
-		  console.log(ambienceSoundData.sound);
-		  // ambienceSoundData.sound?.loop();
 	  }, 0);
   }
 
@@ -72,7 +70,6 @@ function App() {
 			localStorage.setItem('Storage Index', 0);
 		}
 		if (audioOn && !ambienceSoundData.sound.playing()) {
-			console.log();
 			playAmbience();
 		}
 	}
