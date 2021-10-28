@@ -146,8 +146,8 @@ const eventData = [
       {
         type: "fail",
         action: "Dodge",
-        response:
-          "You dodge the zombie, but in the meelee you stumble and fall to the ground.  The zombie takes its opportunity to attack, making your brains its dinner.  "
+        response: "You dodge the zombie, but in the meelee you stumble and fall to the ground.  The zombie takes its opportunity to attack, making your brains its dinner."
+      },
       {
         type: "pass",
         action: "Attack",
