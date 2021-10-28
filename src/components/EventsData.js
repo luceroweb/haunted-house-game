@@ -265,29 +265,6 @@ const eventData = [
     ],
   },
   {
-    name: "Crystal Orbs",
-    description:
-      "Hundreds of glowing crystal orbs fill the room.  You pluck one off the shelf and ask it where you can find the key.",
-    image: crystalOrbs,
-    actions: [
-      {
-        type: "pass",
-        action: "“Talk to the heads” ",
-        response: "“Yes, talk to the heads to help you find the key.”",
-      },
-      {
-        type: "redo",
-        action: "“Are you hungry?”",
-        response: "“I was mistaken, try again” .",
-      },
-      {
-        type: "redo",
-        action: "“Ask the puppet”",
-        response: "“I was mistaken, try again.”",
-      },
-    ],
-  },
-  {
     name: "Alien",
     description:
       "A figure scurries across the floor and up to the team. “Here’s the key, now you’re free!”  The figure holds out a gold key.",
