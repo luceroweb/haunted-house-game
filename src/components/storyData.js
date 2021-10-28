@@ -56,8 +56,7 @@ export const gamewon = [
     /* FalseEnding.js */
 export const falseending = [
         `You were tricked by the alien, play again to win the Silver Key!`,
-
-    ],
+    ]
 
 /* HallwayReroute */
 export const hallwayreroute = [
