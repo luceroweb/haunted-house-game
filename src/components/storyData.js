@@ -1,5 +1,5 @@
 const storyData = [
-  /* Startgame.js */
+
   [
     `The Bitwise React Apprentices were out trick or treating on a dark and windy Halloween eve, when they stumbled across a creepy, rundown home at the end of a half-built construction site. Juan, the leader of the group, walked up to the door, rang the doorbell but no one answered.`,
   ],
@@ -7,7 +7,7 @@ const storyData = [
   [
     `He jiggled the door and it swung open.`,
   
-    `"Is there anyone home?" asks Myles. "Do you think they have Skittles?"`
+    `"Is there anyone home?" asks Myles. "Do you think they have Skittles?"`,
 
     `"Does it look like they have Skittles? They barely have time to clean from the looks of it!" Grace says, eyeing the cobwebs in the corner of the doorway.`,
   
@@ -54,18 +54,11 @@ const gamewon = [
 
 ]
     
-<<<<<<< HEAD
     /* FalseEnding.js */
     const falseending = [
         `You were tricked by the alien, play again to win the Silver Key!`,
 
     ],
-=======
-/* FalseEnding.js */
-const falseending = [
-  `You were tricked by the alien, play again to win the Silver Key`,
-]
->>>>>>> 2fce9f57ed4b0312a4d92285836dcb7378183853
 
 /* HallwayReroute */
 const hallwayreroute = [
