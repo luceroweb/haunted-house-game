@@ -93,13 +93,13 @@ const eventData = [
         type: "pass",
         action: "Candlestick",
         response:
-          "You barely connect with the candlestick, but luckily it is made out of silver.  The werewolf is severely wounded and loses consciousness.  You escape unscathed and can continue your search for the key.",
+          "You barely connect with the candlestick, but luckily it is made out of silver.  The werewolf is severely wounded and loses consciousness.  You escape unscathed.",
       },
       {
         type: "pass",
         action: "Gun",
         response:
-          "The gun contains a silver bullet. You kill the werewolf and run out of the room", //myles please add
+          "The gun contains a silver bullet. As you pull the trigger, the gun recoils and a shot echos through the dusty space.  The werewolf falls to the floor in a large heap of fur.  Your are free.",
       },
       {
         type: "redo",
@@ -119,7 +119,7 @@ const eventData = [
         type: "pass",
         action: "Dodge",
         response:
-          "You dodge the zombie, and in the chaos, it stumbles and smashes it’s head open. You escape the zombie and continue to search for the silver key.",
+          "You dodge the zombie, and in the chaos, it stumbles and smashes it’s head open. You escape the zombie before he made your brains his dinner.",
       },
       {
         type: "fail",
