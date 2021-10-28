@@ -6,7 +6,6 @@ import clownPuppet from "../img/events/puppet-clown.jpg";
 import chainsawMurderer from "../img/events/Chainsaw_Madman.jpg";
 import skittles from "../img/events/skittles.jpg";
 import talkingHeads from "../img/events/talking-heads.jpg";
-import crystalOrbs from "../img/events/glowing-orbs.jpg";
 import alien from "../img/events/alien.jpg";
 
 const eventData = [
