@@ -8,8 +8,8 @@ function Inventory(props) {
 				audioOn={props.audioOn}
 				setAudio={props.setAudio}>
 			</AudioMute>
-            { props.goldKey && <span id="gold-key">G</span> }
-            { props.silverKey && <span id="silver-key">S</span> }            
+            { !props.goldKey && <span id="gold-key" title="Gold Key"><i class="fas fa-key"></i></span> }
+            { !props.silverKey && <span id="silver-key" title="Silver Key"><i class="fas fa-key"></i></span> }            
 		</div>
 	);
 }
