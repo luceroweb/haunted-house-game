@@ -9,8 +9,8 @@ const FalseEnding = ({setHasGoldKey}) => {
 	// const [play] = useSound(gameOverLose);
 
   const falseEndingText = <div>
-      <p>Juan takes the key out of his pocket and inserts it into the keyhole, but just as the tip of the key touches the lock, it smashes into the lock, the gold wrapping peels away and reveals semi-melted chocolate.</p>
-      <p>You were tricked by the alien, keep trying to win the Silver Key</p>
+      <p>You take the key out of your pocket and insert it into the keyhole, but just as the tip of the key touches the lock, it smashes into the lock, and the gold wrapping peels away to reveal semi-melted chocolate.</p>
+      <p>You were tricked by the alien, keep trying to win the Silver Key!</p>
     </div>
 
 	return (
