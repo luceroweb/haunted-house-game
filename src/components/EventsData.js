@@ -48,7 +48,7 @@ const eventData = [
           { 
           type: "pass",
           action: "Tell her a joke to lighten the mood in the room.", 
-          response: "The ghost laughs at the joke and lets you go", //myles please add
+          response: `"The ghost laughs at the joke and lets you go, but before you exit the room she chuckles "Talk to the Heads, they will help you escape."`,
           },
           { 
           type: "redo",
@@ -140,20 +140,19 @@ const eventData = [
   {
     name: "Zombie",
     description:
-      "A foul, grimy, diseased zombie in blood-stained, tattered clothing approaches you.",
+      "A foul, grimy, diseased zombie in blood-stained, tattered clothing approaches you, mouth agape.  The stench of death and decay hits you and...",
     image: zombie,
     actions: [
       {
         type: "fail",
         action: "Dodge",
-        response:
-          "You stumble trying to dodge the zombie and you crack your head open and game over", //myles please add
+        response: "You dodge the zombie, but in the meelee you stumble and fall to the ground.  The zombie takes its opportunity to attack, making your brains its dinner."
       },
       {
         type: "pass",
         action: "Attack",
         response:
-          "You overpower the zombie in a test of strength and win the battle ", //myles please add
+          "The zombie lumbers towards you, as he looms over you, you manage to reach out and push him away, overpowering the zombie in a test of strength."
       },
       {
         type: "redo",
@@ -192,7 +191,7 @@ const eventData = [
   {
     name: "Chainsaw Murderer",
     description:
-      "A reving of a motor fires up behind you.  As you turn, you see a madman with a chainsaw revving in his hands. The madman lifts the chainsaw over you, you decide to...",
+      "A revving of a motor fires up behind you.  As you turn, you see a madman with a chainsaw revving in his hands. The madman lifts the chainsaw over you, you decide to...",
     image: chainsawMurderer,
     actions: [
       {
@@ -256,12 +255,12 @@ const eventData = [
       {
         type: "redo",
         action: "A meal",
-        response: "“You have failed and will meet your doom!” .",
+        response: "“You are incorrect.  Take a moment to check your logic and choose again!” .",
       },
       {
         type: "redo",
         action: "A table",
-        response: "“You have failed and will meet your doom!”",
+        response: "“You are incorrect.  Take a moment to check your logic and choose again!”",
       },
     ],
   },
