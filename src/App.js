@@ -37,13 +37,6 @@ function App() {
   // stop ambience sound when speaker button is toggled off
   if (!audioOn) {
 	  ambienceSoundData.stop();
-  } else {
-	  // setTimeout hack to place playAmbience() in back of event queue 
-  setTimeout(() => {
-		  playAmbience()
-		  console.log(ambienceSoundData.sound);
-		  // ambienceSoundData.sound?.loop();
-	  }, 0);
   }
 
   /**
@@ -72,7 +65,6 @@ function App() {
 			localStorage.setItem('Storage Index', 0);
 		}
 		if (audioOn && !ambienceSoundData.sound.playing()) {
-			console.log();
 			playAmbience();
 		}
 	}
