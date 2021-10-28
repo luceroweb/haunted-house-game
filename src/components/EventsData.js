@@ -48,7 +48,7 @@ const eventData = [
           { 
           type: "pass",
           action: "Tell her a joke to lighten the mood in the room.", 
-          response: "The ghost laughs at the joke and lets you go", //myles please add
+          response: "The ghost laughs at the joke and lets you go, but before you exit the room she 
           },
           { 
           type: "redo",
@@ -191,7 +191,7 @@ const eventData = [
   {
     name: "Chainsaw Murderer",
     description:
-      "A reving of a motor fires up behind you.  As you turn, you see a madman with a chainsaw revving in his hands. The madman lifts the chainsaw over you, you decide to...",
+      "A revving of a motor fires up behind you.  As you turn, you see a madman with a chainsaw revving in his hands. The madman lifts the chainsaw over you, you decide to...",
     image: chainsawMurderer,
     actions: [
       {

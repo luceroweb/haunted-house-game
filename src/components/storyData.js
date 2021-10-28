@@ -63,7 +63,7 @@ const storyData = [
     
     /* FalseEnding.js */
     const falseending = [
-        `You were tricked by the alien, play again to win the Silver Key`,
+        `You were tricked by the alien, play again to win the Silver Key!`,
 
     ],
 
