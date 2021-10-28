@@ -60,7 +60,7 @@ const eventData = [
     {
       name: "Werewolf",
       description:
-        "A snarling and ravenous werewolf attacks you from behind. You barely evade it. Just out your reach, you spot a gun, a haymaker, and a candlestick. You only have time to get to one.",
+        "A snarling and ravenous werewolf attacks you from behind. You barely evade it. Just out of your reach, you spot a gun, a haymaker, and a candlestick. You only have time to get to one.",
       image: werewolf,
       actions: [
         {
@@ -184,7 +184,7 @@ const eventData = [
         type: "redo",
         action: "Take a closer look.",
         response:
-          "As the clown head finishes turning, you look down at its hand and you notice a small object.  You lunge to attack the clown puppet, and as you do it drops the object and smoke fills the room, allowing you to choose another way to overcome the clown puppet.",
+          "As the clown head finishes turning, you look down at its hand and you notice a small object.  You lunge to attack the clown puppet, and as you do it drops the object and smoke fills the room, allowing you an opportunity to choose another way to overcome the Clown Puppet.",
       },
     ],
   },
@@ -290,7 +290,7 @@ const eventData = [
   {
     name: "Alien",
     description:
-      "A figure scurries across the floor and up to the team. “Here’s the key now you’re free!”  The figure holds out a gold key to the group.",
+      "A figure scurries across the floor and up to the team. “Here’s the key, now you’re free!”  The figure holds out a gold key.",
     image: alien,
     actions: [
       {
