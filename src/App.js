@@ -25,14 +25,52 @@ function App() {
 		volume: 0.30,
 		interrupt: true
 	});
-	const [randomEvents, setRandomEvents] = useState(Random.selectRandomEvents(events));
-  const [randomEventsIndex, setRandomEventsIndex] = useState(0);
+	const [randomEvents, setRandomEvents] = useState(
+		localStorage.getItem('Storage Event') 
+			? JSON.parse(localStorage.getItem('Storage Event')) 
+			: Random.selectRandomEvents(events));
+	const [randomEventsIndex, setRandomEventsIndex] = useState(
+		localStorage.getItem('Storage Index') 
+		? JSON.parse(localStorage.getItem('Storage Index')) 
+		: 0);
 
+  // stop ambience sound when speaker button is toggled off
+  if (!audioOn) {
+	  ambienceSoundData.stop();
+  } else {
+	  // setTimeout hack to place playAmbience() in back of event queue 
+  setTimeout(() => {
+		  playAmbience()
+		  console.log(ambienceSoundData.sound);
+		  // ambienceSoundData.sound?.loop();
+	  }, 0);
+  }
+
+  /**
+   * called when user clicks continue after passing an event
+   * @listens onClick EventModal
+   */
+   const onEventPass = () => {
+	  if (randomEventsIndex + 1 >= randomEvents.length) {
+		  const rollEvent = Random.selectRandomEvents(events);
+		  setRandomEvents(rollEvent);
+		  localStorage.setItem('Storage Event', JSON.stringify(rollEvent));
+		  localStorage.setItem('Storage Index', 0);
+		  setRandomEventsIndex(0);
+	  } else {
+		  setRandomEventsIndex(randomEventsIndex + 1);
+		  localStorage.setItem('Storage Index', randomEventsIndex + 1);
+	  }
+  }
 	/**
 	 * called when user clicks 'Skip to Gameplay' or 'Continue Story' button
 	 * @listens onClick StartGame
 	 */
 	const onStartGame = () => {
+		if (localStorage.getItem('Storage Event') == null) {
+			localStorage.setItem('Storage Event', JSON.stringify(randomEvents));
+			localStorage.setItem('Storage Index', 0);
+		}
 		if (audioOn && !ambienceSoundData.sound.playing()) {
 			console.log();
 			playAmbience();
@@ -47,19 +85,8 @@ function App() {
 	const onGameOver = () => {
 		setRandomEvents(Random.selectRandomEvents(events));
 		setRandomEventsIndex(0);
-	}
-
-	/**
-	 * called when user clicks continue after passing an event
-	 * @listens onClick EventModal
-	 */
-	 const onEventPass = () => {
-		if (randomEventsIndex + 1 >= randomEvents.length) {
-			setRandomEvents(Random.selectRandomEvents(events));
-			setRandomEventsIndex(0);
-		} else {
-			setRandomEventsIndex(randomEventsIndex + 1);
-		}
+		localStorage.removeItem('Storage Event');
+		localStorage.removeItem('Storage Index');
 	}
 
 	useEffect(() => {
