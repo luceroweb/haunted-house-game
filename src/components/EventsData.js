@@ -48,7 +48,7 @@ const eventData = [
           { 
           type: "pass",
           action: "Tell her a joke to lighten the mood in the room.", 
-          response: "The ghost laughs at the joke and lets you go, but before you exit the room she 
+          response: `"The ghost laughs at the joke and lets you go, but before you exit the room she chuckles "Talk to the Heads, they will help you escape."`,
           },
           { 
           type: "redo",
