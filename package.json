@@ -10,10 +10,11 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
+    "react-native-image-placeholder": "^1.0.14",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
-    "use-sound": "^4.0.1",
     "typewriter-effect": "^2.18.2",
+    "use-sound": "^4.0.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

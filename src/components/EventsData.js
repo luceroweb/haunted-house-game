@@ -255,12 +255,12 @@ const eventData = [
       {
         type: "redo",
         action: "A meal",
-        response: "“You have failed and will meet your doom!” .",
+        response: "“You are incorrect.  Take a moment to check your logic and choose again!” .",
       },
       {
         type: "redo",
         action: "A table",
-        response: "“You have failed and will meet your doom!”",
+        response: "“You are incorrect.  Take a moment to check your logic and choose again!”",
       },
     ],
   },
