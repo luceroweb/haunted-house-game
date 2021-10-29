@@ -11,15 +11,14 @@ function GameOver(props) {
     interrupt: true
   });
 
-  if (!props.audioOn) {
-    gameOverFailSoundData.stop();
-  } 
   // proper way to play audio
   useEffect(() => {
-    if (props.isGameOver) {
+    if (props.isGameOver && props.audioOn) {
       playGameOverFail();
+    } else {
+      gameOverFailSoundData.stop();
     }
-  }, [playGameOverFail, props.isGameOver]);
+  }, [playGameOverFail, gameOverFailSoundData, props.isGameOver, props.audioOn]);
 
   return (
     props.isGameOver &&
