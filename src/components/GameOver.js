@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import gameOver from "../img/events/game-over.png"
 import useSound from 'use-sound';
@@ -13,10 +13,14 @@ function GameOver(props) {
 
   if (!props.audioOn) {
     gameOverFailSoundData.stop();
-  } else if (props.isGameOver) {
-    // setTimeout hack to place playGameOverWin() in back of event queue 
-    setTimeout(() => playGameOverFail(), 0);
-  }
+  } 
+  // proper way to play audio
+  useEffect(() => {
+    if (props.isGameOver) {
+      playGameOverFail();
+    }
+  }, [playGameOverFail, props.isGameOver]);
+
   return (
     props.isGameOver &&
     props.i === props.selectedAction && (
@@ -28,7 +32,10 @@ function GameOver(props) {
         <h1>Game Over</h1>
         <div className="btn-wrap">
           <Link to="/">
-            <button className="backToHomeBtn" onClick={props.onGameOver}>Restart the Game </button>
+            <button className="backToHomeBtn" onClick={() => {
+              gameOverFailSoundData.stop();
+              props.onGameOver();
+            }}>Restart the Game </button>
           </Link>
         </div>
       </div>

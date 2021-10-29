@@ -147,8 +147,8 @@ function App() {
 				</Route>
 				<Route path="/falseending">
 					<FalseEnding
-            setHasGoldKey={setHasGoldKey}
-          />
+						setHasGoldKey={setHasGoldKey}
+					/>
 				</Route>
 				<Route path="/gamewon">
 					<GameWon onGameOver={onGameOver}/>
