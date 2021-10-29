@@ -14,11 +14,11 @@ function EventModal(props) {
 
   // event sounds
   const noiseStarter = {
-    Ghost: { sound: ghostScream, volume: 0.01 },
-    Werewolf: { sound: werewolf, volume: 0.10 },
-    Zombie: { sound: zombieMoan, volume: 0.07 },
-    "Chainsaw Murderer": { sound: chainsaw, volume: 0.07 },
-    "The Talking Heads": { sound: evilLaugh, volume: 0.07 },
+    Ghost: { sound: ghostScream, volume: 0.05 },
+    Werewolf: { sound: werewolf, volume: 0.30 },
+    Zombie: { sound: zombieMoan, volume: 0.15 },
+    "Chainsaw Murderer": { sound: chainsaw, volume: 0.20 },
+    "The Talking Heads": { sound: evilLaugh, volume: 0.25 },
 
   }
   const soundName = props.event.name;
