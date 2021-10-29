@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
 
 export const TrailerEmbed = () => {
-    console.log(ReactPlayer)
+
     return (
         <div id="trailer-embed">
             <h3> Haunted House Project</h3>

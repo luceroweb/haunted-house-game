@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/haunted-house-game/static/css/main.24da80de.chunk.css",
-    "main.js": "/haunted-house-game/static/js/main.a0706810.chunk.js",
-    "main.js.map": "/haunted-house-game/static/js/main.a0706810.chunk.js.map",
-    "runtime-main.js": "/haunted-house-game/static/js/runtime-main.b20db8f1.js",
-    "runtime-main.js.map": "/haunted-house-game/static/js/runtime-main.b20db8f1.js.map",
-    "static/js/2.da1e2eb2.chunk.js": "/haunted-house-game/static/js/2.da1e2eb2.chunk.js",
-    "static/js/2.da1e2eb2.chunk.js.map": "/haunted-house-game/static/js/2.da1e2eb2.chunk.js.map",
-    "static/js/3.52b1b5e0.chunk.js": "/haunted-house-game/static/js/3.52b1b5e0.chunk.js",
-    "static/js/3.52b1b5e0.chunk.js.map": "/haunted-house-game/static/js/3.52b1b5e0.chunk.js.map",
-    "static/js/4.e8e833b1.chunk.js": "/haunted-house-game/static/js/4.e8e833b1.chunk.js",
-    "static/js/4.e8e833b1.chunk.js.map": "/haunted-house-game/static/js/4.e8e833b1.chunk.js.map",
+    "main.css": "/haunted-house-game/static/css/main.a03443d0.chunk.css",
+    "main.js": "/haunted-house-game/static/js/main.07254728.chunk.js",
+    "main.js.map": "/haunted-house-game/static/js/main.07254728.chunk.js.map",
+    "runtime-main.js": "/haunted-house-game/static/js/runtime-main.888181d3.js",
+    "runtime-main.js.map": "/haunted-house-game/static/js/runtime-main.888181d3.js.map",
+    "static/js/2.46275367.chunk.js": "/haunted-house-game/static/js/2.46275367.chunk.js",
+    "static/js/2.46275367.chunk.js.map": "/haunted-house-game/static/js/2.46275367.chunk.js.map",
+    "static/js/3.4ae94696.chunk.js": "/haunted-house-game/static/js/3.4ae94696.chunk.js",
+    "static/js/3.4ae94696.chunk.js.map": "/haunted-house-game/static/js/3.4ae94696.chunk.js.map",
+    "static/js/4.ea282a16.chunk.js": "/haunted-house-game/static/js/4.ea282a16.chunk.js",
+    "static/js/4.ea282a16.chunk.js.map": "/haunted-house-game/static/js/4.ea282a16.chunk.js.map",
     "index.html": "/haunted-house-game/index.html",
-    "static/css/main.24da80de.chunk.css.map": "/haunted-house-game/static/css/main.24da80de.chunk.css.map",
-    "static/js/2.da1e2eb2.chunk.js.LICENSE.txt": "/haunted-house-game/static/js/2.da1e2eb2.chunk.js.LICENSE.txt",
-    "static/js/3.52b1b5e0.chunk.js.LICENSE.txt": "/haunted-house-game/static/js/3.52b1b5e0.chunk.js.LICENSE.txt",
+    "static/css/main.a03443d0.chunk.css.map": "/haunted-house-game/static/css/main.a03443d0.chunk.css.map",
+    "static/js/2.46275367.chunk.js.LICENSE.txt": "/haunted-house-game/static/js/2.46275367.chunk.js.LICENSE.txt",
+    "static/js/3.4ae94696.chunk.js.LICENSE.txt": "/haunted-house-game/static/js/3.4ae94696.chunk.js.LICENSE.txt",
     "static/media/Chainsaw_Madman.5bcc66a1.jpg": "/haunted-house-game/static/media/Chainsaw_Madman.5bcc66a1.jpg",
     "static/media/Hall-option-1.b1154b66.jpg": "/haunted-house-game/static/media/Hall-option-1.b1154b66.jpg",
     "static/media/Room_Library.fd7b4408.jpg": "/haunted-house-game/static/media/Room_Library.fd7b4408.jpg",
@@ -24,7 +24,6 @@
     "static/media/door-creak.30200790.mp3": "/haunted-house-game/static/media/door-creak.30200790.mp3",
     "static/media/evil-laugh.8c8c0235.mp3": "/haunted-house-game/static/media/evil-laugh.8c8c0235.mp3",
     "static/media/game-over-fail.d8bc585b.mp3": "/haunted-house-game/static/media/game-over-fail.d8bc585b.mp3",
-    "static/media/game-over-lose.6b10c7f4.wav": "/haunted-house-game/static/media/game-over-lose.6b10c7f4.wav",
     "static/media/game-over-win-2.e106e9fb.mp3": "/haunted-house-game/static/media/game-over-win-2.e106e9fb.mp3",
     "static/media/game-over-win.43f72268.mp3": "/haunted-house-game/static/media/game-over-win.43f72268.mp3",
     "static/media/game-over.0780246a.png": "/haunted-house-game/static/media/game-over.0780246a.png",
@@ -46,9 +45,9 @@
     "static/media/zombie-option-1.759bb4ed.jpg": "/haunted-house-game/static/media/zombie-option-1.759bb4ed.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b20db8f1.js",
-    "static/js/2.da1e2eb2.chunk.js",
-    "static/css/main.24da80de.chunk.css",
-    "static/js/main.a0706810.chunk.js"
+    "static/js/runtime-main.888181d3.js",
+    "static/js/2.46275367.chunk.js",
+    "static/css/main.a03443d0.chunk.css",
+    "static/js/main.07254728.chunk.js"
   ]
 }

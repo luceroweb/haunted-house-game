@@ -4,15 +4,21 @@ import Event from "./Event";
 
 function Room(props) {
   const { name } = useParams();
-  const [isGameOver, setIsGameOver] = useState(false);
-  const [showDialog, setShowDialog] = useState(false);
-  const [beginEvent, setBeginEvent] = useState(true);
+  const [isGameOver, setIsGameOver] = useState(!!JSON.parse(localStorage.getItem('isGameOver')));
+  const [showDialog, setShowDialog] = useState(!!JSON.parse(localStorage.getItem('showEventModal')));
+  const [beginEvent, setBeginEvent] = useState(
+    localStorage.getItem('beginEvent') !== null 
+      ? JSON.parse(localStorage.getItem('beginEvent'))
+      : true
+  );
 
   const found = props.rooms.filter(
     (room) => room.name.toLowerCase() === name.toLowerCase()
   );
 
   const searchRoom = () => {
+    localStorage.setItem('showEventModal', true);
+    localStorage.setItem('beginEvent', false);
     setShowDialog(true);
     setBeginEvent(false);
   };
@@ -56,6 +62,7 @@ function Room(props) {
         showDialog={showDialog}
         events={props.events}
         audioOn={props.audioOn}
+        onGameOver={props.onGameOver}
       />
     </div>
   );

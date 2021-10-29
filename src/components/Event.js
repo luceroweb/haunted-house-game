@@ -14,15 +14,20 @@ const Event = ({
   showDialog,
   events,
   audioOn,
+  onGameOver,
 }) => {
   const [action, setAction] = useState({});
   const [selectedAction, setSelectedAction] = useState(-1);
   const [hasChosenAction, setHasChosenAction] = useState(false);
-  const [deathNote, setDeathNote] = useState("");
+  const [deathNote, setDeathNote] = useState(
+    localStorage.getItem('deathNote')
+      ? localStorage.getItem('deathNote')
+      : ""
+  );
 
-  const closeEvent = () => {
-    setShowDialog(false);
-  };
+  // const closeEvent = () => {
+  //   setShowDialog(false);
+  // };
 
   return (
     <>
@@ -38,7 +43,7 @@ const Event = ({
           setIsGameOver={setIsGameOver}
           hasGoldKey={hasGoldKey}
           hasSilverKey={hasSilverKey}
-          closeEvent={closeEvent}
+          // closeEvent={closeEvent}
           setDeathNote={setDeathNote}
           setShowDialog={setShowDialog}
           action={action}
@@ -48,7 +53,7 @@ const Event = ({
           audioOn={audioOn}
         />
       )}
-      <GameOver isGameOver={isGameOver} message={deathNote} audioOn={audioOn} />
+      <GameOver isGameOver={isGameOver} message={deathNote} audioOn={audioOn} onGameOver={onGameOver}/>
     </>
   );
 };
