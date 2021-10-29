@@ -56,7 +56,7 @@ body {
   justify-content: flex-start;
   width: 90%;
   height: calc(100% - 60px);
-  padding: 5px;
+  padding: 0 5px 60px 5px;
   margin: auto;
 }
 
