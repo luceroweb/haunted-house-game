@@ -34,16 +34,13 @@ function App() {
 		? JSON.parse(localStorage.getItem('Storage Index')) 
 		: 0);
 
-  // stop ambience sound when speaker button is toggled off
-  if (!audioOn) {
-	  ambienceSoundData.stop();
-  }
-
   /**
    * called when user clicks continue after passing an event
    * @listens onClick EventModal
    */
    const onEventPass = () => {
+		localStorage.setItem('beginEvent', true);
+
 	  if (randomEventsIndex + 1 >= randomEvents.length) {
 		  const rollEvent = Random.selectRandomEvents(events);
 		  setRandomEvents(rollEvent);
@@ -60,12 +57,14 @@ function App() {
 	 * @listens onClick StartGame
 	 */
 	const onStartGame = () => {
+		localStorage.clear();
 		if (localStorage.getItem('Storage Event') == null) {
 			localStorage.setItem('Storage Event', JSON.stringify(randomEvents));
 			localStorage.setItem('Storage Index', 0);
 		}
 		if (audioOn && !ambienceSoundData.sound.playing()) {
 			playAmbience();
+			ambienceSoundData.sound.loop(true);
 		}
 	}
 
@@ -77,8 +76,7 @@ function App() {
 	const onGameOver = () => {
 		setRandomEvents(Random.selectRandomEvents(events));
 		setRandomEventsIndex(0);
-		localStorage.removeItem('Storage Event');
-		localStorage.removeItem('Storage Index');
+		localStorage.clear();
 	}
 
 	useEffect(() => {
