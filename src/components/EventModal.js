@@ -3,19 +3,22 @@ import ResultAction from "./ResultAction";
 import KeyDisplay from "./KeyDisplay";
 import useSound from "use-sound";
 import { zombieMoan, ghostScream, chainsaw, evilLaugh, werewolf,  } from "../sounds";
+import Random from '../util/Random';
 
 function EventModal(props) {
   //States to determine which key they have just received since now it is possible to have both keys simultaneously
   const [informedOfSilverKey, setInformedOfSilverKey] = useState(true);
   const [informedOfGoldKey, setInformedOfGoldKey] = useState(true);
+  // shuffledActions is used for generating shuffled action choices
+  const [shuffledActions, setShuffledActions] = useState([]);
 
   // event sounds
   const noiseStarter = {
     Ghost: { sound: ghostScream, volume: 0.01 },
     Werewolf: { sound: werewolf, volume: 0.10 },
-    Zombie: { sound: zombieMoan, volume: 0.10 },
-    "Chainsaw Murderer": { sound: chainsaw, volume: 0.10 },
-    "The Talking Heads": { sound: evilLaugh, volume: 0.10 },
+    Zombie: { sound: zombieMoan, volume: 0.07 },
+    "Chainsaw Murderer": { sound: chainsaw, volume: 0.07 },
+    "The Talking Heads": { sound: evilLaugh, volume: 0.07 },
 
   }
   const soundName = props.event.name;
@@ -25,6 +28,40 @@ function EventModal(props) {
     volume: noiseStarter[soundName]?.volume,
     interrupt: true }
   );
+
+  /**
+   * Helper function to shuffle and return action buttons
+   */
+  const renderChoices = () => {
+    let shuffledActionsList = shuffledActions;
+
+    if (shuffledActionsList.length === 0 ) {
+      shuffledActionsList = Random.selectRandomElements(props.event.actions);
+      setShuffledActions(shuffledActionsList);
+    } 
+    return shuffledActionsList.map((currentAction, i) => (
+      <div key={i}>
+        <button
+          onClick={() => {
+            props.setAction(currentAction);
+            props.setSelectedAction(i);
+            if (currentAction.type !== "redo")
+              props.setHasChosenAction(true);
+          }}
+        >
+          {currentAction.action}
+        </button>
+        <ResultAction
+          { ...props }
+          i={i}
+          setInformedOfGoldKey={setInformedOfGoldKey}
+          setInformedOfSilverKey={setInformedOfSilverKey}
+          informedOfGoldKey={informedOfGoldKey}
+          informedOfSilverKey={informedOfSilverKey}
+        />
+      </div>
+    ))
+  }
   
   if (props.hasChosenAction || !props.audioOn) {
     soundData.stop();
@@ -67,42 +104,7 @@ function EventModal(props) {
               <img src={props.event.image} alt="" />
             </div>
             <p>{props.event.description}</p>
-            {props.event.actions.map((currentAction, i) => (
-              <div key={i}>
-                {!props.isGameOver && (
-                  <button
-                    onClick={() => {
-                      props.setAction(currentAction);
-                      props.setSelectedAction(i);
-                      if (currentAction.type !== "redo")
-                        props.setHasChosenAction(true);
-                    }}
-                  >
-                    {currentAction.action}
-                  </button>
-                )}
-                <ResultAction
-                  i={i}
-                  action={props.action}
-                  selectedAction={props.selectedAction}
-                  setHasSilverKey={props.setHasSilverKey}
-                  setHasGoldKey={props.setHasGoldKey}
-                  setIsGameOver={props.setIsGameOver}
-                  hasGoldKey={props.hasGoldKey}
-                  hasSilverKey={props.hasSilverKey}
-                  closeEvent={props.closeEvent}
-                  name={props.event.name}
-                  setShowDialog={props.setShowDialog}
-                  setDeathNote={props.setDeathNote}
-                  setInformedOfGoldKey={setInformedOfGoldKey}
-                  setInformedOfSilverKey={setInformedOfSilverKey}
-                  informedOfGoldKey={informedOfGoldKey}
-                  informedOfSilverKey={informedOfSilverKey}
-                  event={props.event}
-                  events={props.events}
-                />
-              </div>
-            ))}
+            { renderChoices() }
           </div>
         </div>
       ) : (
@@ -117,24 +119,13 @@ function EventModal(props) {
                 <img src={props.event.image} alt="" />
               </div>
               <ResultAction
+                { ...props }
                 i={props.selectedAction}
-                action={props.action}
-                selectedAction={props.selectedAction}
-                setHasSilverKey={props.setHasSilverKey}
-                setHasGoldKey={props.setHasGoldKey}
-                setIsGameOver={props.setIsGameOver}
-                hasGoldKey={props.hasGoldKey}
-                hasSilverKey={props.hasSilverKey}
-                closeEvent={props.closeEvent}
                 name={props.event.name}
-                setShowDialog={props.setShowDialog}
-                setDeathNote={props.setDeathNote}
                 setInformedOfGoldKey={setInformedOfGoldKey}
                 setInformedOfSilverKey={setInformedOfSilverKey}
                 informedOfGoldKey={informedOfGoldKey}
                 informedOfSilverKey={informedOfSilverKey}
-                event={props.event}
-                events={props.events}
               />
             </div>
           </div>
