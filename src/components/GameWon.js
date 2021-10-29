@@ -10,7 +10,7 @@ function GameWon({ audioOn, onGameOver }) {
   // useState to prevent infinite loop bug when passing random sounds to useSound
   const [playGameOverWin, gameOverWinSoundData] = useSound(gameOverWin, {
     soundEnabled: audioOn,
-    volume: 0.50,
+    volume: 0.70,
     interrupt: true
   });
 

@@ -151,7 +151,7 @@ function App() {
 					/>
 				</Route>
 				<Route path="/gamewon">
-					<GameWon onGameOver={onGameOver}/>
+					<GameWon onGameOver={onGameOver} audioOn={audioOn}/>
 				</Route>
 			</Switch>
 			<Inventory
