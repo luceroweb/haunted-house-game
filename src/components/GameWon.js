@@ -1,26 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link }from 'react-router-dom';
 import useSound from "use-sound";
-import { gameOverWin, gameOverWinTwo } from "../sounds";
+import { gameOverWin } from "../sounds";
 import image from "../img/events/win.jpeg";
 import Header from "./Header";
 import silverKey from "../img/events/silver-key.jpg";
-import Random from "../util/Random";
 
 function GameWon({ audioOn, onGameOver }) {
   // useState to prevent infinite loop bug when passing random sounds to useSound
-  const [playGameOverWin, gameOverWinSoundData] = useSound(Random.selectEvent([gameOverWin, gameOverWinTwo]), {
+  const [playGameOverWin, gameOverWinSoundData] = useSound(gameOverWin, {
     soundEnabled: audioOn,
-    volume: 0.05,
+    volume: 0.70,
     interrupt: true
   });
- 
-  if (!audioOn) {
-    gameOverWinSoundData.stop();
-  } else {
-    // setTimeout hack to place playGameOverWin() in back of event queue 
-    setTimeout(() => playGameOverWin(), 0);
-  }
+
+  useEffect(() => {
+    if (audioOn) {
+      playGameOverWin();
+    } else {
+      gameOverWinSoundData.stop();
+    }
+  }, [audioOn, playGameOverWin,gameOverWinSoundData]);
 
   const gameWonText = <div>
     <p>You return to the group with the key. The cage containing Juan and the rest of the team lifts. The team rushes out of the cage, and passes you to the door. As you hold out the key, the group parts and you spot the door. You insert the key into the keyhole and turn. As the door unlocks, you push the heavy door open. Fresh air rushes past you and into the house. You and the team spill out into the street as you spot a figure strolling up the street to the house.</p>
@@ -45,7 +45,10 @@ function GameWon({ audioOn, onGameOver }) {
 
       <div className="btn-wrap">
         <Link to="/">
-          <button className="backToHomeBtn" onClick={onGameOver}>Restart the Game</button>
+          <button className="backToHomeBtn" onClick={ () => {
+            gameOverWinSoundData.stop();
+            onGameOver();
+          }}>Restart the Game</button>
         </Link>
       </div>
     </div>

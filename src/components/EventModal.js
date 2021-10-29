@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ResultAction from "./ResultAction";
 import KeyDisplay from "./KeyDisplay";
 import useSound from "use-sound";
@@ -14,11 +14,11 @@ function EventModal(props) {
 
   // event sounds
   const noiseStarter = {
-    Ghost: { sound: ghostScream, volume: 0.01 },
-    Werewolf: { sound: werewolf, volume: 0.10 },
-    Zombie: { sound: zombieMoan, volume: 0.07 },
-    "Chainsaw Murderer": { sound: chainsaw, volume: 0.07 },
-    "The Talking Heads": { sound: evilLaugh, volume: 0.07 },
+    Ghost: { sound: ghostScream, volume: 0.05 },
+    Werewolf: { sound: werewolf, volume: 0.30 },
+    Zombie: { sound: zombieMoan, volume: 0.15 },
+    "Chainsaw Murderer": { sound: chainsaw, volume: 0.20 },
+    "The Talking Heads": { sound: evilLaugh, volume: 0.25 },
 
   }
   const soundName = props.event.name;
@@ -63,12 +63,14 @@ function EventModal(props) {
     ))
   }
   
-  if (props.hasChosenAction || !props.audioOn) {
-    soundData.stop();
-  } else {
-    // setTimeout hack to place playSound() in back of event queue 
-    setTimeout(() => playSound(), 0);
-  }
+  useEffect(() => {
+    if (props.isGameOver || props.hasChosenAction || !props.audioOn) {
+      soundData.stop();
+    } else {
+      playSound();
+    }
+  }, [props.isGameOver, props.hasChosenAction, props.audioOn, playSound, soundData]);
+  
   // For if they just received either key
   if (!informedOfSilverKey || !informedOfGoldKey) {
     return (
@@ -83,6 +85,7 @@ function EventModal(props) {
         />
         <button
           onClick={() => {
+            localStorage.setItem('showEventModal', false);
             props.setShowDialog(false);
             setInformedOfSilverKey(true);
             setInformedOfGoldKey(true);

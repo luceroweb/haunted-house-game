@@ -9,6 +9,8 @@ const ResultAction = (props) => {
     if (props.action.type === "fail") {
       props.setDeathNote(props.action.response);
       props.setIsGameOver(true);
+      localStorage.setItem('deathNote', props.action.response);
+      localStorage.setItem('isGameOver', true);
     }
 
     if (props.action.action === "A coffin") {
@@ -45,7 +47,10 @@ const ResultAction = (props) => {
         informedOfSilverKey={props.informedOfSilverKey}
       />
       {props.action.type !== "redo" && (
-        <button onClick={() => props.setShowDialog(false)}>Continue</button>
+        <button onClick={() => {
+          localStorage.setItem('showEventModal', false);
+          props.setShowDialog(false);
+        }}>Continue</button>
       )}
     </>
   ) : null;
