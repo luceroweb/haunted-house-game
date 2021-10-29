@@ -164,7 +164,7 @@ const eventData = [
   {
     name: "Clown Puppet",
     description:
-      "A puppet sits on the shelf has its head backwards. As you enter the room, the head slowly begins to spin around.",
+      "A puppet sitting on the shelf has its head backwards. As you enter the room, the head slowly begins to spin around.",
     image: clownPuppet,
     actions: [
       {
@@ -271,7 +271,7 @@ const eventData = [
     actions: [
       {
         type: "pass",
-        action: "“Turn the key down and keep looking.",
+        action: "Turn the key down and keep looking.",
         response: "“I was mistaken, try again.”",
       },
       {
