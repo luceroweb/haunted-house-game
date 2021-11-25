@@ -1,21 +1,24 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Event from "./Event";
-import Random from "../util/Random";
 
 function Room(props) {
   const { name } = useParams();
-  const [isGameOver, setIsGameOver] = useState(false);
-  const [showDialog, setShowDialog] = useState(false);
-  const [beginEvent, setBeginEvent] = useState(true);
-  const [randomEvent, setRandomEvent] = useState({});
+  const [isGameOver, setIsGameOver] = useState(!!JSON.parse(localStorage.getItem('isGameOver')));
+  const [showDialog, setShowDialog] = useState(!!JSON.parse(localStorage.getItem('showEventModal')));
+  const [beginEvent, setBeginEvent] = useState(
+    localStorage.getItem('beginEvent') !== null 
+      ? JSON.parse(localStorage.getItem('beginEvent'))
+      : true
+  );
 
   const found = props.rooms.filter(
     (room) => room.name.toLowerCase() === name.toLowerCase()
   );
 
   const searchRoom = () => {
-    setRandomEvent(Random.selectEvent(props.events));
+    localStorage.setItem('showEventModal', true);
+    localStorage.setItem('beginEvent', false);
     setShowDialog(true);
     setBeginEvent(false);
   };
@@ -32,10 +35,13 @@ function Room(props) {
 
       {(!isGameOver || !props.hasSilverKey) && (
         <div className="btn-wrap">
-          <Link to="/hallway/1">
+          <Link to="/hallwayreroute">
             <button
               className="backToHomeBtn"
-              onClick={() => setBeginEvent(true)}
+              onClick={() => {
+                setBeginEvent(true);
+                props.onEventPass();
+              }}
             >
               Back to Hallway
             </button>
@@ -43,7 +49,7 @@ function Room(props) {
         </div>
       )}
       <Event
-        event={randomEvent}
+        event={props.randomEvent}
         isGameOver={isGameOver}
         setIsGameOver={setIsGameOver}
         hasGoldKey={props.hasGoldKey}
@@ -56,13 +62,8 @@ function Room(props) {
         showDialog={showDialog}
         events={props.events}
         audioOn={props.audioOn}
+        onGameOver={props.onGameOver}
       />
-
-      {(!isGameOver || !props.hasSilverKey) && (
-        <Link to="/">
-          <button className="backToHomeBtn">Restart Game!</button>
-        </Link>
-      )}
     </div>
   );
 }
