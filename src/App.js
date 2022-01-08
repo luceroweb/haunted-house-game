@@ -28,6 +28,8 @@ function App() {
 	const [randomEvents, setRandomEvents] = useState(Random.selectRandomEvents(events));
   const [randomEventsIndex, setRandomEventsIndex] = useState(0);
 
+  console.log('test');
+
 	// stop ambience sound when speaker button is toggled off
 	if (!audioOn) {
 		ambienceSoundData.stop();
